@@ -2,3 +2,26 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 
+version = '1.0-SNAPSHOT'
+group = 'com.mos'
+
+sourceCompatibility = 1.8
+
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.5',
+			'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final',
+            'org.apache.activemq:activemq-core:5.7.0'
+
+    runtime 'ch.qos.logback:logback-classic:1.0.13'
+
+    testCompile 'junit:junit:4.11',
+            'org.mockito:mockito-core:1.9.5',
+            'org.assertj:assertj-core:1.6.1'
+}
