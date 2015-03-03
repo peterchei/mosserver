@@ -1,4 +1,4 @@
-package com.mos.ordermanagement;
+package com.mos.service.ordermanagement;
 
 import java.util.ArrayList;
 import java.util.List;
