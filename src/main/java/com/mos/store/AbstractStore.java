@@ -12,12 +12,6 @@ public class AbstractStore<T> {
 	protected Class<T> genericClassT = null;
 	EntityManagerFactory emfactory = null;
 	
-	@SuppressWarnings("rawtypes")
-	protected Class<?> returnedClass() {
-		ParameterizedType parameterizedType = (ParameterizedType) getClass()
-				.getGenericSuperclass();
-		return (Class) parameterizedType.getActualTypeArguments()[0];
-	}
 	
 	@SuppressWarnings("unchecked")
 	public AbstractStore() {		
@@ -25,6 +19,16 @@ public class AbstractStore<T> {
 		entityManager = emfactory.createEntityManager();
 		genericClassT = ((Class<T>) returnedClass());
 	}
+	
+		
+	@SuppressWarnings("rawtypes")
+	protected Class<?> returnedClass() {
+		ParameterizedType parameterizedType = (ParameterizedType) getClass()
+				.getGenericSuperclass();
+		return (Class) parameterizedType.getActualTypeArguments()[0];
+	}
+	
+
 	
 	public void save(T obj) {		
 		entityManager.getTransaction().begin();
