@@ -1,10 +1,5 @@
 package com.mos.app;
 
-import static org.slf4j.LoggerFactory.getLogger;
-
-import java.util.ArrayList;
-
-import org.slf4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
