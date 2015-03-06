@@ -11,7 +11,7 @@
 
 
 <!--  an ActiveMQ embedded server, suppose one application only have one embedded server -->
-<bean id="embededBrokerServer" class="com.mos.messaging.ActiveMqBrokerServerImpl" factory-method="getInstance" scope="singleton" />
+<bean id="embededBrokerServer" class="com.mos.messaging.impl.ActiveMqBrokerServerImpl" factory-method="getInstance" scope="singleton" />
 
 <!--  a broker service connects to remote / local broker server -->
 <!--  

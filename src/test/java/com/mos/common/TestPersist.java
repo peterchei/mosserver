@@ -1,5 +1,8 @@
 package com.mos.common;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -11,10 +14,14 @@ public class TestPersist {
 
 	public static void main(String[] args) {
 
+		
+		//Create Portfolio
 		Portfolio pf = new Portfolio();
-		pf.setName("A");
-		pf.setTradedate(20121212);
+		pf.setName("Portfolio " + new Date().getTime());
+		pf.setTradedate(Integer.parseInt(new SimpleDateFormat("yyyyddmm").format((new Date()))));
 		new PortfolioStore().save(pf);
+		
+	    
 		
 //		EntityManagerFactory emfactory = Persistence
 //				.createEntityManagerFactory("TestJPA");

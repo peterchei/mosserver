@@ -1,11 +1,17 @@
 package com.mos.event;
 
+import javax.jms.Destination;
+
 public class Util {
 
-	
-	public static void publish(Notification event) {
-		//To Do
-		//put the message to a queue and wait for publish
-		
+
+	public static void publish(Destination destination, Notification event) {
+        getEventPublisher(destination).publish(event);
 	}
+
+    private static EventPublisher getEventPublisher(Destination dest) {
+        //TODO
+
+        return null;
+    }
 }

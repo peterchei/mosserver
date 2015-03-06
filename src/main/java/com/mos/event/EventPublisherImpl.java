@@ -11,8 +11,7 @@ public class EventPublisherImpl implements EventPublisher {
 	protected String destination;
 	protected DestinationType type;
 	
-	
-	
+		
 	@Override
 	public void publish(Notification Notification) {
 		// TODO Auto-generated method stub

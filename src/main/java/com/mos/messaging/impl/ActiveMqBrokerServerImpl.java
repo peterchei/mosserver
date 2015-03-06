@@ -1,9 +1,11 @@
-package com.mos.messaging;
+package com.mos.messaging.impl;
 
 
 import org.apache.activemq.broker.Broker;
 import org.apache.activemq.broker.BrokerService;
 import org.apache.activemq.broker.region.DestinationStatistics;
+
+import com.mos.messaging.IBrokerServer;
 
 /**
  * 
