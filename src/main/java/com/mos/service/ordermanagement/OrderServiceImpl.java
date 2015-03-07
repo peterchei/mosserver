@@ -3,14 +3,19 @@ package com.mos.service.ordermanagement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.inject.Inject;
 import com.mos.domain.Order;
+import com.mos.event.EventPublisher;
 import com.mos.service.ServiceRequest;
 import com.mos.store.OrderStore;
 
 public class OrderServiceImpl implements OrderService {
 	
-	//TODO dependence injection
+	@Inject
 	protected OrderStore store;
+	
+	@Inject
+	private EventPublisher publisher;
 
 	
 	@Override

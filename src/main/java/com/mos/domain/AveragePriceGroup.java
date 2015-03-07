@@ -16,121 +16,167 @@ public class AveragePriceGroup implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	private long averageprcgrpid;
+	private long averagePrcGrpId;
 
-	private BigDecimal averageprice;
+	private BigDecimal averagePrice;
 
 	private String capacity;
 
-	private BigDecimal clientid;
+	private BigDecimal clientId;
 
-	private BigDecimal exchangeid;
+	private BigDecimal exchangeId;
 
-	private String flowtype;
+	private String flowType;
 
-	private BigDecimal instrumentid;
+	private BigDecimal instrumentId;
 
-	private String mergekey;
+	private String mergeKey;
 
 	private BigDecimal quantity;
 
 	private String status;
 
-	private BigDecimal tradedate;
+	private BigDecimal tradeDate;
 
 	@Column(name="\"VERSION\"")
 	private BigDecimal version;
 
 	public AveragePriceGroup() {
 	}
+	
+	
 
-	public long getAverageprcgrpid() {
-		return this.averageprcgrpid;
+	public long getAveragePrcGrpId() {
+		return averagePrcGrpId;
 	}
 
-	public void setAverageprcgrpid(long averageprcgrpid) {
-		this.averageprcgrpid = averageprcgrpid;
+
+
+	public void setAveragePrcGrpId(long averagePrcGrpId) {
+		this.averagePrcGrpId = averagePrcGrpId;
 	}
 
-	public BigDecimal getAverageprice() {
-		return this.averageprice;
+
+
+	public BigDecimal getAveragePrice() {
+		return averagePrice;
 	}
 
-	public void setAverageprice(BigDecimal averageprice) {
-		this.averageprice = averageprice;
+
+
+	public void setAveragePrice(BigDecimal averagePrice) {
+		this.averagePrice = averagePrice;
 	}
+
+
 
 	public String getCapacity() {
-		return this.capacity;
+		return capacity;
 	}
+
+
 
 	public void setCapacity(String capacity) {
 		this.capacity = capacity;
 	}
 
-	public BigDecimal getClientid() {
-		return this.clientid;
+
+
+	public BigDecimal getClientId() {
+		return clientId;
 	}
 
-	public void setClientid(BigDecimal clientid) {
-		this.clientid = clientid;
+
+
+	public void setClientId(BigDecimal clientId) {
+		this.clientId = clientId;
 	}
 
-	public BigDecimal getExchangeid() {
-		return this.exchangeid;
+
+
+	public BigDecimal getExchangeId() {
+		return exchangeId;
 	}
 
-	public void setExchangeid(BigDecimal exchangeid) {
-		this.exchangeid = exchangeid;
+
+
+	public void setExchangeId(BigDecimal exchangeId) {
+		this.exchangeId = exchangeId;
 	}
 
-	public String getFlowtype() {
-		return this.flowtype;
+
+
+	public String getFlowType() {
+		return flowType;
 	}
 
-	public void setFlowtype(String flowtype) {
-		this.flowtype = flowtype;
+
+
+	public void setFlowType(String flowType) {
+		this.flowType = flowType;
 	}
 
-	public BigDecimal getInstrumentid() {
-		return this.instrumentid;
+
+
+	public BigDecimal getInstrumentId() {
+		return instrumentId;
 	}
 
-	public void setInstrumentid(BigDecimal instrumentid) {
-		this.instrumentid = instrumentid;
+
+
+	public void setInstrumentId(BigDecimal instrumentId) {
+		this.instrumentId = instrumentId;
 	}
 
-	public String getMergekey() {
-		return this.mergekey;
+
+
+	public String getMergeKey() {
+		return mergeKey;
 	}
 
-	public void setMergekey(String mergekey) {
-		this.mergekey = mergekey;
+
+
+	public void setMergeKey(String mergeKey) {
+		this.mergeKey = mergeKey;
 	}
+
+
 
 	public BigDecimal getQuantity() {
-		return this.quantity;
+		return quantity;
 	}
+
+
 
 	public void setQuantity(BigDecimal quantity) {
 		this.quantity = quantity;
 	}
 
+
+
 	public String getStatus() {
-		return this.status;
+		return status;
 	}
+
+
 
 	public void setStatus(String status) {
 		this.status = status;
 	}
 
-	public BigDecimal getTradedate() {
-		return this.tradedate;
+
+
+	public BigDecimal getTradeDate() {
+		return tradeDate;
 	}
 
-	public void setTradedate(BigDecimal tradedate) {
-		this.tradedate = tradedate;
+
+
+	public void setTradeDate(BigDecimal tradeDate) {
+		this.tradeDate = tradeDate;
 	}
+
+
 
 	public BigDecimal getVersion() {
 		return this.version;

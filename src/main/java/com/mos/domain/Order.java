@@ -17,61 +17,61 @@ public class Order implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	private long orderid;
+	private long orderId;
 
-	private BigDecimal averageprcgrpid;
+	private BigDecimal averagePrcGrpId;
 
-	private BigDecimal bookid;
+	private BigDecimal bookId;
 
 	private String capacity;
 
-	private BigDecimal clientid;
+	private BigDecimal clientId;
 
 	private BigDecimal commission;
 
-	private String commissiontype;
+	private String commissionType;
 
 	private String currency;
 
-	private BigDecimal exchangeid;
+	private BigDecimal exchangeId;
 
-	private String executioncountry;
+	private String executionCountry;
 
-	private String executionregion;
+	private String executionRegion;
 
-	private String flowtype;
+	private String flowType;
 
-	private String foorderref;
+	private String foOrderRef;
 
-	private BigDecimal frontofficecomment;
+	private BigDecimal frontOfficeComment;
 
-	private String fxdirection;
+	private String fxDirection;
 
-	private BigDecimal fxrate;
+	private BigDecimal fxRate;
 
-	private BigDecimal instrumentid;
+	private BigDecimal instrumentId;
 
-	private String mocomment;
+	private String moComment;
 
-	private String orderstatus;
+	private String orderStatus;
 
-	private BigDecimal portfolioid;
+	private BigDecimal portfolioId;
 
 	private BigDecimal quantity;
 
-	private String salesid;
+	private String salesId;
 
-	private String settleconversion;
+	private String settleConversion;
 
-	private String settlecurrency;
+	private String settleCurrency;
 
-	private BigDecimal settledate;
+	private BigDecimal settleDate;
 
 	private String side;
 
-	private BigDecimal tradedate;
+	private BigDecimal tradeDate;
 
-	private String traderid;
+	private String traderId;
 
 	@Column(name="\"VERSION\"")
 	private BigDecimal version;
@@ -79,236 +79,239 @@ public class Order implements Serializable {
 	public Order() {
 	}
 
-	public long getOrderid() {
-		return this.orderid;
+	public BigDecimal getAveragePrcGrpId() {
+		return averagePrcGrpId;
 	}
 
-	public void setOrderid(long orderid) {
-		this.orderid = orderid;
+	public void setAveragePrcGrpId(BigDecimal averagePrcGrpId) {
+		this.averagePrcGrpId = averagePrcGrpId;
 	}
 
-	public BigDecimal getAverageprcgrpid() {
-		return this.averageprcgrpid;
+	public BigDecimal getBookId() {
+		return bookId;
 	}
 
-	public void setAverageprcgrpid(BigDecimal averageprcgrpid) {
-		this.averageprcgrpid = averageprcgrpid;
-	}
-
-	public BigDecimal getBookid() {
-		return this.bookid;
-	}
-
-	public void setBookid(BigDecimal bookid) {
-		this.bookid = bookid;
+	public void setBookId(BigDecimal bookId) {
+		this.bookId = bookId;
 	}
 
 	public String getCapacity() {
-		return this.capacity;
+		return capacity;
 	}
 
 	public void setCapacity(String capacity) {
 		this.capacity = capacity;
 	}
 
-	public BigDecimal getClientid() {
-		return this.clientid;
+	public BigDecimal getClientId() {
+		return clientId;
 	}
 
-	public void setClientid(BigDecimal clientid) {
-		this.clientid = clientid;
+	public void setClientId(BigDecimal clientId) {
+		this.clientId = clientId;
 	}
 
 	public BigDecimal getCommission() {
-		return this.commission;
+		return commission;
 	}
 
 	public void setCommission(BigDecimal commission) {
 		this.commission = commission;
 	}
 
-	public String getCommissiontype() {
-		return this.commissiontype;
+	public String getCommissionType() {
+		return commissionType;
 	}
 
-	public void setCommissiontype(String commissiontype) {
-		this.commissiontype = commissiontype;
+	public void setCommissionType(String commissionType) {
+		this.commissionType = commissionType;
 	}
 
 	public String getCurrency() {
-		return this.currency;
+		return currency;
 	}
 
 	public void setCurrency(String currency) {
 		this.currency = currency;
 	}
 
-	public BigDecimal getExchangeid() {
-		return this.exchangeid;
+	public BigDecimal getExchangeId() {
+		return exchangeId;
 	}
 
-	public void setExchangeid(BigDecimal exchangeid) {
-		this.exchangeid = exchangeid;
+	public void setExchangeId(BigDecimal exchangeId) {
+		this.exchangeId = exchangeId;
 	}
 
-	public String getExecutioncountry() {
-		return this.executioncountry;
+	public String getExecutionCountry() {
+		return executionCountry;
 	}
 
-	public void setExecutioncountry(String executioncountry) {
-		this.executioncountry = executioncountry;
+	public void setExecutionCountry(String executionCountry) {
+		this.executionCountry = executionCountry;
 	}
 
-	public String getExecutionregion() {
-		return this.executionregion;
+	public String getExecutionRegion() {
+		return executionRegion;
 	}
 
-	public void setExecutionregion(String executionregion) {
-		this.executionregion = executionregion;
+	public void setExecutionRegion(String executionRegion) {
+		this.executionRegion = executionRegion;
 	}
 
-	public String getFlowtype() {
-		return this.flowtype;
+	public String getFlowType() {
+		return flowType;
 	}
 
-	public void setFlowtype(String flowtype) {
-		this.flowtype = flowtype;
+	public void setFlowType(String flowType) {
+		this.flowType = flowType;
 	}
 
-	public String getFoorderref() {
-		return this.foorderref;
+	public String getFoOrderRef() {
+		return foOrderRef;
 	}
 
-	public void setFoorderref(String foorderref) {
-		this.foorderref = foorderref;
+	public void setFoOrderRef(String foOrderRef) {
+		this.foOrderRef = foOrderRef;
 	}
 
-	public BigDecimal getFrontofficecomment() {
-		return this.frontofficecomment;
+	public BigDecimal getFrontOfficeComment() {
+		return frontOfficeComment;
 	}
 
-	public void setFrontofficecomment(BigDecimal frontofficecomment) {
-		this.frontofficecomment = frontofficecomment;
+	public void setFrontOfficeComment(BigDecimal frontOfficeComment) {
+		this.frontOfficeComment = frontOfficeComment;
 	}
 
-	public String getFxdirection() {
-		return this.fxdirection;
+	public String getFxDirection() {
+		return fxDirection;
 	}
 
-	public void setFxdirection(String fxdirection) {
-		this.fxdirection = fxdirection;
+	public void setFxDirection(String fxDirection) {
+		this.fxDirection = fxDirection;
 	}
 
-	public BigDecimal getFxrate() {
-		return this.fxrate;
+	public BigDecimal getFxRate() {
+		return fxRate;
 	}
 
-	public void setFxrate(BigDecimal fxrate) {
-		this.fxrate = fxrate;
+	public void setFxRate(BigDecimal fxRate) {
+		this.fxRate = fxRate;
 	}
 
-	public BigDecimal getInstrumentid() {
-		return this.instrumentid;
+	public BigDecimal getInstrumentId() {
+		return instrumentId;
 	}
 
-	public void setInstrumentid(BigDecimal instrumentid) {
-		this.instrumentid = instrumentid;
+	public void setInstrumentId(BigDecimal instrumentId) {
+		this.instrumentId = instrumentId;
 	}
 
-	public String getMocomment() {
-		return this.mocomment;
+	public String getMoComment() {
+		return moComment;
 	}
 
-	public void setMocomment(String mocomment) {
-		this.mocomment = mocomment;
+	public void setMoComment(String moComment) {
+		this.moComment = moComment;
 	}
 
-	public String getOrderstatus() {
-		return this.orderstatus;
+	public String getOrderStatus() {
+		return orderStatus;
 	}
 
-	public void setOrderstatus(String orderstatus) {
-		this.orderstatus = orderstatus;
+	public void setOrderStatus(String orderStatus) {
+		this.orderStatus = orderStatus;
 	}
 
-	public BigDecimal getPortfolioid() {
-		return this.portfolioid;
+	public BigDecimal getPortfolioId() {
+		return portfolioId;
 	}
 
-	public void setPortfolioid(BigDecimal portfolioid) {
-		this.portfolioid = portfolioid;
+	public void setPortfolioId(BigDecimal protfolioId) {
+		this.portfolioId = protfolioId;
 	}
 
 	public BigDecimal getQuantity() {
-		return this.quantity;
+		return quantity;
 	}
 
 	public void setQuantity(BigDecimal quantity) {
 		this.quantity = quantity;
 	}
 
-	public String getSalesid() {
-		return this.salesid;
+	public String getSalesId() {
+		return salesId;
 	}
 
-	public void setSalesid(String salesid) {
-		this.salesid = salesid;
+	public void setSalesId(String salesId) {
+		this.salesId = salesId;
 	}
 
-	public String getSettleconversion() {
-		return this.settleconversion;
+	public String getSettleConversion() {
+		return settleConversion;
 	}
 
-	public void setSettleconversion(String settleconversion) {
-		this.settleconversion = settleconversion;
+	public void setSettleConversion(String settleConversion) {
+		this.settleConversion = settleConversion;
 	}
 
-	public String getSettlecurrency() {
-		return this.settlecurrency;
+	public String getSettleCurrency() {
+		return settleCurrency;
 	}
 
-	public void setSettlecurrency(String settlecurrency) {
-		this.settlecurrency = settlecurrency;
+	public void setSettleCurrency(String settleCurrency) {
+		this.settleCurrency = settleCurrency;
 	}
 
-	public BigDecimal getSettledate() {
-		return this.settledate;
+	public BigDecimal getSettleDate() {
+		return settleDate;
 	}
 
-	public void setSettledate(BigDecimal settledate) {
-		this.settledate = settledate;
+	public void setSettleDate(BigDecimal settleDate) {
+		this.settleDate = settleDate;
 	}
 
 	public String getSide() {
-		return this.side;
+		return side;
 	}
 
 	public void setSide(String side) {
 		this.side = side;
 	}
 
-	public BigDecimal getTradedate() {
-		return this.tradedate;
+	public BigDecimal getTradeDate() {
+		return tradeDate;
 	}
 
-	public void setTradedate(BigDecimal tradedate) {
-		this.tradedate = tradedate;
+	public void setTradeDate(BigDecimal tradeDate) {
+		this.tradeDate = tradeDate;
 	}
 
-	public String getTraderid() {
-		return this.traderid;
+	public String getTraderId() {
+		return traderId;
 	}
 
-	public void setTraderid(String traderid) {
-		this.traderid = traderid;
+	public void setTraderId(String traderId) {
+		this.traderId = traderId;
 	}
 
 	public BigDecimal getVersion() {
-		return this.version;
+		return version;
 	}
 
 	public void setVersion(BigDecimal version) {
 		this.version = version;
 	}
 
+	public long getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(long orderId) {
+		this.orderId = orderId;
+	}
+
+	
+	
+	
 }

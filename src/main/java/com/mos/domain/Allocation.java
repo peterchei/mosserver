@@ -16,11 +16,11 @@ public class Allocation implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	private long allocationid;
+	private long allocationId;
 
 	private BigDecimal allocationprice;
 
-	private String allocstatus;
+	private String allocStatus;
 
 	private String alloctype;
 
@@ -63,11 +63,11 @@ public class Allocation implements Serializable {
 	}
 
 	public long getAllocationid() {
-		return this.allocationid;
+		return this.allocationId;
 	}
 
-	public void setAllocationid(long allocationid) {
-		this.allocationid = allocationid;
+	public void setAllocationid(long allocationId) {
+		this.allocationId = allocationId;
 	}
 
 	public BigDecimal getAllocationprice() {
@@ -79,11 +79,11 @@ public class Allocation implements Serializable {
 	}
 
 	public String getAllocstatus() {
-		return this.allocstatus;
+		return this.allocStatus;
 	}
 
-	public void setAllocstatus(String allocstatus) {
-		this.allocstatus = allocstatus;
+	public void setAllocstatus(String allocStatus) {
+		this.allocStatus = allocStatus;
 	}
 
 	public String getAlloctype() {
