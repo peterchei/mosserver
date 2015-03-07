@@ -19,13 +19,13 @@ public class Order implements Serializable {
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	private long orderId;
 
-	private BigDecimal averagePrcGrpId;
+	private long averagePrcGrpId;
 
-	private BigDecimal bookId;
+	private long bookId;
 
 	private String capacity;
 
-	private BigDecimal clientId;
+	private long clientId;
 
 	private BigDecimal commission;
 
@@ -33,7 +33,7 @@ public class Order implements Serializable {
 
 	private String currency;
 
-	private BigDecimal exchangeId;
+	private long exchangeId;
 
 	private String executionCountry;
 
@@ -49,13 +49,13 @@ public class Order implements Serializable {
 
 	private BigDecimal fxRate;
 
-	private BigDecimal instrumentId;
+	private long instrumentId;
 
 	private String moComment;
 
 	private String orderStatus;
 
-	private BigDecimal portfolioId;
+	private long portfolioId;
 
 	private BigDecimal quantity;
 
@@ -65,11 +65,11 @@ public class Order implements Serializable {
 
 	private String settleCurrency;
 
-	private BigDecimal settleDate;
+	private int settleDate;
 
 	private String side;
 
-	private BigDecimal tradeDate;
+	private int tradeDate;
 
 	private String traderId;
 
@@ -79,19 +79,27 @@ public class Order implements Serializable {
 	public Order() {
 	}
 
-	public BigDecimal getAveragePrcGrpId() {
+	public long getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(long orderId) {
+		this.orderId = orderId;
+	}
+
+	public long getAveragePrcGrpId() {
 		return averagePrcGrpId;
 	}
 
-	public void setAveragePrcGrpId(BigDecimal averagePrcGrpId) {
+	public void setAveragePrcGrpId(long averagePrcGrpId) {
 		this.averagePrcGrpId = averagePrcGrpId;
 	}
 
-	public BigDecimal getBookId() {
+	public long getBookId() {
 		return bookId;
 	}
 
-	public void setBookId(BigDecimal bookId) {
+	public void setBookId(long bookId) {
 		this.bookId = bookId;
 	}
 
@@ -103,11 +111,11 @@ public class Order implements Serializable {
 		this.capacity = capacity;
 	}
 
-	public BigDecimal getClientId() {
+	public long getClientId() {
 		return clientId;
 	}
 
-	public void setClientId(BigDecimal clientId) {
+	public void setClientId(long clientId) {
 		this.clientId = clientId;
 	}
 
@@ -135,11 +143,11 @@ public class Order implements Serializable {
 		this.currency = currency;
 	}
 
-	public BigDecimal getExchangeId() {
+	public long getExchangeId() {
 		return exchangeId;
 	}
 
-	public void setExchangeId(BigDecimal exchangeId) {
+	public void setExchangeId(long exchangeId) {
 		this.exchangeId = exchangeId;
 	}
 
@@ -199,11 +207,11 @@ public class Order implements Serializable {
 		this.fxRate = fxRate;
 	}
 
-	public BigDecimal getInstrumentId() {
+	public long getInstrumentId() {
 		return instrumentId;
 	}
 
-	public void setInstrumentId(BigDecimal instrumentId) {
+	public void setInstrumentId(long instrumentId) {
 		this.instrumentId = instrumentId;
 	}
 
@@ -223,12 +231,12 @@ public class Order implements Serializable {
 		this.orderStatus = orderStatus;
 	}
 
-	public BigDecimal getPortfolioId() {
+	public long getPortfolioId() {
 		return portfolioId;
 	}
 
-	public void setPortfolioId(BigDecimal protfolioId) {
-		this.portfolioId = protfolioId;
+	public void setPortfolioId(long portfolioId) {
+		this.portfolioId = portfolioId;
 	}
 
 	public BigDecimal getQuantity() {
@@ -263,11 +271,11 @@ public class Order implements Serializable {
 		this.settleCurrency = settleCurrency;
 	}
 
-	public BigDecimal getSettleDate() {
+	public int getSettleDate() {
 		return settleDate;
 	}
 
-	public void setSettleDate(BigDecimal settleDate) {
+	public void setSettleDate(int settleDate) {
 		this.settleDate = settleDate;
 	}
 
@@ -279,11 +287,11 @@ public class Order implements Serializable {
 		this.side = side;
 	}
 
-	public BigDecimal getTradeDate() {
+	public int getTradeDate() {
 		return tradeDate;
 	}
 
-	public void setTradeDate(BigDecimal tradeDate) {
+	public void setTradeDate(int tradeDate) {
 		this.tradeDate = tradeDate;
 	}
 
@@ -303,15 +311,6 @@ public class Order implements Serializable {
 		this.version = version;
 	}
 
-	public long getOrderId() {
-		return orderId;
-	}
-
-	public void setOrderId(long orderId) {
-		this.orderId = orderId;
-	}
-
-	
 	
 	
 }

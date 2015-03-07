@@ -22,13 +22,13 @@ public class AveragePriceGroup implements Serializable {
 
 	private String capacity;
 
-	private BigDecimal clientId;
+	private long clientId;
 
-	private BigDecimal exchangeId;
+	private long exchangeId;
 
 	private String flowType;
 
-	private BigDecimal instrumentId;
+	private long instrumentId;
 
 	private String mergeKey;
 
@@ -36,10 +36,10 @@ public class AveragePriceGroup implements Serializable {
 
 	private String status;
 
-	private BigDecimal tradeDate;
+	private int tradeDate;
 
 	@Column(name="\"VERSION\"")
-	private BigDecimal version;
+	private int version;
 
 	public AveragePriceGroup() {
 	}
@@ -82,25 +82,25 @@ public class AveragePriceGroup implements Serializable {
 
 
 
-	public BigDecimal getClientId() {
+	public long getClientId() {
 		return clientId;
 	}
 
 
 
-	public void setClientId(BigDecimal clientId) {
+	public void setClientId(long clientId) {
 		this.clientId = clientId;
 	}
 
 
 
-	public BigDecimal getExchangeId() {
+	public long getExchangeId() {
 		return exchangeId;
 	}
 
 
 
-	public void setExchangeId(BigDecimal exchangeId) {
+	public void setExchangeId(long exchangeId) {
 		this.exchangeId = exchangeId;
 	}
 
@@ -118,13 +118,13 @@ public class AveragePriceGroup implements Serializable {
 
 
 
-	public BigDecimal getInstrumentId() {
+	public long getInstrumentId() {
 		return instrumentId;
 	}
 
 
 
-	public void setInstrumentId(BigDecimal instrumentId) {
+	public void setInstrumentId(long instrumentId) {
 		this.instrumentId = instrumentId;
 	}
 
@@ -166,23 +166,23 @@ public class AveragePriceGroup implements Serializable {
 
 
 
-	public BigDecimal getTradeDate() {
+	public int getTradeDate() {
 		return tradeDate;
 	}
 
 
 
-	public void setTradeDate(BigDecimal tradeDate) {
+	public void setTradeDate(int tradeDate) {
 		this.tradeDate = tradeDate;
 	}
 
 
 
-	public BigDecimal getVersion() {
+	public int getVersion() {
 		return this.version;
 	}
 
-	public void setVersion(BigDecimal version) {
+	public void setVersion(int version) {
 		this.version = version;
 	}
 

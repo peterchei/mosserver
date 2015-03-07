@@ -17,110 +17,110 @@ public class Fill implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	private long fillid;
+	private long fillId;
 
 	private String capacity;
 
-	private BigDecimal exchangeid;
+	private long exchangeId;
 
-	private BigDecimal executedshares;
+	private BigDecimal executedShares;
 
-	private Timestamp executiontime;
+	private Timestamp executionTime;
 
-	private String externalref;
+	private String externalRef;
 
-	private BigDecimal instrumentid;
+	private long instrumentId;
 
-	private String isoffmarket;
+	private String isOffMarket;
 
-	private BigDecimal orderid;
+	private long orderId;
 
 	private BigDecimal price;
 
 	private String side;
 
-	private BigDecimal tradedate;
+	private int tradeDate;
 
 	@Column(name="\"VERSION\"")
-	private BigDecimal version;
+	private int version;
 
 	public Fill() {
 	}
 
-	public long getFillid() {
-		return this.fillid;
+	public long getFillId() {
+		return fillId;
 	}
 
-	public void setFillid(long fillid) {
-		this.fillid = fillid;
+	public void setFillId(long fillId) {
+		this.fillId = fillId;
 	}
 
 	public String getCapacity() {
-		return this.capacity;
+		return capacity;
 	}
 
 	public void setCapacity(String capacity) {
 		this.capacity = capacity;
 	}
 
-	public BigDecimal getExchangeid() {
-		return this.exchangeid;
+	public long getExchangeId() {
+		return exchangeId;
 	}
 
-	public void setExchangeid(BigDecimal exchangeid) {
-		this.exchangeid = exchangeid;
+	public void setExchangeId(long exchangeId) {
+		this.exchangeId = exchangeId;
 	}
 
-	public BigDecimal getExecutedshares() {
-		return this.executedshares;
+	public BigDecimal getExecutedShares() {
+		return executedShares;
 	}
 
-	public void setExecutedshares(BigDecimal executedshares) {
-		this.executedshares = executedshares;
+	public void setExecutedShares(BigDecimal executedShares) {
+		this.executedShares = executedShares;
 	}
 
-	public Timestamp getExecutiontime() {
-		return this.executiontime;
+	public Timestamp getExecutionTime() {
+		return executionTime;
 	}
 
-	public void setExecutiontime(Timestamp executiontime) {
-		this.executiontime = executiontime;
+	public void setExecutionTime(Timestamp executionTime) {
+		this.executionTime = executionTime;
 	}
 
-	public String getExternalref() {
-		return this.externalref;
+	public String getExternalRef() {
+		return externalRef;
 	}
 
-	public void setExternalref(String externalref) {
-		this.externalref = externalref;
+	public void setExternalRef(String externalRef) {
+		this.externalRef = externalRef;
 	}
 
-	public BigDecimal getInstrumentid() {
-		return this.instrumentid;
+	public long getInstrumentId() {
+		return instrumentId;
 	}
 
-	public void setInstrumentid(BigDecimal instrumentid) {
-		this.instrumentid = instrumentid;
+	public void setInstrumentId(long instrumentId) {
+		this.instrumentId = instrumentId;
 	}
 
-	public String getIsoffmarket() {
-		return this.isoffmarket;
+	public String getIsOffMarket() {
+		return isOffMarket;
 	}
 
-	public void setIsoffmarket(String isoffmarket) {
-		this.isoffmarket = isoffmarket;
+	public void setIsOffMarket(String isOffMarket) {
+		this.isOffMarket = isOffMarket;
 	}
 
-	public BigDecimal getOrderid() {
-		return this.orderid;
+	public long getOrderId() {
+		return orderId;
 	}
 
-	public void setOrderid(BigDecimal orderid) {
-		this.orderid = orderid;
+	public void setOrderId(long orderId) {
+		this.orderId = orderId;
 	}
 
 	public BigDecimal getPrice() {
-		return this.price;
+		return price;
 	}
 
 	public void setPrice(BigDecimal price) {
@@ -128,27 +128,29 @@ public class Fill implements Serializable {
 	}
 
 	public String getSide() {
-		return this.side;
+		return side;
 	}
 
 	public void setSide(String side) {
 		this.side = side;
 	}
 
-	public BigDecimal getTradedate() {
-		return this.tradedate;
+	public int getTradeDate() {
+		return tradeDate;
 	}
 
-	public void setTradedate(BigDecimal tradedate) {
-		this.tradedate = tradedate;
+	public void setTradeDate(int tradeDate) {
+		this.tradeDate = tradeDate;
 	}
 
-	public BigDecimal getVersion() {
-		return this.version;
+	public int getVersion() {
+		return version;
 	}
 
-	public void setVersion(BigDecimal version) {
+	public void setVersion(int version) {
 		this.version = version;
 	}
+
+
 
 }

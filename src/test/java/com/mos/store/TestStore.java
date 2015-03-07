@@ -27,7 +27,7 @@ public class TestStore {
 		//Create Portfolio
 		Portfolio pf = new Portfolio();
 		pf.setName("Peter Portfolio");
-		pf.setTradedate(Integer.parseInt(new SimpleDateFormat("yyyyddmm").format((new Date()))));
+		pf.setTradeDate(Integer.parseInt(new SimpleDateFormat("yyyyddmm").format((new Date()))));
 		new PortfolioStore().save(pf);
 		assertTrue(pf.getPortfolioid()>0);
 
@@ -35,37 +35,37 @@ public class TestStore {
 
 		apg.setCapacity("A");
 		apg.setAveragePrice(BigDecimal.ZERO);
-		apg.setClientId(BigDecimal.ONE);
+		apg.setClientId(1);
 		apg.setFlowType("SS");
 		apg.setCapacity("A");
-		apg.setExchangeId(BigDecimal.ONE);
-		apg.setInstrumentId(BigDecimal.ONE);
+		apg.setExchangeId(1);
+		apg.setInstrumentId(1);
 		apg.setStatus("NEW");
 		apg.setQuantity(BigDecimal.ONE);
 		apg.setMergeKey("MERGEKEY");
-		apg.setTradeDate(new BigDecimal(20150101));
-		apg.setVersion(new BigDecimal(1));
+		apg.setTradeDate(20150101);
+		apg.setVersion((1));
 	
 		new AveragePriceGroupStore().save(apg);
 
 		//Create Order
 		Order od = new Order();
 	
-		od.setAveragePrcGrpId(new BigDecimal(apg.getAveragePrcGrpId()));
-		od.setPortfolioId(new BigDecimal(pf.getPortfolioid()));
+		od.setAveragePrcGrpId((apg.getAveragePrcGrpId()));
+		od.setPortfolioId((pf.getPortfolioid()));
 		od.setFoOrderRef("XXXXXX");
-		od.setClientId(BigDecimal.ONE);
+		od.setClientId(1);
 		od.setSide("B");
-		od.setInstrumentId(BigDecimal.ONE);
-		od.setExchangeId(BigDecimal.ONE);
+		od.setInstrumentId(1);
+		od.setExchangeId(1);
 		od.setQuantity(BigDecimal.TEN);
 		od.setOrderStatus("NEW");
 		od.setCommission(BigDecimal.ZERO);
 		od.setCommissionType("BPS");
-		od.setBookId(BigDecimal.ZERO);
-		od.setTradeDate(BigDecimal.ONE);
+		od.setBookId(999);
+		od.setTradeDate(1);
 		od.setSettleConversion("T+3");
-		od.setSettleDate(new BigDecimal(20150101));
+		od.setSettleDate((20150101));
 		od.setFlowType("SS");
 		od.setCurrency("HKD");
 		od.setSettleCurrency("USD");

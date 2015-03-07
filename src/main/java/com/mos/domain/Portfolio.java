@@ -17,21 +17,21 @@ public class Portfolio implements Serializable {
 	//@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="sequencePortfolio")
     //@SequenceGenerator(name="sequencePortfolio", sequenceName="seq_Portfolio", allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	private long portfolioid;
+	private long portfolioId;
 
 	private String name;
 
-	private int tradedate;
+	private int tradeDate;
 
 	public Portfolio() {
 	}
 
 	public long getPortfolioid() {
-		return this.portfolioid;
+		return this.portfolioId;
 	}
 
-	public void setPortfolioid(long portfolioid) {
-		this.portfolioid = portfolioid;
+	public void setPortfolioid(long portfolioId) {
+		this.portfolioId = portfolioId;
 	}
 
 	public String getName() {
@@ -42,12 +42,12 @@ public class Portfolio implements Serializable {
 		this.name = name;
 	}
 
-	public int getTradedate() {
-		return this.tradedate;
+	public int getTradeDate() {
+		return this.tradeDate;
 	}
 
-	public void setTradedate(int tradedate) {
-		this.tradedate = tradedate;
+	public void setTradeDate(int tradeDate) {
+		this.tradeDate = tradeDate;
 	}
 
 }

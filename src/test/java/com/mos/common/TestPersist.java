@@ -18,7 +18,7 @@ public class TestPersist {
 		//Create Portfolio
 		Portfolio pf = new Portfolio();
 		pf.setName("Portfolio " + new Date().getTime());
-		pf.setTradedate(Integer.parseInt(new SimpleDateFormat("yyyyddmm").format((new Date()))));
+		pf.setTradeDate(Integer.parseInt(new SimpleDateFormat("yyyyddmm").format((new Date()))));
 		new PortfolioStore().save(pf);
 		
 	    
