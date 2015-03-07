@@ -115,7 +115,7 @@ public class ActivemqBrokerService implements IBrokerService {
 	    
 	    protected String executeCallbackAgainstConnection(Connection aConnection, String aDestinationName, JmsCallback aCallback) {
 	        try {
-	            Queue queue = session.createQueue(aDestinationName);
+	            Queue queue = session.createQueue(aDestinationName);	            
 	            return aCallback.performJmsFunction(session, queue);
 	        } catch (JMSException jmse) {
 	            LOG.error("Failed to create session on connection {}", aConnection);
@@ -139,6 +139,7 @@ public class ActivemqBrokerService implements IBrokerService {
 	        return executeCallbackAgainstRemoteBroker(destinationName, (aSession, aDestination) -> {
 	        	
 	        	if (consumer ==null) {
+	        	
 	               consumer = aSession.createConsumer(aDestination);
 	        	}
 	        	
