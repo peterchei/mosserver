@@ -10,13 +10,29 @@ public class WebModule {
 
 	public static Logger logger = getLogger(WebModule.class);
 
-	private Endpoint endPoint;
+	//private Endpoint endPoint1;
+	//private Endpoint endPoint2;
+	
+	
 	public void start() {
-
-		endPoint = Endpoint.create(new OrderWSEntryPoint());		
-		endPoint.publish("http://localhost:9001/mos"); 	
 		
+		logger.info("Starting webservice.");
 
+		//endPoint1 = Endpoint.create(new OrderWSEntryPoint());		
+		//endPoint1.publish("http://localhost:9001/mos"); 	
+		logger.info("Service orderWS exported to http://localhost:9001/mos/OrderWS.");
+		
+		
+		//endPoint2 = Endpoint.create(new ExecutionWSEntryPoint());		
+		//endPoint1.publish("http://localhost:9001/mos",new ExecutionWSEntryPoint()); 	
+		Endpoint.publish("http://localhost:9001/mos", new ExecutionWSImpl());
+		//Endpoint.publish("http://localhost:9001/mos", new OrderWSImpl());
+		
+		logger.info("Service executionWS exported to http://localhost:9001/mos/ExecutionWS.");
+
+		logger.info("*****************************");
+		logger.info("**** WebService started. ****");
+		logger.info("*****************************");
 		
 	}
 
@@ -25,7 +41,8 @@ public class WebModule {
 	}
 
 	public void stop() {
-		endPoint.stop();
+		//endPoint.stop();
+		//endPoint.stop();
 	}
 
 }

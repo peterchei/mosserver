@@ -8,12 +8,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import static org.slf4j.LoggerFactory.getLogger;
 
 import com.mos.messaging.IBrokerServer;
+import com.mos.web.WebModule;
 
 public class MosApp {
 	
 	private static Logger logger = getLogger(MosApp.class);
 	
 	private IBrokerServer brokerServer;
+	
+	private WebModule webModule;
 	
 	public MosApp() {
 		init();
@@ -28,6 +31,9 @@ public class MosApp {
 
 		} 
 		
+		
+		webModule = new WebModule();
+		
 	}
 	
 	public void start() throws Exception {
@@ -36,6 +42,7 @@ public class MosApp {
 		brokerServer.start("tcp://localhost:8081");
 
 
+		webModule.start();
 		
 		logger.info("*****************************************");
 		logger.info("******   All services started.  *********");

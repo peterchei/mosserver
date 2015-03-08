@@ -1,5 +1,6 @@
 package com.mos.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jws.WebService;
@@ -19,10 +20,10 @@ import com.mos.service.ServiceRequest;
 public interface OrderWS {
 	
 	@WebMethod
-	public List<Order> getAllOrders(ServiceRequest request);
+	public Order[] getAllOrders(ServiceRequest request);
 	
 	@WebMethod
-	public List<Order> getOrdersByIds(ServiceRequest request);
+	public Order[] getOrdersByIds(ServiceRequest request);
 	
 	@WebMethod
 	public Order getOrder(ServiceRequest request);

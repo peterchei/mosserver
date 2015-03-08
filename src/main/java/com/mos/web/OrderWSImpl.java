@@ -1,5 +1,6 @@
 package com.mos.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jws.WebService;
@@ -14,20 +15,20 @@ import com.mos.service.ordermanagement.OrderService;
  * @author Peter Chei
  *
  */
-@WebService(endpointInterface = "mos.OrderWS") //this binds the SEI to the SIB
-public class OrderWSEntryPoint implements OrderWS {
+@WebService(endpointInterface = "com.mos.web.OrderWS") //this binds the SEI to the SIB
+public class OrderWSImpl implements OrderWS {
 
 	@Inject
 	private OrderService orderService;
 	
 	@Override
-	public List<Order> getAllOrders(ServiceRequest request) {
-		return orderService.getAllOrders(request);
+	public Order[] getAllOrders(ServiceRequest request) {
+		return orderService.getAllOrders(request).toArray(new Order[0]);
 	}
 
 	@Override
-	public List<Order> getOrdersByIds(ServiceRequest request) {
-		return orderService.getOrdersByIds(request);
+	public Order[] getOrdersByIds(ServiceRequest request) {
+		return orderService.getOrdersByIds(request).toArray(new Order[0]);
 	}
 
 	@Override

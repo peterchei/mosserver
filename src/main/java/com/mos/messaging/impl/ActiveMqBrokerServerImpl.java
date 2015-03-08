@@ -1,9 +1,13 @@
 package com.mos.messaging.impl;
 
 
+
+
 import org.apache.activemq.broker.Broker;
 import org.apache.activemq.broker.BrokerService;
 import org.apache.activemq.broker.region.DestinationStatistics;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.mos.messaging.IBrokerServer;
 
@@ -16,6 +20,7 @@ import com.mos.messaging.IBrokerServer;
  */
 public class ActiveMqBrokerServerImpl implements IBrokerServer {
 	
+	private Logger logger = LoggerFactory.getLogger(ActiveMqBrokerServerImpl.class);
 	private static ActiveMqBrokerServerImpl instance;
 	private BrokerService brokerService;
 	
@@ -38,6 +43,11 @@ public class ActiveMqBrokerServerImpl implements IBrokerServer {
                 
 		// create and start embedded broker
 		brokerService.start();	
+		
+		logger.info("*****************************************");
+		logger.info("******   Broker service started *********");
+		logger.info("*****************************************");
+		
 	}
 
 	@Override
