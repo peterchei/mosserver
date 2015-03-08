@@ -1,6 +1,7 @@
 package com.mos.store;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -34,6 +35,14 @@ public class AbstractStore<T> {
 	public void save(T obj) {		
 		entityManager.getTransaction().begin();
 		entityManager.persist(obj);
+		entityManager.getTransaction().commit();
+	}
+	
+	public void save(List<T> objs) {
+		entityManager.getTransaction().begin();
+		for (T obj : objs) {
+			entityManager.persist(obj);
+		}
 		entityManager.getTransaction().commit();
 	}
 	

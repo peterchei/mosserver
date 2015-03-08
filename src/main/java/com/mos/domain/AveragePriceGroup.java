@@ -1,7 +1,12 @@
 package com.mos.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import com.mos.domain.DomainEnums.AVGStatus;
+import com.sun.xml.bind.v2.runtime.RuntimeUtil.ToStringAdapter;
+
 import java.math.BigDecimal;
 
 
@@ -11,8 +16,10 @@ import java.math.BigDecimal;
  */
 @Entity
 @NamedQuery(name="AveragePriceGroup.findAll", query="SELECT a FROM AveragePriceGroup a")
+
 public class AveragePriceGroup implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
@@ -33,8 +40,9 @@ public class AveragePriceGroup implements Serializable {
 	private String mergeKey;
 
 	private BigDecimal quantity;
-
-	private String status;
+	
+	@Enumerated(EnumType.STRING)
+	private AVGStatus status;
 
 	private int tradeDate;
 
@@ -154,13 +162,13 @@ public class AveragePriceGroup implements Serializable {
 
 
 
-	public String getStatus() {
+	public AVGStatus getStatus() {
 		return status;
 	}
 
 
 
-	public void setStatus(String status) {
+	public void setStatus(AVGStatus status) {
 		this.status = status;
 	}
 

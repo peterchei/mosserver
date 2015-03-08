@@ -1,7 +1,12 @@
 package com.mos.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import com.mos.domain.DomainEnums.Capacity;
+import com.mos.domain.DomainEnums.Side;
+
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
@@ -19,7 +24,8 @@ public class Fill implements Serializable {
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	private long fillId;
 
-	private String capacity;
+	@Enumerated(EnumType.STRING)
+	private Capacity capacity;
 
 	private long exchangeId;
 
@@ -37,7 +43,7 @@ public class Fill implements Serializable {
 
 	private BigDecimal price;
 
-	private String side;
+	private Side side;
 
 	private int tradeDate;
 
@@ -55,11 +61,11 @@ public class Fill implements Serializable {
 		this.fillId = fillId;
 	}
 
-	public String getCapacity() {
+	public Capacity getCapacity() {
 		return capacity;
 	}
 
-	public void setCapacity(String capacity) {
+	public void setCapacity(Capacity capacity) {
 		this.capacity = capacity;
 	}
 
@@ -127,11 +133,11 @@ public class Fill implements Serializable {
 		this.price = price;
 	}
 
-	public String getSide() {
+	public Side getSide() {
 		return side;
 	}
 
-	public void setSide(String side) {
+	public void setSide(Side side) {
 		this.side = side;
 	}
 

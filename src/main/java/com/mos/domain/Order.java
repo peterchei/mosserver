@@ -1,7 +1,15 @@
 package com.mos.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import com.mos.domain.DomainEnums.Capacity;
+import com.mos.domain.DomainEnums.CommissionType;
+import com.mos.domain.DomainEnums.FlowType;
+import com.mos.domain.DomainEnums.OrderStatus;
+import com.mos.domain.DomainEnums.Side;
+
 import java.math.BigDecimal;
 
 
@@ -23,13 +31,13 @@ public class Order implements Serializable {
 
 	private long bookId;
 
-	private String capacity;
+	private Capacity capacity;
 
 	private long clientId;
 
 	private BigDecimal commission;
 
-	private String commissionType;
+	private CommissionType commissionType;
 
 	private String currency;
 
@@ -39,7 +47,8 @@ public class Order implements Serializable {
 
 	private String executionRegion;
 
-	private String flowType;
+	@Enumerated(EnumType.STRING)
+	private FlowType flowType;
 
 	private String foOrderRef;
 
@@ -53,7 +62,8 @@ public class Order implements Serializable {
 
 	private String moComment;
 
-	private String orderStatus;
+	@Enumerated(EnumType.STRING)
+	private OrderStatus orderStatus;
 
 	private long portfolioId;
 
@@ -67,14 +77,14 @@ public class Order implements Serializable {
 
 	private int settleDate;
 
-	private String side;
+	private Side side;
 
 	private int tradeDate;
 
 	private String traderId;
 
 	@Column(name="\"VERSION\"")
-	private BigDecimal version;
+	private int version;
 
 	public Order() {
 	}
@@ -103,11 +113,11 @@ public class Order implements Serializable {
 		this.bookId = bookId;
 	}
 
-	public String getCapacity() {
+	public Capacity getCapacity() {
 		return capacity;
 	}
 
-	public void setCapacity(String capacity) {
+	public void setCapacity(Capacity capacity) {
 		this.capacity = capacity;
 	}
 
@@ -127,11 +137,11 @@ public class Order implements Serializable {
 		this.commission = commission;
 	}
 
-	public String getCommissionType() {
+	public CommissionType getCommissionType() {
 		return commissionType;
 	}
 
-	public void setCommissionType(String commissionType) {
+	public void setCommissionType(CommissionType commissionType) {
 		this.commissionType = commissionType;
 	}
 
@@ -167,11 +177,11 @@ public class Order implements Serializable {
 		this.executionRegion = executionRegion;
 	}
 
-	public String getFlowType() {
+	public FlowType getFlowType() {
 		return flowType;
 	}
 
-	public void setFlowType(String flowType) {
+	public void setFlowType(FlowType flowType) {
 		this.flowType = flowType;
 	}
 
@@ -223,11 +233,11 @@ public class Order implements Serializable {
 		this.moComment = moComment;
 	}
 
-	public String getOrderStatus() {
+	public OrderStatus getOrderStatus() {
 		return orderStatus;
 	}
 
-	public void setOrderStatus(String orderStatus) {
+	public void setOrderStatus(OrderStatus orderStatus) {
 		this.orderStatus = orderStatus;
 	}
 
@@ -279,11 +289,11 @@ public class Order implements Serializable {
 		this.settleDate = settleDate;
 	}
 
-	public String getSide() {
+	public Side getSide() {
 		return side;
 	}
 
-	public void setSide(String side) {
+	public void setSide(Side side) {
 		this.side = side;
 	}
 
@@ -303,14 +313,12 @@ public class Order implements Serializable {
 		this.traderId = traderId;
 	}
 
-	public BigDecimal getVersion() {
+	public int getVersion() {
 		return version;
 	}
 
-	public void setVersion(BigDecimal version) {
+	public void setVersion(int version) {
 		this.version = version;
-	}
-
-	
+	}	
 	
 }
