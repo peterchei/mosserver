@@ -6,29 +6,32 @@ import org.slf4j.Logger;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
+/**
+ * 
+ * Configuration Module to bring up mos WS. 
+ * 
+ * TODO, uses dependence injection.
+ * 
+ * @author Hung
+ *
+ */
 public class WebModule {
 
 	public static Logger logger = getLogger(WebModule.class);
 
-	//private Endpoint endPoint1;
-	//private Endpoint endPoint2;
-	
+	private Endpoint endPoint;
+
 	
 	public void start() {
 		
+		
 		logger.info("Starting webservice.");
 
-		//endPoint1 = Endpoint.create(new OrderWSEntryPoint());		
-		//endPoint1.publish("http://localhost:9001/mos"); 	
-		logger.info("Service orderWS exported to http://localhost:9001/mos/OrderWS.");
-		
-		
-		//endPoint2 = Endpoint.create(new ExecutionWSEntryPoint());		
-		//endPoint1.publish("http://localhost:9001/mos",new ExecutionWSEntryPoint()); 	
-		Endpoint.publish("http://localhost:9001/mos", new ExecutionWSImpl());
-		//Endpoint.publish("http://localhost:9001/mos", new OrderWSImpl());
-		
-		logger.info("Service executionWS exported to http://localhost:9001/mos/ExecutionWS.");
+		endPoint = Endpoint.create(new MosServices());		
+		endPoint.publish("http://localhost:9001/mos"); 	
+		logger.info("Service orderWS exported to http://localhost:9001/mos");
+
+
 
 		logger.info("*****************************");
 		logger.info("**** WebService started. ****");
@@ -41,8 +44,8 @@ public class WebModule {
 	}
 
 	public void stop() {
-		//endPoint.stop();
-		//endPoint.stop();
+		endPoint.stop();
+
 	}
 
 }

@@ -4,7 +4,6 @@ import javax.jws.WebService;
 
 import com.google.inject.Inject;
 import com.mos.domain.Fill;
-import com.mos.service.ServiceRequest;
 import com.mos.service.executionmanagement.ExecutionService;
 
 @WebService(endpointInterface = "com.mos.web.ExecutionWS") //this binds the SEI to the SIB

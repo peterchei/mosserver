@@ -7,7 +7,6 @@ import javax.jws.WebService;
 
 import com.google.inject.Inject;
 import com.mos.domain.Order;
-import com.mos.service.ServiceRequest;
 import com.mos.service.ordermanagement.OrderService;
 
 /**
@@ -23,17 +22,17 @@ public class OrderWSImpl implements OrderWS {
 	
 	@Override
 	public Order[] getAllOrders(ServiceRequest request) {
-		return orderService.getAllOrders(request).toArray(new Order[0]);
+		return orderService.getAllOrders(5).toArray(new Order[0]);
 	}
 
 	@Override
 	public Order[] getOrdersByIds(ServiceRequest request) {
-		return orderService.getOrdersByIds(request).toArray(new Order[0]);
+		return orderService.getOrdersByIds(request.getObjectIds()).toArray(new Order[0]);
 	}
 
 	@Override
 	public Order getOrder(ServiceRequest request) {
-		return orderService.getOrder(request);
+		return orderService.getOrder(request.getObjectIds()[0]);
 	}
 
 }

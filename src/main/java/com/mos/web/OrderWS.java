@@ -12,7 +12,6 @@ import javax.jws.soap.SOAPBinding;
 import javax.jws.soap.SOAPBinding.Style;
 
 import com.mos.domain.Order;
-import com.mos.service.ServiceRequest;
 
 
 @WebService

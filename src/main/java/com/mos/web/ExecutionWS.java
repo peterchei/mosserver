@@ -6,7 +6,6 @@ import javax.jws.soap.SOAPBinding;
 import javax.jws.soap.SOAPBinding.Style;
 
 import com.mos.domain.Fill;
-import com.mos.service.ServiceRequest;
 
 @WebService
 @SOAPBinding(style = Style.RPC)

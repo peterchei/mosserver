@@ -1,5 +1,5 @@
 package com.mos.web;
 
-public class AllocationWS {
+public interface AllocationWS {
 
 }
