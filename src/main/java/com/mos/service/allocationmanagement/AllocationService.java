@@ -1,11 +1,17 @@
 package com.mos.service.allocationmanagement;
 
+import java.util.List;
+
 import com.google.inject.Inject;
+import com.mos.domain.Allocation;
 import com.mos.event.EventPublisher;
 
-public class AllocationService {
+public interface AllocationService {
 
-	@Inject
-	private EventPublisher publisher;
-	
+	public Allocation getAllocation(long allocationId);
+
+	public List<Allocation> getAllocationsByAveragePriceGroupId(long averagePrcGrpId);
+
+	public List<Allocation> getAllAllocations(long numberOfDays);
+
 }

@@ -7,30 +7,42 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.eclipse.persistence.sdo.types.SDOWrapperType.IntObjectWrapperImpl;
 import org.junit.Test;
+import org.slf4j.Logger;
 
+import static org.slf4j.LoggerFactory.getLogger;
+
+import com.mos.domain.Allocation;
 import com.mos.domain.AveragePriceGroup;
 import com.mos.domain.DomainEnums.CommissionType;
 import com.mos.domain.DomainEnums.FlowType;
+import com.mos.domain.DomainEnums.PaymentMethod;
 import com.mos.domain.Fill;
 import com.mos.domain.Order;
 import com.mos.domain.Portfolio;
 import com.mos.domain.DomainEnums.AVGStatus;
+import com.mos.domain.DomainEnums.AllocStatus;
+import com.mos.domain.DomainEnums.AllocType;
 import com.mos.domain.DomainEnums.Capacity;
 import com.mos.domain.DomainEnums.OrderStatus;
 import com.mos.domain.DomainEnums.Side;
 
 public class TestStore {
 
-	@Test
-	public void testStore() {
+	private static Logger log = getLogger(TestStore.class);
 
-		for (int i=0;i<1000;i++) {
+	@Test
+	public void testSaveOrderFillAllocation() {
+
+		int tradeDate = Integer.parseInt(new SimpleDateFormat("yyyyMMdd")
+				.format(new Date()));
+		int settleDate = Integer.parseInt(new SimpleDateFormat("yyyyMMdd")
+				.format(new Date()));
+
 		// Create Portfolio
 		Portfolio pf = new Portfolio();
 		pf.setName("Peter Portfolio");
-		pf.setTradeDate(Integer.parseInt(new SimpleDateFormat("yyyyddmm")
+		pf.setTradeDate(Integer.parseInt(new SimpleDateFormat("yyyymmdd")
 				.format((new Date()))));
 		new PortfolioStore().save(pf);
 		assertTrue(pf.getPortfolioid() > 0);
@@ -47,7 +59,7 @@ public class TestStore {
 		apg.setStatus(AVGStatus.OPEN);
 		apg.setQuantity(BigDecimal.ONE);
 		apg.setMergeKey("MERGEKEY");
-		apg.setTradeDate(20150101);
+		apg.setTradeDate(tradeDate);
 		apg.setVersion((1));
 
 		new AveragePriceGroupStore().save(apg);
@@ -67,9 +79,9 @@ public class TestStore {
 		od.setCommission(BigDecimal.ZERO);
 		od.setCommissionType(CommissionType.BPS);
 		od.setBookId(999);
-		od.setTradeDate(1);
+		od.setTradeDate(tradeDate);
 		od.setSettleConversion("T+3");
-		od.setSettleDate((20150101));
+		od.setSettleDate((settleDate));
 		od.setFlowType(FlowType.SS);
 		od.setCurrency("HKD");
 		od.setSettleCurrency("USD");
@@ -100,7 +112,35 @@ public class TestStore {
 		fill.setExecutionTime(new Timestamp(new Date().getTime()));
 
 		new FillStore().save(fill);
-		}
+
+		Allocation alloc = new Allocation();
+		alloc.setAllocationPrice(BigDecimal.ONE);
+		alloc.setAllocStatus(AllocStatus.NEW);
+		alloc.setAveragePrcGrpId(apg.getAveragePrcGrpId());
+		alloc.setClearingMechanism("HK");
+		alloc.setFirmDepo(11);
+		alloc.setQuantity(BigDecimal.TEN);
+		alloc.setCommission(BigDecimal.ZERO);
+		alloc.setCommissionType(CommissionType.BPS);
+		alloc.setCommissionAmount(BigDecimal.TEN);
+		alloc.setAllocType(AllocType.TRADE);
+		alloc.setClientSSI(0);
+		alloc.setSubAccountId(100);
+		alloc.setTopAccountId(200);
+		alloc.setTradeDate(od.getTradeDate());
+		alloc.setSettleDate(od.getSettleDate());
+		alloc.setAveragePrice(BigDecimal.ONE);
+		alloc.setPaymentMethod(PaymentMethod.DVP);
+		alloc.setVersion(1);
+
+		new AllocationStore().save(alloc);
+
+		System.out
+				.println(new AllocationStore()
+						.getAllocationByAveragePriceGroupId(alloc
+								.getAveragePrcGrpId()));
+
+		System.out.println(new AllocationStore().getAllAllocations(1));
 
 	}
 

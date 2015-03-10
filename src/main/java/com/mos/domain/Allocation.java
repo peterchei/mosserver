@@ -34,7 +34,7 @@ public class Allocation implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private AllocType allocType;
 
-	private BigDecimal averagePrcGrpId;
+	private long averagePrcGrpId;
 
 	private BigDecimal averagePrice;
 
@@ -106,11 +106,11 @@ public class Allocation implements Serializable {
 		this.allocType = allocType;
 	}
 
-	public BigDecimal getAveragePrcGrpId() {
+	public long getAveragePrcGrpId() {
 		return averagePrcGrpId;
 	}
 
-	public void setAveragePrcGrpId(BigDecimal averagePrcGrpId) {
+	public void setAveragePrcGrpId(long averagePrcGrpId) {
 		this.averagePrcGrpId = averagePrcGrpId;
 	}
 

@@ -9,7 +9,6 @@ import com.mos.domain.Order;
 
 public class OrderStore extends AbstractStore<Order> {
 
-	
    
 	public List<Order> getAllOrders(int days) {
 		entityManager.getTransaction().begin();		
