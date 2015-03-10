@@ -8,11 +8,12 @@ import com.mos.domain.Order;
 import com.mos.event.EventPublisher;
 import com.mos.store.OrderStore;
 import com.mos.web.ServiceRequest;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 public class OrderServiceImpl implements OrderService {
 	
 	@Inject
-	protected OrderStore store;
+	protected OrderStore store = new OrderStore();
 	
 	@Inject
 	private EventPublisher publisher;

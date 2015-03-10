@@ -1,7 +1,14 @@
 package com.mos.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import com.mos.domain.DomainEnums.AllocStatus;
+import com.mos.domain.DomainEnums.AllocType;
+import com.mos.domain.DomainEnums.CommissionType;
+import com.mos.domain.DomainEnums.PaymentMethod;
+
 import java.math.BigDecimal;
 
 
@@ -18,216 +25,223 @@ public class Allocation implements Serializable {
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	private long allocationId;
 
-	private BigDecimal allocationprice;
+	
+	private BigDecimal allocationPrice;
 
-	private String allocStatus;
+	@Enumerated(EnumType.STRING)
+	private AllocStatus allocStatus;
 
-	private String alloctype;
+	@Enumerated(EnumType.STRING)
+	private AllocType allocType;
 
-	private BigDecimal averageprcgrpid;
+	private BigDecimal averagePrcGrpId;
 
-	private BigDecimal averageprice;
+	private BigDecimal averagePrice;
 
-	private String clearingmechanism;
+	private String clearingMechanism;
 
-	private BigDecimal clientssi;
+	private long clientSSI;
 
 	private BigDecimal commission;
 
-	private BigDecimal commissionamount;
+	private BigDecimal commissionAmount;
 
-	private String commissiontype;
+	@Enumerated(EnumType.STRING)
+	private CommissionType commissionType;
 
-	private BigDecimal exchangeid;
+	private long exchangeId;
 
-	private BigDecimal firmdepo;
+	private long firmDepo;
 
-	private BigDecimal instrumentid;
+	private long instrumentId;
 
-	private String paymentmethod;
+	@Enumerated(EnumType.STRING)
+	private PaymentMethod paymentMethod;
 
 	private BigDecimal quantity;
 
-	private BigDecimal settledate;
+	private int settleDate;
 
-	private BigDecimal subaccountid;
+	private long subAccountId;
 
-	private BigDecimal topaccountid;
+	private long topAccountId;
 
-	private BigDecimal tradedate;
+	private int tradeDate;
 
 	@Column(name="\"VERSION\"")
-	private BigDecimal version;
+	private int version;
 
 	public Allocation() {
 	}
 
-	public long getAllocationid() {
-		return this.allocationId;
+	public long getAllocationId() {
+		return allocationId;
 	}
 
-	public void setAllocationid(long allocationId) {
+	public void setAllocationId(long allocationId) {
 		this.allocationId = allocationId;
 	}
 
-	public BigDecimal getAllocationprice() {
-		return this.allocationprice;
+	public BigDecimal getAllocationPrice() {
+		return allocationPrice;
 	}
 
-	public void setAllocationprice(BigDecimal allocationprice) {
-		this.allocationprice = allocationprice;
+	public void setAllocationPrice(BigDecimal allocationPrice) {
+		this.allocationPrice = allocationPrice;
 	}
 
-	public String getAllocstatus() {
-		return this.allocStatus;
+	public AllocStatus getAllocStatus() {
+		return allocStatus;
 	}
 
-	public void setAllocstatus(String allocStatus) {
+	public void setAllocStatus(AllocStatus allocStatus) {
 		this.allocStatus = allocStatus;
 	}
 
-	public String getAlloctype() {
-		return this.alloctype;
+	public AllocType getAllocType() {
+		return allocType;
 	}
 
-	public void setAlloctype(String alloctype) {
-		this.alloctype = alloctype;
+	public void setAllocType(AllocType allocType) {
+		this.allocType = allocType;
 	}
 
-	public BigDecimal getAverageprcgrpid() {
-		return this.averageprcgrpid;
+	public BigDecimal getAveragePrcGrpId() {
+		return averagePrcGrpId;
 	}
 
-	public void setAverageprcgrpid(BigDecimal averageprcgrpid) {
-		this.averageprcgrpid = averageprcgrpid;
+	public void setAveragePrcGrpId(BigDecimal averagePrcGrpId) {
+		this.averagePrcGrpId = averagePrcGrpId;
 	}
 
-	public BigDecimal getAverageprice() {
-		return this.averageprice;
+	public BigDecimal getAveragePrice() {
+		return averagePrice;
 	}
 
-	public void setAverageprice(BigDecimal averageprice) {
-		this.averageprice = averageprice;
+	public void setAveragePrice(BigDecimal averagePrice) {
+		this.averagePrice = averagePrice;
 	}
 
-	public String getClearingmechanism() {
-		return this.clearingmechanism;
+	public String getClearingMechanism() {
+		return clearingMechanism;
 	}
 
-	public void setClearingmechanism(String clearingmechanism) {
-		this.clearingmechanism = clearingmechanism;
+	public void setClearingMechanism(String clearingMechanism) {
+		this.clearingMechanism = clearingMechanism;
 	}
 
-	public BigDecimal getClientssi() {
-		return this.clientssi;
+	public long getClientSSI() {
+		return clientSSI;
 	}
 
-	public void setClientssi(BigDecimal clientssi) {
-		this.clientssi = clientssi;
+	public void setClientSSI(long clientSSI) {
+		this.clientSSI = clientSSI;
 	}
 
 	public BigDecimal getCommission() {
-		return this.commission;
+		return commission;
 	}
 
 	public void setCommission(BigDecimal commission) {
 		this.commission = commission;
 	}
 
-	public BigDecimal getCommissionamount() {
-		return this.commissionamount;
+	public BigDecimal getCommissionAmount() {
+		return commissionAmount;
 	}
 
-	public void setCommissionamount(BigDecimal commissionamount) {
-		this.commissionamount = commissionamount;
+	public void setCommissionAmount(BigDecimal commissionAmount) {
+		this.commissionAmount = commissionAmount;
 	}
 
-	public String getCommissiontype() {
-		return this.commissiontype;
+	public CommissionType getCommissionType() {
+		return commissionType;
 	}
 
-	public void setCommissiontype(String commissiontype) {
-		this.commissiontype = commissiontype;
+	public void setCommissionType(CommissionType commissionType) {
+		this.commissionType = commissionType;
 	}
 
-	public BigDecimal getExchangeid() {
-		return this.exchangeid;
+	public long getExchangeId() {
+		return exchangeId;
 	}
 
-	public void setExchangeid(BigDecimal exchangeid) {
-		this.exchangeid = exchangeid;
+	public void setExchangeId(long exchangeId) {
+		this.exchangeId = exchangeId;
 	}
 
-	public BigDecimal getFirmdepo() {
-		return this.firmdepo;
+	public long getFirmDepo() {
+		return firmDepo;
 	}
 
-	public void setFirmdepo(BigDecimal firmdepo) {
-		this.firmdepo = firmdepo;
+	public void setFirmDepo(long firmDepo) {
+		this.firmDepo = firmDepo;
 	}
 
-	public BigDecimal getInstrumentid() {
-		return this.instrumentid;
+	public long getInstrumentId() {
+		return instrumentId;
 	}
 
-	public void setInstrumentid(BigDecimal instrumentid) {
-		this.instrumentid = instrumentid;
+	public void setInstrumentId(long instrumentId) {
+		this.instrumentId = instrumentId;
 	}
 
-	public String getPaymentmethod() {
-		return this.paymentmethod;
+	public PaymentMethod getPaymentMethod() {
+		return paymentMethod;
 	}
 
-	public void setPaymentmethod(String paymentmethod) {
-		this.paymentmethod = paymentmethod;
+	public void setPaymentMethod(PaymentMethod paymentMethod) {
+		this.paymentMethod = paymentMethod;
 	}
 
 	public BigDecimal getQuantity() {
-		return this.quantity;
+		return quantity;
 	}
 
 	public void setQuantity(BigDecimal quantity) {
 		this.quantity = quantity;
 	}
 
-	public BigDecimal getSettledate() {
-		return this.settledate;
+	public int getSettleDate() {
+		return settleDate;
 	}
 
-	public void setSettledate(BigDecimal settledate) {
-		this.settledate = settledate;
+	public void setSettleDate(int settleDate) {
+		this.settleDate = settleDate;
 	}
 
-	public BigDecimal getSubaccountid() {
-		return this.subaccountid;
+	public long getSubAccountId() {
+		return subAccountId;
 	}
 
-	public void setSubaccountid(BigDecimal subaccountid) {
-		this.subaccountid = subaccountid;
+	public void setSubAccountId(long subAccountId) {
+		this.subAccountId = subAccountId;
 	}
 
-	public BigDecimal getTopaccountid() {
-		return this.topaccountid;
+	public long getTopAccountId() {
+		return topAccountId;
 	}
 
-	public void setTopaccountid(BigDecimal topaccountid) {
-		this.topaccountid = topaccountid;
+	public void setTopAccountId(long topAccountId) {
+		this.topAccountId = topAccountId;
 	}
 
-	public BigDecimal getTradedate() {
-		return this.tradedate;
+	public int getTradeDate() {
+		return tradeDate;
 	}
 
-	public void setTradedate(BigDecimal tradedate) {
-		this.tradedate = tradedate;
+	public void setTradeDate(int tradeDate) {
+		this.tradeDate = tradeDate;
 	}
 
-	public BigDecimal getVersion() {
-		return this.version;
+	public int getVersion() {
+		return version;
 	}
 
-	public void setVersion(BigDecimal version) {
+	public void setVersion(int version) {
 		this.version = version;
 	}
+
+
 
 }

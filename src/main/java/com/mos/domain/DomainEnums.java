@@ -6,16 +6,24 @@ public class DomainEnums {
 		NONE, ERROR, VERIFIED, FILLED, CLOSED, CANCELLED, COMPLETED
 	}
 
+	public enum AllocStatus {
+		NEW, ERROR, AMEND, CANCELLED
+	}
+
 	public enum AVGStatus {
 		NONE, ERROR, OPEN, CLOSED
 	}
 
 	public enum FillStatus {
-		NONE, ERROR, NEW, CANCELED, AMENDED
+		NONE, ERROR, NEW, AMEND, CANCELLED
 	}
 
 	public enum FlowType {
-		SS, PT, DMA, ATS, EDG, HFT
+		SS, PT, DMA, ATS, EDG, HFT, CVB, SYC
+	}
+
+	public enum AllocType {
+		BLOCK, TRADE, EOD
 	}
 
 	public enum Capacity {
@@ -24,6 +32,10 @@ public class DomainEnums {
 
 	public enum CommissionType {
 		BPS, CPS, FLAT, PERCENT
+	}
+
+	public enum PaymentMethod {
+		DVP, FOP, TBA
 	}
 
 	public enum Side {

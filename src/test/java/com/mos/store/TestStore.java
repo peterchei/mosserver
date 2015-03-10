@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.eclipse.persistence.sdo.types.SDOWrapperType.IntObjectWrapperImpl;
 import org.junit.Test;
 
 import com.mos.domain.AveragePriceGroup;
@@ -25,6 +26,7 @@ public class TestStore {
 	@Test
 	public void testStore() {
 
+		for (int i=0;i<1000;i++) {
 		// Create Portfolio
 		Portfolio pf = new Portfolio();
 		pf.setName("Peter Portfolio");
@@ -98,6 +100,7 @@ public class TestStore {
 		fill.setExecutionTime(new Timestamp(new Date().getTime()));
 
 		new FillStore().save(fill);
+		}
 
 	}
 

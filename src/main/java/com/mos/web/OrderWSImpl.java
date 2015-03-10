@@ -8,6 +8,8 @@ import javax.jws.WebService;
 import com.google.inject.Inject;
 import com.mos.domain.Order;
 import com.mos.service.ordermanagement.OrderService;
+import com.mos.service.ordermanagement.OrderServiceImpl;
+import com.sun.org.apache.bcel.internal.generic.NEW;
 
 /**
  * 
@@ -18,7 +20,7 @@ import com.mos.service.ordermanagement.OrderService;
 public class OrderWSImpl implements OrderWS {
 
 	@Inject
-	private OrderService orderService;
+	private OrderService orderService = new OrderServiceImpl();
 	
 	@Override
 	public Order[] getAllOrders(ServiceRequest request) {

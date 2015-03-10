@@ -31,12 +31,14 @@ public class Order implements Serializable {
 
 	private long bookId;
 
+	@Enumerated(EnumType.STRING)
 	private Capacity capacity;
 
 	private long clientId;
 
 	private BigDecimal commission;
 
+	@Enumerated(EnumType.STRING)
 	private CommissionType commissionType;
 
 	private String currency;
@@ -77,6 +79,7 @@ public class Order implements Serializable {
 
 	private int settleDate;
 
+	@Enumerated(EnumType.STRING)
 	private Side side;
 
 	private int tradeDate;
