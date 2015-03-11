@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 import com.mos.domain.DomainEnums.AVGStatus;
+import com.mos.domain.DomainEnums.FlowType;
 import com.sun.xml.bind.v2.runtime.RuntimeUtil.ToStringAdapter;
 
 import java.math.BigDecimal;
@@ -33,7 +34,8 @@ public class AveragePriceGroup implements Serializable {
 
 	private long exchangeId;
 
-	private String flowType;
+	@Enumerated(EnumType.STRING)
+	private FlowType flowType;
 
 	private long instrumentId;
 
@@ -114,13 +116,13 @@ public class AveragePriceGroup implements Serializable {
 
 
 
-	public String getFlowType() {
+	public FlowType getFlowType() {
 		return flowType;
 	}
 
 
 
-	public void setFlowType(String flowType) {
+	public void setFlowType(FlowType flowType) {
 		this.flowType = flowType;
 	}
 

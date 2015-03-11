@@ -10,6 +10,7 @@ import javax.persistence.Persistence;
 
 public class AbstractStore<T> {
 	
+		
 	protected EntityManager entityManager =null;
 	protected Class<T> genericClassT = null;
 	EntityManagerFactory emfactory = null;
@@ -52,5 +53,7 @@ public class AbstractStore<T> {
 		entityManager.getTransaction().commit();
 		return obj;
 	}
+	
+	
 
 }

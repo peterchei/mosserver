@@ -1,6 +1,6 @@
 package com.mos.domain;
 
-public class DomainEnums {
+public interface DomainEnums {
 
 	public enum OrderStatus {
 		NONE, ERROR, VERIFIED, FILLED, CLOSED, CANCELLED, COMPLETED
@@ -17,6 +17,19 @@ public class DomainEnums {
 	public enum FillStatus {
 		NONE, ERROR, NEW, AMEND, CANCELLED
 	}
+	
+	public enum ConfStatus {
+		NONE, PENDING_SEND, SENT, ACKED, CONFIRMED
+	}
+	
+	public enum CtmStatus {
+		NONE, SENT, RBT, RBC, AFFRIAMED, REJECTED, CANCELLED 
+	}
+	
+	public enum BookingStatus {
+		NONE, SENT, ACKED, BOOKED, REJECTED
+	}
+	
 
 	public enum FlowType {
 		SS, PT, DMA, ATS, EDG, HFT, CVB, SYC
@@ -37,6 +50,8 @@ public class DomainEnums {
 	public enum PaymentMethod {
 		DVP, FOP, TBA
 	}
+	
+
 
 	public enum Side {
 		B("Buy"), S("Sell"), SS("ShortSell"), SE("ShortSellExcempt");

@@ -14,7 +14,10 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 import com.mos.domain.Allocation;
 import com.mos.domain.AveragePriceGroup;
+import com.mos.domain.ClientTrade;
+import com.mos.domain.DomainEnums.BookingStatus;
 import com.mos.domain.DomainEnums.CommissionType;
+import com.mos.domain.DomainEnums.CtmStatus;
 import com.mos.domain.DomainEnums.FlowType;
 import com.mos.domain.DomainEnums.PaymentMethod;
 import com.mos.domain.Fill;
@@ -24,6 +27,7 @@ import com.mos.domain.DomainEnums.AVGStatus;
 import com.mos.domain.DomainEnums.AllocStatus;
 import com.mos.domain.DomainEnums.AllocType;
 import com.mos.domain.DomainEnums.Capacity;
+import com.mos.domain.DomainEnums.ConfStatus;
 import com.mos.domain.DomainEnums.OrderStatus;
 import com.mos.domain.DomainEnums.Side;
 
@@ -52,7 +56,7 @@ public class TestStore {
 		apg.setCapacity("A");
 		apg.setAveragePrice(BigDecimal.ZERO);
 		apg.setClientId(1);
-		apg.setFlowType("SS");
+		apg.setFlowType(FlowType.SS);
 		apg.setCapacity("A");
 		apg.setExchangeId(1);
 		apg.setInstrumentId(1);
@@ -135,12 +139,22 @@ public class TestStore {
 
 		new AllocationStore().save(alloc);
 
-		System.out
-				.println(new AllocationStore()
-						.getAllocationByAveragePriceGroupId(alloc
-								.getAveragePrcGrpId()));
 
-		System.out.println(new AllocationStore().getAllAllocations(1));
+		ClientTrade ct = new ClientTrade();
+		ct.setAllocationId(alloc.getAllocationId());
+		ct.setBookingStatus(BookingStatus.BOOKED);
+		ct.setConfirmSuppress(true);
+		ct.setExchangeId(alloc.getExchangeId());
+		ct.setInstrumentId(alloc.getInstrumentId());
+		ct.setQuantity(alloc.getQuantity());
+		ct.setSettleDate(alloc.getSettleDate());
+		ct.setCtmStatus(CtmStatus.AFFRIAMED);
+		ct.setBookingSuppress(false);
+		ct.setTradeDate(alloc.getTradeDate());
+		ct.setConfStatus(ConfStatus.NONE);
+		ct.setVersion(1);
+		
+		new ClientTradeStore().save(ct);  
 
 	}
 

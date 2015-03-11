@@ -1,7 +1,13 @@
 package com.mos.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import com.mos.domain.DomainEnums.BookingStatus;
+import com.mos.domain.DomainEnums.ConfStatus;
+import com.mos.domain.DomainEnums.CtmStatus;
+
 import java.math.BigDecimal;
 
 
@@ -16,138 +22,141 @@ public class ClientTrade implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	private long clienttradeid;
+	private long clientTradeId;
 
-	private BigDecimal allocationid;
+	private long allocationId;
 
-	private String bookingstatus;
+	@Enumerated(EnumType.STRING)
+	private BookingStatus bookingStatus;
 
-	private String bookingsuppress;
+	private boolean bookingSuppress;
 
-	private String confirmsuppress;
+	private boolean confirmSuppress;
 
-	private String confstatus;
+	@Enumerated(EnumType.STRING)
+	private ConfStatus confStatus;
 
-	private String ctmstatus;
+	@Enumerated(EnumType.STRING)
+	private CtmStatus ctmStatus;
 
-	private BigDecimal exchangeid;
+	private long exchangeId;
 
-	private BigDecimal instrumentid;
+	private long instrumentId;
 
 	private BigDecimal quantity;
 
-	private BigDecimal settledate;
+	private int settleDate;
 
-	private BigDecimal tradedate;
+	private int tradeDate;
 
 	@Column(name="\"VERSION\"")
-	private BigDecimal version;
+	private int version;
 
 	public ClientTrade() {
 	}
 
-	public long getClienttradeid() {
-		return this.clienttradeid;
+	public long getClientTradeId() {
+		return clientTradeId;
 	}
 
-	public void setClienttradeid(long clienttradeid) {
-		this.clienttradeid = clienttradeid;
+	public void setClientTradeId(long clientTradeId) {
+		this.clientTradeId = clientTradeId;
 	}
 
-	public BigDecimal getAllocationid() {
-		return this.allocationid;
+	public long getAllocationId() {
+		return allocationId;
 	}
 
-	public void setAllocationid(BigDecimal allocationid) {
-		this.allocationid = allocationid;
+	public void setAllocationId(long allocationId) {
+		this.allocationId = allocationId;
 	}
 
-	public String getBookingstatus() {
-		return this.bookingstatus;
+	public BookingStatus getBookingStatus() {
+		return bookingStatus;
 	}
 
-	public void setBookingstatus(String bookingstatus) {
-		this.bookingstatus = bookingstatus;
+	public void setBookingStatus(BookingStatus bookingStatus) {
+		this.bookingStatus = bookingStatus;
 	}
 
-	public String getBookingsuppress() {
-		return this.bookingsuppress;
+	public boolean isBookingSuppress() {
+		return bookingSuppress;
 	}
 
-	public void setBookingsuppress(String bookingsuppress) {
-		this.bookingsuppress = bookingsuppress;
+	public void setBookingSuppress(boolean bookingSuppress) {
+		this.bookingSuppress = bookingSuppress;
 	}
 
-	public String getConfirmsuppress() {
-		return this.confirmsuppress;
+	public boolean isConfirmSuppress() {
+		return confirmSuppress;
 	}
 
-	public void setConfirmsuppress(String confirmsuppress) {
-		this.confirmsuppress = confirmsuppress;
+	public void setConfirmSuppress(boolean confirmSuppress) {
+		this.confirmSuppress = confirmSuppress;
 	}
 
-	public String getConfstatus() {
-		return this.confstatus;
+	public ConfStatus getConfStatus() {
+		return confStatus;
 	}
 
-	public void setConfstatus(String confstatus) {
-		this.confstatus = confstatus;
+	public void setConfStatus(ConfStatus confStatus) {
+		this.confStatus = confStatus;
 	}
 
-	public String getCtmstatus() {
-		return this.ctmstatus;
+	public CtmStatus getCtmStatus() {
+		return ctmStatus;
 	}
 
-	public void setCtmstatus(String ctmstatus) {
-		this.ctmstatus = ctmstatus;
+	public void setCtmStatus(CtmStatus ctmStatus) {
+		this.ctmStatus = ctmStatus;
 	}
 
-	public BigDecimal getExchangeid() {
-		return this.exchangeid;
+	public long getExchangeId() {
+		return exchangeId;
 	}
 
-	public void setExchangeid(BigDecimal exchangeid) {
-		this.exchangeid = exchangeid;
+	public void setExchangeId(long exchangeId) {
+		this.exchangeId = exchangeId;
 	}
 
-	public BigDecimal getInstrumentid() {
-		return this.instrumentid;
+	public long getInstrumentId() {
+		return instrumentId;
 	}
 
-	public void setInstrumentid(BigDecimal instrumentid) {
-		this.instrumentid = instrumentid;
+	public void setInstrumentId(long instrumentId) {
+		this.instrumentId = instrumentId;
 	}
 
 	public BigDecimal getQuantity() {
-		return this.quantity;
+		return quantity;
 	}
 
 	public void setQuantity(BigDecimal quantity) {
 		this.quantity = quantity;
 	}
 
-	public BigDecimal getSettledate() {
-		return this.settledate;
+	public int getSettleDate() {
+		return settleDate;
 	}
 
-	public void setSettledate(BigDecimal settledate) {
-		this.settledate = settledate;
+	public void setSettleDate(int settleDate) {
+		this.settleDate = settleDate;
 	}
 
-	public BigDecimal getTradedate() {
-		return this.tradedate;
+	public int getTradeDate() {
+		return tradeDate;
 	}
 
-	public void setTradedate(BigDecimal tradedate) {
-		this.tradedate = tradedate;
+	public void setTradeDate(int tradeDate) {
+		this.tradeDate = tradeDate;
 	}
 
-	public BigDecimal getVersion() {
-		return this.version;
+	public int getVersion() {
+		return version;
 	}
 
-	public void setVersion(BigDecimal version) {
+	public void setVersion(int version) {
 		this.version = version;
 	}
-
+	
 }
