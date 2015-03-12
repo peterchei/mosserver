@@ -31,7 +31,6 @@ public class AbstractStore<T> {
 		return (Class) parameterizedType.getActualTypeArguments()[0];
 	}
 	
-
 	
 	public void save(T obj) {		
 		entityManager.getTransaction().begin();

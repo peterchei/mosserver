@@ -1,5 +1,7 @@
 package com.mos.messaging;
 
+import javax.jms.Destination;
+
 /**
  * BrokerService Factory interface to retrieve IMessageConsumer and IMessageProducer
  * 
@@ -12,8 +14,8 @@ public interface IBrokerService {
 
 	public void bindToBrokerAtUrl(String aBrokerUrl);
 
-	public IMessageConsumer getMessageConsumer(String destination);
+	public IMessageConsumer getMessageConsumer(Destination destination);
 
-	public IMessageProducer getMessageProducer(String destination);
+	public IMessageProducer getMessageProducer(Destination destination);
 
 }

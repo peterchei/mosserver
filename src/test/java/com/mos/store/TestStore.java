@@ -53,11 +53,11 @@ public class TestStore {
 
 		AveragePriceGroup apg = new AveragePriceGroup();
 
-		apg.setCapacity("A");
+		apg.setCapacity(Capacity.Agency);
 		apg.setAveragePrice(BigDecimal.ZERO);
 		apg.setClientId(1);
 		apg.setFlowType(FlowType.SS);
-		apg.setCapacity("A");
+		apg.setCapacity(Capacity.Agency);
 		apg.setExchangeId(1);
 		apg.setInstrumentId(1);
 		apg.setStatus(AVGStatus.OPEN);
@@ -112,7 +112,7 @@ public class TestStore {
 		fill.setOrderId(od.getOrderId());
 		fill.setExternalRef("externalRef");
 		fill.setExecutedShares(BigDecimal.ONE);
-		fill.setIsOffMarket("Y");
+		fill.setIsOffMarket(true);
 		fill.setExecutionTime(new Timestamp(new Date().getTime()));
 
 		new FillStore().save(fill);

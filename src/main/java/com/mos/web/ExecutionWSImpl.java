@@ -13,13 +13,13 @@ public class ExecutionWSImpl implements ExecutionWS {
 	private ExecutionService executionService;
 
 	@Override
-	public Fill[] getFillsByOrderId(ServiceRequest serviceRequest) {
+	public Fill[] getFillsByOrderId(long orderId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Fill[] getFillById(ServiceRequest serviceRequest) {
+	public Fill[] getFillById(long fillId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

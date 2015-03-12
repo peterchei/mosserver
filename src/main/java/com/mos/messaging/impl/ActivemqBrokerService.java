@@ -12,6 +12,7 @@ import javax.jms.MessageProducer;
 import javax.jms.Queue;
 import javax.jms.Session;
 import javax.jms.TextMessage;
+import javax.jms.Topic;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.slf4j.Logger;
@@ -41,13 +42,13 @@ public class ActivemqBrokerService implements IBrokerService {
 	}
 	
 	@Override
-	public IMessageConsumer getMessageConsumer(String destination) {
+	public IMessageConsumer getMessageConsumer(Destination destination) {
 		return new ActivemqMessageConsumer(destination);
 	}
 
 
 	@Override
-	public IMessageProducer getMessageProducer(String destination) {
+	public IMessageProducer getMessageProducer(Destination destination) {
 		return new ActivemqMessageProducer(destination);
 	}
 	
@@ -107,16 +108,22 @@ public class ActivemqBrokerService implements IBrokerService {
 			}
 		}
 				
-		protected String executeCallbackAgainstRemoteBroker(String aDestinationName, JmsCallback aCallback) {
+		protected String executeCallbackAgainstRemoteBroker(Destination aDestination, JmsCallback aCallback) {
 	        String returnValue = "";
-            returnValue = executeCallbackAgainstConnection(connection, aDestinationName, aCallback);
+            returnValue = executeCallbackAgainstConnection(connection, aDestination, aCallback);
 	        return returnValue;
 	    }
 	    
-	    protected String executeCallbackAgainstConnection(Connection aConnection, String aDestinationName, JmsCallback aCallback) {
+	    protected String executeCallbackAgainstConnection(Connection aConnection, Destination aDestination, JmsCallback aCallback) {
 	        try {
-	            Queue queue = session.createQueue(aDestinationName);	            
+	        	
+	        	if (aDestination instanceof Queue) {
+	            Queue queue = session.createQueue(((Queue) aDestination).getQueueName());	            
 	            return aCallback.performJmsFunction(session, queue);
+	        	} else {
+		            Topic topic = session.createTopic(((Topic)aDestination).getTopicName());	            
+		            return aCallback.performJmsFunction(session, topic);
+	        	}
 	        } catch (JMSException jmse) {
 	            LOG.error("Failed to create session on connection {}", aConnection);
 	            throw new IllegalStateException(jmse);
@@ -127,16 +134,16 @@ public class ActivemqBrokerService implements IBrokerService {
     
     class ActivemqMessageConsumer extends ActivemqConnection implements IMessageConsumer {
 
-    	private String destinationName;
+    	private Destination destination;
     	private MessageConsumer consumer;
     	
-    	ActivemqMessageConsumer(String aDestinationName) {
-    		this.destinationName = aDestinationName;
+    	ActivemqMessageConsumer(Destination aDestination) {
+    		this.destination = aDestination;
     	}
     	   	
 		@Override
 		public String retrieve(int aTimeout) {
-	        return executeCallbackAgainstRemoteBroker(destinationName, (aSession, aDestination) -> {
+	        return executeCallbackAgainstRemoteBroker(destination, (aSession, aDestination) -> {
 	        	
 	        	if (consumer ==null) {
 	        	
@@ -168,16 +175,16 @@ public class ActivemqBrokerService implements IBrokerService {
     
     class ActivemqMessageProducer extends ActivemqConnection implements IMessageProducer {
     	
-    	private String destinationName;
+    	private Destination destination;
     	private MessageProducer producer;
     	    	
-    	ActivemqMessageProducer(String aDestinationName) {
-    		this.destinationName = aDestinationName;
+    	ActivemqMessageProducer(Destination aDestination) {
+    		this.destination = aDestination;
     	}
     	
 		@Override
 		public void send(String aMessageToSend) {
-	        executeCallbackAgainstRemoteBroker(destinationName, (aSession, aDestination) -> {
+	        executeCallbackAgainstRemoteBroker(destination, (aSession, aDestination) -> {
 	        	if (producer == null) {
 	        		producer = aSession.createProducer(aDestination);
 	        	}

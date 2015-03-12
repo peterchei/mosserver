@@ -12,10 +12,10 @@ import com.mos.domain.Fill;
 public interface ExecutionWS {
 	
 	@WebMethod
-	public Fill[] getFillsByOrderId(ServiceRequest serviceRequest);
+	public Fill[] getFillsByOrderId(long orderId);
 	
 	@WebMethod
-	public Fill[] getFillById(ServiceRequest serviceRequest);
+	public Fill[] getFillById(long fillId);
 	
 	
 

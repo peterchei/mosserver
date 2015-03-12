@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 import com.mos.domain.DomainEnums.AVGStatus;
+import com.mos.domain.DomainEnums.Capacity;
 import com.mos.domain.DomainEnums.FlowType;
 import com.sun.xml.bind.v2.runtime.RuntimeUtil.ToStringAdapter;
 
@@ -28,7 +29,8 @@ public class AveragePriceGroup implements Serializable {
 
 	private BigDecimal averagePrice;
 
-	private String capacity;
+	@Enumerated(EnumType.STRING)
+	private Capacity capacity;
 
 	private long clientId;
 
@@ -80,13 +82,13 @@ public class AveragePriceGroup implements Serializable {
 
 
 
-	public String getCapacity() {
+	public Capacity getCapacity() {
 		return capacity;
 	}
 
 
 
-	public void setCapacity(String capacity) {
+	public void setCapacity(Capacity capacity) {
 		this.capacity = capacity;
 	}
 

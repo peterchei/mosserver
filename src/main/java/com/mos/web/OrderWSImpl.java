@@ -23,18 +23,18 @@ public class OrderWSImpl implements OrderWS {
 	private OrderService orderService = new OrderServiceImpl();
 	
 	@Override
-	public Order[] getAllOrders(ServiceRequest request) {
-		return orderService.getAllOrders(5).toArray(new Order[0]);
+	public Order[] getAllOrders(int numberOfDays) {
+		return orderService.getAllOrders(numberOfDays).toArray(new Order[0]);
 	}
 
 	@Override
-	public Order[] getOrdersByIds(ServiceRequest request) {
-		return orderService.getOrdersByIds(request.getObjectIds()).toArray(new Order[0]);
+	public Order[] getOrdersByIds(long[] orderIds) {
+		return orderService.getOrdersByIds(orderIds).toArray(new Order[0]);
 	}
 
 	@Override
-	public Order getOrder(ServiceRequest request) {
-		return orderService.getOrder(request.getObjectIds()[0]);
+	public Order getOrder(long orderId) {
+		return orderService.getOrder(orderId);
 	}
 
 }

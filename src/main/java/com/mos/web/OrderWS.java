@@ -19,13 +19,13 @@ import com.mos.domain.Order;
 public interface OrderWS {
 	
 	@WebMethod
-	public Order[] getAllOrders(ServiceRequest request);
+	public Order[] getAllOrders(int numberOfDays);
 	
 	@WebMethod
-	public Order[] getOrdersByIds(ServiceRequest request);
+	public Order[] getOrdersByIds(long orderIds[]);
 	
 	@WebMethod
-	public Order getOrder(ServiceRequest request);
+	public Order getOrder(long orderId);
 
 
 }

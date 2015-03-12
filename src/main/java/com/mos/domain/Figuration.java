@@ -16,17 +16,17 @@ public class Figuration implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	private long figurationid;
+	private long figurationId;
 
 	private BigDecimal commission;
 
-	private BigDecimal commissionamount;
+	private BigDecimal commissionAmount;
 
-	private BigDecimal commissiontype;
+	private BigDecimal commissionType;
 
-	private BigDecimal entityid;
+	private long entityId;
 
-	private String entitytype;
+	private String entityType;
 
 	private BigDecimal fee1;
 
@@ -48,11 +48,11 @@ public class Figuration implements Serializable {
 
 	private BigDecimal levy;
 
-	private BigDecimal netprice;
+	private BigDecimal netPrice;
 
-	private BigDecimal netproceed;
+	private BigDecimal netProceed;
 
-	private BigDecimal netprocessfx;
+	private BigDecimal netProcessFx;
 
 	private BigDecimal price;
 
@@ -62,61 +62,61 @@ public class Figuration implements Serializable {
 
 	private BigDecimal tax;
 
-	private BigDecimal tradedate;
+	private BigDecimal tradeDate;
 
 	public Figuration() {
 	}
 
-	public long getFigurationid() {
-		return this.figurationid;
+	public long getFigurationId() {
+		return figurationId;
 	}
 
-	public void setFigurationid(long figurationid) {
-		this.figurationid = figurationid;
+	public void setFigurationId(long figurationId) {
+		this.figurationId = figurationId;
 	}
 
 	public BigDecimal getCommission() {
-		return this.commission;
+		return commission;
 	}
 
 	public void setCommission(BigDecimal commission) {
 		this.commission = commission;
 	}
 
-	public BigDecimal getCommissionamount() {
-		return this.commissionamount;
+	public BigDecimal getCommissionAmount() {
+		return commissionAmount;
 	}
 
-	public void setCommissionamount(BigDecimal commissionamount) {
-		this.commissionamount = commissionamount;
+	public void setCommissionAmount(BigDecimal commissionAmount) {
+		this.commissionAmount = commissionAmount;
 	}
 
-	public BigDecimal getCommissiontype() {
-		return this.commissiontype;
+	public BigDecimal getCommissionType() {
+		return commissionType;
 	}
 
-	public void setCommissiontype(BigDecimal commissiontype) {
-		this.commissiontype = commissiontype;
+	public void setCommissionType(BigDecimal commissionType) {
+		this.commissionType = commissionType;
 	}
 
-	public BigDecimal getEntityid() {
-		return this.entityid;
+	public long getEntityId() {
+		return entityId;
 	}
 
-	public void setEntityid(BigDecimal entityid) {
-		this.entityid = entityid;
+	public void setEntityId(long entityId) {
+		this.entityId = entityId;
 	}
 
-	public String getEntitytype() {
-		return this.entitytype;
+	public String getEntityType() {
+		return entityType;
 	}
 
-	public void setEntitytype(String entitytype) {
-		this.entitytype = entitytype;
+	public void setEntityType(String entityType) {
+		this.entityType = entityType;
 	}
 
 	public BigDecimal getFee1() {
-		return this.fee1;
+		return fee1;
 	}
 
 	public void setFee1(BigDecimal fee1) {
@@ -124,7 +124,7 @@ public class Figuration implements Serializable {
 	}
 
 	public BigDecimal getFee2() {
-		return this.fee2;
+		return fee2;
 	}
 
 	public void setFee2(BigDecimal fee2) {
@@ -132,7 +132,7 @@ public class Figuration implements Serializable {
 	}
 
 	public BigDecimal getFee3() {
-		return this.fee3;
+		return fee3;
 	}
 
 	public void setFee3(BigDecimal fee3) {
@@ -140,7 +140,7 @@ public class Figuration implements Serializable {
 	}
 
 	public BigDecimal getFee4() {
-		return this.fee4;
+		return fee4;
 	}
 
 	public void setFee4(BigDecimal fee4) {
@@ -148,7 +148,7 @@ public class Figuration implements Serializable {
 	}
 
 	public BigDecimal getFee5() {
-		return this.fee5;
+		return fee5;
 	}
 
 	public void setFee5(BigDecimal fee5) {
@@ -156,7 +156,7 @@ public class Figuration implements Serializable {
 	}
 
 	public BigDecimal getFee6() {
-		return this.fee6;
+		return fee6;
 	}
 
 	public void setFee6(BigDecimal fee6) {
@@ -164,7 +164,7 @@ public class Figuration implements Serializable {
 	}
 
 	public BigDecimal getFee7() {
-		return this.fee7;
+		return fee7;
 	}
 
 	public void setFee7(BigDecimal fee7) {
@@ -172,7 +172,7 @@ public class Figuration implements Serializable {
 	}
 
 	public BigDecimal getFee8() {
-		return this.fee8;
+		return fee8;
 	}
 
 	public void setFee8(BigDecimal fee8) {
@@ -180,7 +180,7 @@ public class Figuration implements Serializable {
 	}
 
 	public BigDecimal getFee9() {
-		return this.fee9;
+		return fee9;
 	}
 
 	public void setFee9(BigDecimal fee9) {
@@ -188,39 +188,39 @@ public class Figuration implements Serializable {
 	}
 
 	public BigDecimal getLevy() {
-		return this.levy;
+		return levy;
 	}
 
 	public void setLevy(BigDecimal levy) {
 		this.levy = levy;
 	}
 
-	public BigDecimal getNetprice() {
-		return this.netprice;
+	public BigDecimal getNetPrice() {
+		return netPrice;
 	}
 
-	public void setNetprice(BigDecimal netprice) {
-		this.netprice = netprice;
+	public void setNetPrice(BigDecimal netPrice) {
+		this.netPrice = netPrice;
 	}
 
-	public BigDecimal getNetproceed() {
-		return this.netproceed;
+	public BigDecimal getNetProceed() {
+		return netProceed;
 	}
 
-	public void setNetproceed(BigDecimal netproceed) {
-		this.netproceed = netproceed;
+	public void setNetProceed(BigDecimal netProceed) {
+		this.netProceed = netProceed;
 	}
 
-	public BigDecimal getNetprocessfx() {
-		return this.netprocessfx;
+	public BigDecimal getNetProcessFx() {
+		return netProcessFx;
 	}
 
-	public void setNetprocessfx(BigDecimal netprocessfx) {
-		this.netprocessfx = netprocessfx;
+	public void setNetProcessFx(BigDecimal netProcessFx) {
+		this.netProcessFx = netProcessFx;
 	}
 
 	public BigDecimal getPrice() {
-		return this.price;
+		return price;
 	}
 
 	public void setPrice(BigDecimal price) {
@@ -228,7 +228,7 @@ public class Figuration implements Serializable {
 	}
 
 	public BigDecimal getPrincipal() {
-		return this.principal;
+		return principal;
 	}
 
 	public void setPrincipal(BigDecimal principal) {
@@ -236,7 +236,7 @@ public class Figuration implements Serializable {
 	}
 
 	public BigDecimal getQuantity() {
-		return this.quantity;
+		return quantity;
 	}
 
 	public void setQuantity(BigDecimal quantity) {
@@ -244,19 +244,20 @@ public class Figuration implements Serializable {
 	}
 
 	public BigDecimal getTax() {
-		return this.tax;
+		return tax;
 	}
 
 	public void setTax(BigDecimal tax) {
 		this.tax = tax;
 	}
 
-	public BigDecimal getTradedate() {
-		return this.tradedate;
+	public BigDecimal getTradeDate() {
+		return tradeDate;
 	}
 
-	public void setTradedate(BigDecimal tradedate) {
-		this.tradedate = tradedate;
+	public void setTradeDate(BigDecimal tradeDate) {
+		this.tradeDate = tradeDate;
 	}
 
+	
 }

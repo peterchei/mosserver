@@ -3,6 +3,7 @@ package com.mos.web;
 import javax.jws.WebService;
 
 import com.google.inject.Inject;
+import com.mos.domain.Allocation;
 import com.mos.domain.Fill;
 import com.mos.domain.Order;
 import com.sun.org.apache.bcel.internal.generic.NEW;
@@ -21,28 +22,46 @@ public class MosServices implements WSFacadeInterface {
 	private ExecutionWS executionWs = new ExecutionWSImpl();
 		
 	@Override
-	public Fill[] getFillsByOrderId(ServiceRequest serviceRequest) {
-		return executionWs.getFillsByOrderId(serviceRequest);	
+	public Fill[] getFillsByOrderId(long orderId) {
+		return executionWs.getFillsByOrderId(orderId);	
 	}
 
 	@Override
-	public Fill[] getFillById(ServiceRequest serviceRequest) {
-		return executionWs.getFillById(serviceRequest);
+	public Fill[] getFillById(long fillId) {
+		return executionWs.getFillById(fillId);
 	}
 
 	@Override
-	public Order[] getAllOrders(ServiceRequest request) {
-		return orderWs.getAllOrders(request);
+	public Order[] getAllOrders(int numberOfDays) {
+		return orderWs.getAllOrders(numberOfDays);
 	}
 
 	@Override
-	public Order[] getOrdersByIds(ServiceRequest request) {
-		return orderWs.getOrdersByIds(request);
+	public Order[] getOrdersByIds(long[] orderIds) {
+		return orderWs.getOrdersByIds(orderIds);
 	}
 
 	@Override
-	public Order getOrder(ServiceRequest request) {
-		return orderWs.getOrder(request);
+	public Order getOrder(long orderId) {
+		return orderWs.getOrder(orderId);
+	}
+
+	@Override
+	public Allocation getAllocation(long allocationId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Allocation[] getAllocationsByAveragePriceGroupId(long averagePrcGrpId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Allocation[] getAllAllocations(long numberOfDays) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

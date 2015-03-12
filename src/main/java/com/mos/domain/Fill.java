@@ -37,12 +37,13 @@ public class Fill implements Serializable {
 
 	private long instrumentId;
 
-	private String isOffMarket;
+	private boolean isOffMarket;
 
 	private long orderId;
 
 	private BigDecimal price;
 
+	@Enumerated(EnumType.STRING)
 	private Side side;
 
 	private int tradeDate;
@@ -109,11 +110,11 @@ public class Fill implements Serializable {
 		this.instrumentId = instrumentId;
 	}
 
-	public String getIsOffMarket() {
+	public boolean getIsOffMarket() {
 		return isOffMarket;
 	}
 
-	public void setIsOffMarket(String isOffMarket) {
+	public void setIsOffMarket(boolean isOffMarket) {
 		this.isOffMarket = isOffMarket;
 	}
 
