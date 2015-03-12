@@ -15,7 +15,10 @@ public interface ExecutionWS {
 	public Fill[] getFillsByOrderId(long orderId);
 	
 	@WebMethod
-	public Fill[] getFillById(long fillId);
+	public Fill getFillById(long fillId);
+	
+	@WebMethod
+	public Fill[] getAllFills(int numberOfDays);
 	
 	
 

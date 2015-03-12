@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -139,6 +140,9 @@ public class TestStore {
 
 		new AllocationStore().save(alloc);
 
+		List<Allocation> allocs = new AllocationStore().getAllAllocationByOrderId(od.getOrderId());
+		
+		System.out.println(allocs);
 
 		ClientTrade ct = new ClientTrade();
 		ct.setAllocationId(alloc.getAllocationId());

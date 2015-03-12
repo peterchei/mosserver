@@ -7,14 +7,22 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import com.google.inject.Inject;
+
 
 public class AbstractStore<T> {
 	
 		
+	@Inject
 	protected EntityManager entityManager =null;
-	protected Class<T> genericClassT = null;
+	
+	@Inject
 	EntityManagerFactory emfactory = null;
 	
+	
+	protected Class<T> genericClassT = null;
+	
+
 	
 	@SuppressWarnings("unchecked")
 	public AbstractStore() {		

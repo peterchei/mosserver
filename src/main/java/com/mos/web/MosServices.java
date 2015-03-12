@@ -27,8 +27,13 @@ public class MosServices implements WSFacadeInterface {
 	}
 
 	@Override
-	public Fill[] getFillById(long fillId) {
+	public Fill getFillById(long fillId) {
 		return executionWs.getFillById(fillId);
+	}
+	
+	@Override
+	public Fill[] getAllFills(int numberOfDays) {		
+		return executionWs.getAllFills(numberOfDays);
 	}
 
 	@Override
@@ -63,5 +68,7 @@ public class MosServices implements WSFacadeInterface {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 
 }
