@@ -22,7 +22,6 @@ public class AbstractStore<T> {
 	
 	protected Class<T> genericClassT = null;
 	
-
 	
 	@SuppressWarnings("unchecked")
 	public AbstractStore() {		

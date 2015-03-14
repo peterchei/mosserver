@@ -16,4 +16,12 @@ public class OrderStore extends AbstractStore<Order> {
 		return orders;
 	}
 	
+	@SuppressWarnings("unchecked")
+	public List<Order> getOrdersByAveragePrcGrpId(long averagePrcGrpId) {
+		return entityManager
+				.createQuery("SELECT f FROM Order od WHERE od.averagePrcGrpId = :avpId")
+				.setParameter("avpId", averagePrcGrpId).getResultList();
+	
+	}
+	
 }

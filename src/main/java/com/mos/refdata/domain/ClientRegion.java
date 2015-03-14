@@ -1,6 +1,5 @@
 package com.mos.refdata.domain;
 
-import org.omg.CORBA.PRIVATE_MEMBER;
 
 public enum ClientRegion {
 
