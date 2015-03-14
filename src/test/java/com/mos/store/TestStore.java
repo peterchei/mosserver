@@ -159,6 +159,9 @@ public class TestStore {
 		ct.setVersion(1);
 		
 		new ClientTradeStore().save(ct);  
+		
+		
+		
 
 	}
 

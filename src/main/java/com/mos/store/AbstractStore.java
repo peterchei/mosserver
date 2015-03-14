@@ -18,8 +18,7 @@ public class AbstractStore<T> {
 	
 	@Inject
 	EntityManagerFactory emfactory = null;
-	
-	
+		
 	protected Class<T> genericClassT = null;
 	
 	

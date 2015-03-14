@@ -24,7 +24,7 @@ public class AllocationStore extends AbstractStore<Allocation> {
 		return entityManager
 				.createQuery("SELECT alloc FROM Allocation alloc WHERE alloc.tradeDate >= :asOfDate")
 				.setParameter("asOfDate", asOfDate)
-				.setMaxResults(1000).getResultList();
+				.setMaxResults(5000).getResultList();
 	}
 	
 	
