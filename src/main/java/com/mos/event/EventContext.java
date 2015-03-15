@@ -2,8 +2,6 @@ package com.mos.event;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-import javax.jms.Destination;
-
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.command.ActiveMQTopic;
 

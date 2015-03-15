@@ -1,11 +1,11 @@
 package com.mos.app;
 
 
+import static org.slf4j.LoggerFactory.getLogger;
+
 import org.slf4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import static org.slf4j.LoggerFactory.getLogger;
 
 import com.mos.event.EventContext;
 import com.mos.heartbeat.HeartBeatDaemon;

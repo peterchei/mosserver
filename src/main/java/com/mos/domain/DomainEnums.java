@@ -67,6 +67,9 @@ public interface DomainEnums {
 	}
 
 
+	public enum ClientRegion {
+		AS,EM,JP,US,AU
+	}
 	public enum Side {
 		B("Buy"), S("Sell"), SS("ShortSell"), SE("ShortSellExcempt");
 

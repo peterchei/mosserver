@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:aop="http://www.springframework.org/schema/aop"
+  xmlns:context="http://www.springframework.org/schema/context"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+
+<!--  an ActiveMQ embedded server, suppose one application only have one embedded server -->
+<bean id="embededBrokerServer" class="com.mos.messaging.impl.ActiveMqBrokerServerImpl" factory-method="getInstance" scope="singleton" />
+
+<!--  a broker service connects to remote / local broker server -->
+<!--  
+<bean id="brokerService" class="org.suggs.katas.jmsbroker.service.impl.ActivemqBrokerService" scope="prototype" />
+-->
+<!-- JmsMessageBrokerSupport instance -->
+<!--  
+<bean id="jmsMessageBrokerSupport" class="org.suggs.katas.jmsbroker.JmsMessageBrokerSupport"  scope="prototype">
+	<property name="brokerService" ref="brokerService" />
+
+</bean>
+-->
+</beans> 

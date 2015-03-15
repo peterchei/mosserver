@@ -1,7 +1,5 @@
 package com.mos.web;
 
-import java.util.List;
-
 import com.mos.domain.Allocation;
 
 public interface AllocationWS {

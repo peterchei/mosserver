@@ -1,10 +1,10 @@
 package com.mos.web;
 
+import static org.slf4j.LoggerFactory.getLogger;
+
 import javax.xml.ws.Endpoint;
 
 import org.slf4j.Logger;
-
-import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  * 

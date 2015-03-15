@@ -1,15 +1,11 @@
 package com.mos.web;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.jws.WebService;
 
 import com.google.inject.Inject;
 import com.mos.domain.Order;
 import com.mos.service.ordermanagement.OrderService;
 import com.mos.service.ordermanagement.OrderServiceImpl;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 /**
  * 

@@ -2,7 +2,6 @@ package com.mos.store;
 
 import java.util.List;
 
-import com.mos.domain.Allocation;
 import com.mos.domain.Fill;
 
 public class FillStore extends AbstractStore<Fill> {

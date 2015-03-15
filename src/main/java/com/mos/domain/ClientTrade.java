@@ -1,14 +1,20 @@
 package com.mos.domain;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 import com.mos.domain.DomainEnums.BookingStatus;
 import com.mos.domain.DomainEnums.ConfStatus;
 import com.mos.domain.DomainEnums.CtmStatus;
-
-import java.math.BigDecimal;
 
 
 /**

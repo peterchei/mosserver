@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.google.inject.Inject;
 import com.mos.domain.Allocation;
-
 import com.mos.store.AllocationStore;
 
 public class AllocationServiceImpl implements AllocationService {

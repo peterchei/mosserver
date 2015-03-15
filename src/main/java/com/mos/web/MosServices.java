@@ -6,7 +6,6 @@ import com.google.inject.Inject;
 import com.mos.domain.Allocation;
 import com.mos.domain.Fill;
 import com.mos.domain.Order;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 
 @WebService(endpointInterface = "com.mos.web.MosServices") //this binds the SEI to the SIB

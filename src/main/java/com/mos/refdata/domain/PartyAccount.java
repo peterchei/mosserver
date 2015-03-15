@@ -1,5 +1,7 @@
 package com.mos.refdata.domain;
 
+import com.mos.domain.DomainEnums.ClientRegion;
+
 public class PartyAccount {
 
 	private long partyId;

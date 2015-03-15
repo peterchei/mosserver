@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+		<persistence-unit name="TestJPA" transaction-type="RESOURCE_LOCAL">
+			<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>com.mos.domain.Allocation</class>
+		<class>com.mos.domain.AuditRecord</class>
+		<class>com.mos.domain.AveragePriceGroup</class>
+		<class>com.mos.domain.BackOfficeNotification</class>
+		<class>com.mos.domain.BlockConfirmation</class>
+		<class>com.mos.domain.BulkConf</class>
+		<class>com.mos.domain.ClientTrade</class>
+		<class>com.mos.domain.Confirmation</class>
+		<class>com.mos.domain.ContractNote</class>
+		<class>com.mos.domain.Figuration</class>
+		<class>com.mos.domain.Fill</class>
+		<class>com.mos.domain.Order</class>
+		<class>com.mos.domain.Portfolio</class>
+		<class>com.mos.domain.Task</class>
+		<class>com.mos.domain.Tradeleg</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:calDb"/>
+			<property name="javax.persistence.jdbc.user" value="mos"/>
+			<property name="javax.persistence.jdbc.password" value="CALYPSO"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+			<property name="javax.persistence.schema-generation.create-database-schemas" value="false"/>
+			<property name="javax.persistence.schema-generation.scripts.action" value="create"/>
+			<property name="javax.persistence.schema-generation.scripts.create-target" value="creationScript.sql"/>
+		</properties>
+</persistence-unit>
+
+</persistence>

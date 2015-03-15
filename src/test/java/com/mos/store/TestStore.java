@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 
@@ -29,15 +30,27 @@ import com.mos.domain.DomainEnums.AllocStatus;
 import com.mos.domain.DomainEnums.AllocType;
 import com.mos.domain.DomainEnums.Capacity;
 import com.mos.domain.DomainEnums.ConfStatus;
+import com.mos.domain.DomainEnums.EntityType;
 import com.mos.domain.DomainEnums.OrderStatus;
 import com.mos.domain.DomainEnums.Side;
+import com.mos.domain.DomainEnums.TaskStatus;
+import com.mos.domain.DomainEnums.TaskType;
+import com.mos.domain.Task;
 
 public class TestStore {
 
 	private static Logger log = getLogger(TestStore.class);
 
-	@Test
-	public void testSaveOrderFillAllocation() {
+	private Order od;
+	private Allocation alloc;
+	private ClientTrade ct;
+
+	/**
+	 * Store one record for each entity first.
+	 * 
+	 */
+	@Before 
+	public void setup() {
 
 		int tradeDate = Integer.parseInt(new SimpleDateFormat("yyyyMMdd")
 				.format(new Date()));
@@ -70,7 +83,7 @@ public class TestStore {
 		new AveragePriceGroupStore().save(apg);
 
 		// Create Order
-		Order od = new Order();
+		od = new Order();
 
 		od.setAveragePrcGrpId((apg.getAveragePrcGrpId()));
 		od.setPortfolioId((pf.getPortfolioid()));
@@ -101,8 +114,7 @@ public class TestStore {
 		od.setTraderId("Peter");
 		od.setSalesId("Peter");
 		new OrderStore().save(od);
-		assertTrue(od.getOrderId() > 0);
-
+	
 		Fill fill = new Fill();
 		fill.setCapacity(od.getCapacity());
 		fill.setExchangeId(od.getExchangeId());
@@ -118,7 +130,7 @@ public class TestStore {
 
 		new FillStore().save(fill);
 
-		Allocation alloc = new Allocation();
+		alloc = new Allocation();
 		alloc.setAllocationPrice(BigDecimal.ONE);
 		alloc.setAllocStatus(AllocStatus.NEW);
 		alloc.setAveragePrcGrpId(apg.getAveragePrcGrpId());
@@ -140,11 +152,12 @@ public class TestStore {
 
 		new AllocationStore().save(alloc);
 
-		List<Allocation> allocs = new AllocationStore().getAllAllocationByOrderId(od.getOrderId());
-		
+		List<Allocation> allocs = new AllocationStore()
+				.getAllAllocationByOrderId(od.getOrderId());
+
 		System.out.println(allocs);
 
-		ClientTrade ct = new ClientTrade();
+		ct = new ClientTrade();
 		ct.setAllocationId(alloc.getAllocationId());
 		ct.setBookingStatus(BookingStatus.BOOKED);
 		ct.setConfirmSuppress(true);
@@ -157,12 +170,91 @@ public class TestStore {
 		ct.setTradeDate(alloc.getTradeDate());
 		ct.setConfStatus(ConfStatus.NONE);
 		ct.setVersion(1);
-		
-		new ClientTradeStore().save(ct);  
-		
-		
-		
+
+		new ClientTradeStore().save(ct);
+
+		Task task = new Task();
+		task.setAssignedGroup("MyGroup");
+		task.setAssignedUser("MyUser");
+		task.setComments("Testing");
+		task.setCreationTime(new Date());
+		task.setDescription("New Order");
+		task.setObjectId(od.getOrderId());
+		task.setObjectType(EntityType.ORDER);
+		task.setTaskStatus(TaskStatus.NEW);
+		task.setTradeDate(tradeDate);
+		task.setTaskType(TaskType.TRADEMANAGEMENT);
+
+		new TaskStore().save(task);
+
+
+
 
 	}
+
+	@Test
+	public void testFigurationStore() {
+
+	}
+
+	@Test
+	public void testAllocationStore() {
+		
+		AllocationStore store = new AllocationStore();
+		
+		assertNotNull(store.get(alloc.getAllocationId()));
+		
+		assertNotNull(store.getAllAllocationByOrderId(od.getOrderId()));
+		
+		assertNotNull(store.getAllAllocations(5));
+		
+		assertNotNull(store.getAllocationByAveragePriceGroupId(od.getAveragePrcGrpId()));
+
+	}
+
+	@Test
+	public void testOrderStore() {		
+		OrderStore os = new OrderStore();
+		
+		assertTrue(os.getAllOrders(5).size() >0);	
+		
+		assertNotNull(os.getOrdersByAveragePrcGrpId(od.getAveragePrcGrpId()));		
+		
+		assertNotNull(os.get(od.getOrderId()));
+	}
+
+	@Test
+	public void testAveragePriceGroupStore() {
+		
+		AveragePriceGroupStore store = new AveragePriceGroupStore();
+		
+		assertNotNull(store.get(od.getAveragePrcGrpId()));
+	}
+
+	@Test
+	public void testClieneTradeStore() {
+		
+		ClientTradeStore store = new ClientTradeStore();
+		
+		assertNotNull(store.get(ct.getClientTradeId()));
+		
+		assertNotNull(store.getClientTradesByAllocId(alloc.getAllocationId()));
+
+	}
+
+	@Test
+	public void testFillStore() {
+
+	}
+
+	@Test
+	public void testTaskStore() {
+		TaskStore store = new TaskStore();
+		
+		List<Task> tasks = store.getTasksByEntityId(EntityType.ORDER,od.getOrderId());
+		
+		assertTrue(tasks != null && tasks.size() > 0);
+	}
+
 
 }

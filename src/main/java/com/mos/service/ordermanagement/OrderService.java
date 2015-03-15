@@ -3,7 +3,6 @@ package com.mos.service.ordermanagement;
 import java.util.List;
 
 import com.mos.domain.Order;
-import com.mos.web.ServiceRequest;
 
 
 public interface OrderService {

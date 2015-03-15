@@ -1,8 +1,17 @@
 package com.mos.domain;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.math.BigDecimal;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+
+import com.mos.domain.DomainEnums.EntityType;
 
 
 /**
@@ -26,7 +35,8 @@ public class Figuration implements Serializable {
 
 	private long entityId;
 
-	private String entityType;
+	@Enumerated(EnumType.STRING)
+	private EntityType entityType;
 
 	private BigDecimal fee1;
 
@@ -62,7 +72,7 @@ public class Figuration implements Serializable {
 
 	private BigDecimal tax;
 
-	private BigDecimal tradeDate;
+	private int tradeDate;
 
 	public Figuration() {
 	}
@@ -107,11 +117,11 @@ public class Figuration implements Serializable {
 		this.entityId = entityId;
 	}
 
-	public String getEntityType() {
+	public EntityType getEntityType() {
 		return entityType;
 	}
 
-	public void setEntityType(String entityType) {
+	public void setEntityType(EntityType entityType) {
 		this.entityType = entityType;
 	}
 
@@ -251,11 +261,11 @@ public class Figuration implements Serializable {
 		this.tax = tax;
 	}
 
-	public BigDecimal getTradeDate() {
+	public int getTradeDate() {
 		return tradeDate;
 	}
 
-	public void setTradeDate(BigDecimal tradeDate) {
+	public void setTradeDate(int tradeDate) {
 		this.tradeDate = tradeDate;
 	}
 

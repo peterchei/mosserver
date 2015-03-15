@@ -4,9 +4,8 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 import org.slf4j.Logger;
 
-import com.mos.app.MosApp;
-import com.mos.event.Notification;
 import com.mos.event.EventContext;
+import com.mos.event.Notification;
 
 public class HeartBeatDaemon implements Runnable {
 

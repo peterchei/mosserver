@@ -1,6 +1,5 @@
 package com.mos.refdata.domain;
 
-import java.util.Currency;
 
 public class Exchange {
 	

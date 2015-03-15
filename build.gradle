@@ -14,15 +14,30 @@ repositories {
 }
 
 
+
+  
+
+
+
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.5',
 			'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final',
             'org.apache.activemq:activemq-core:5.7.0',
             'com.google.inject:guice:3.0'
 
-    runtime 'ch.qos.logback:logback-classic:1.0.13'
+    runtime 'ch.qos.logback:logback-classic:1.0.13',
+    'org.slf4j:slf4j-api:1.7.5',
+			'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final',
+            'org.apache.activemq:activemq-core:5.7.0',
+            'com.google.inject:guice:3.0',
+            'org.eclipse.persistence:eclipselink:2.5.2-M1'
 
     testCompile 'junit:junit:4.11',
             'org.mockito:mockito-core:1.9.5',
-            'org.assertj:assertj-core:1.6.1'
+            'org.assertj:assertj-core:1.6.1',
+            'org.slf4j:slf4j-api:1.7.5',
+			'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final',
+            'org.apache.activemq:activemq-core:5.7.0',
+            'com.google.inject:guice:3.0',
+            'org.eclipse.persistence:eclipselink:2.5.2-M1'
 }
