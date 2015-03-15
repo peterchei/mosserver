@@ -7,9 +7,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
+import com.mos.event.EventContext;
 import com.mos.heartbeat.HeartBeatDaemon;
 import com.mos.messaging.IBrokerServer;
 import com.mos.web.WebModule;
+
 
 public class MosApp {
 	
@@ -17,7 +19,7 @@ public class MosApp {
 	
 	private IBrokerServer brokerServer;	
 	private WebModule webModule;
-	private HeartBeatDaemon heartBeat;
+	private Thread heartBeat;
 	
 	public MosApp() {
 		init();
@@ -31,8 +33,8 @@ public class MosApp {
 		} catch (Exception e) {
 
 		} 
-		Thread heartBeat = new Thread(new HeartBeatDaemon());
-		heartBeat.start();;
+		heartBeat = new Thread(new HeartBeatDaemon());
+		
 		
 		webModule = new WebModule();
 		
@@ -43,7 +45,8 @@ public class MosApp {
 
 		brokerServer.start("tcp://localhost:8081");
 		webModule.start();
-		
+		heartBeat.start();
+		EventContext.getInstance();
 		logger.info("*****************************************");
 		logger.info("******   All services started.  *********");
 		logger.info("*****************************************");

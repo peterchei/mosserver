@@ -189,6 +189,7 @@ public class ActivemqBrokerService implements IBrokerService {
 	        		producer = aSession.createProducer(aDestination);
 	        	}
 	            producer.send(aSession.createTextMessage(aMessageToSend));
+	 
 	            return "";
 	        });		
 		}

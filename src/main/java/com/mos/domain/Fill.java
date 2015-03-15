@@ -9,6 +9,7 @@ import com.mos.domain.DomainEnums.Side;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Date;
 
 
 /**
@@ -31,7 +32,8 @@ public class Fill implements Serializable {
 
 	private BigDecimal executedShares;
 
-	private Timestamp executionTime;
+	@Temporal( TemporalType.TIME)
+	private Date executionTime;
 
 	private String externalRef;
 
@@ -86,11 +88,11 @@ public class Fill implements Serializable {
 		this.executedShares = executedShares;
 	}
 
-	public Timestamp getExecutionTime() {
+	public Date getExecutionTime() {
 		return executionTime;
 	}
 
-	public void setExecutionTime(Timestamp executionTime) {
+	public void setExecutionTime(Date executionTime) {
 		this.executionTime = executionTime;
 	}
 

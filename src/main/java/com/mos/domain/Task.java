@@ -1,163 +1,174 @@
 package com.mos.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import com.mos.domain.DomainEnums.Priority;
+import com.mos.domain.DomainEnums.TaskStatus;
+import com.mos.domain.DomainEnums.TaskType;
+
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-
+import java.util.Date;
 
 /**
  * The persistent class for the TASK database table.
  * 
  */
 @Entity
-@NamedQuery(name="Task.findAll", query="SELECT t FROM Task t")
+@NamedQuery(name = "Task.findAll", query = "SELECT t FROM Task t")
 public class Task implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
-	private long taskid;
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	private long taskId;
 
-	private BigDecimal assignedgroup;
+	private String assignedGroup;
 
-	private BigDecimal assigneduser;
+	private String assignedUser;
 
 	private String comments;
 
-	private Timestamp creationtime;
+	@Temporal( TemporalType.TIME)
+	private Date creationTime;
 
 	private String description;
 
-	private Timestamp modifiedtime;
+	@Temporal( TemporalType.TIME)
+	private Date modifiedTime;
 
-	private BigDecimal objectid;
+	private long objectId;
 
-	private String objecttype;
+	private String objectType;
 
-	private String priority;
+	@Enumerated(EnumType.STRING)
+	private Priority priority;
 
-	private String taskstatus;
+	@Enumerated(EnumType.STRING)
+	private TaskStatus taskStatus;
 
-	private String tasktype;
+	@Enumerated(EnumType.STRING)
+	private TaskType taskType;
 
-	private BigDecimal tradedate;
+	private int tradeDate;
 
-	@Column(name="\"VERSION\"")
-	private BigDecimal version;
+	@Column(name = "\"VERSION\"")
+	private int version;
 
 	public Task() {
 	}
 
-	public long getTaskid() {
-		return this.taskid;
+	public long getTaskId() {
+		return taskId;
 	}
 
-	public void setTaskid(long taskid) {
-		this.taskid = taskid;
+	public void setTaskId(long taskId) {
+		this.taskId = taskId;
 	}
 
-	public BigDecimal getAssignedgroup() {
-		return this.assignedgroup;
+	public String getAssignedGroup() {
+		return assignedGroup;
 	}
 
-	public void setAssignedgroup(BigDecimal assignedgroup) {
-		this.assignedgroup = assignedgroup;
+	public void setAssignedGroup(String assignedGroup) {
+		this.assignedGroup = assignedGroup;
 	}
 
-	public BigDecimal getAssigneduser() {
-		return this.assigneduser;
+	public String getAssignedUser() {
+		return assignedUser;
 	}
 
-	public void setAssigneduser(BigDecimal assigneduser) {
-		this.assigneduser = assigneduser;
+	public void setAssignedUser(String assignedUser) {
+		this.assignedUser = assignedUser;
 	}
 
 	public String getComments() {
-		return this.comments;
+		return comments;
 	}
 
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
 
-	public Timestamp getCreationtime() {
-		return this.creationtime;
+	public Date getCreationTime() {
+		return creationTime;
 	}
 
-	public void setCreationtime(Timestamp creationtime) {
-		this.creationtime = creationtime;
+	public void setCreationTime(Date creationTime) {
+		this.creationTime = creationTime;
 	}
 
 	public String getDescription() {
-		return this.description;
+		return description;
 	}
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	public Timestamp getModifiedtime() {
-		return this.modifiedtime;
+	public Date getModifiedTime() {
+		return modifiedTime;
 	}
 
-	public void setModifiedtime(Timestamp modifiedtime) {
-		this.modifiedtime = modifiedtime;
+	public void setModifiedTime(Date modifiedTime) {
+		this.modifiedTime = modifiedTime;
 	}
 
-	public BigDecimal getObjectid() {
-		return this.objectid;
+	public long getObjectId() {
+		return objectId;
 	}
 
-	public void setObjectid(BigDecimal objectid) {
-		this.objectid = objectid;
+	public void setObjectId(long objectId) {
+		this.objectId = objectId;
 	}
 
-	public String getObjecttype() {
-		return this.objecttype;
+	public String getObjectType() {
+		return objectType;
 	}
 
-	public void setObjecttype(String objecttype) {
-		this.objecttype = objecttype;
+	public void setObjectType(String objectType) {
+		this.objectType = objectType;
 	}
 
-	public String getPriority() {
-		return this.priority;
+	public Priority getPriority() {
+		return priority;
 	}
 
-	public void setPriority(String priority) {
+	public void setPriority(Priority priority) {
 		this.priority = priority;
 	}
 
-	public String getTaskstatus() {
-		return this.taskstatus;
+	public TaskStatus getTaskStatus() {
+		return taskStatus;
 	}
 
-	public void setTaskstatus(String taskstatus) {
-		this.taskstatus = taskstatus;
+	public void setTaskStatus(TaskStatus taskStatus) {
+		this.taskStatus = taskStatus;
 	}
 
-	public String getTasktype() {
-		return this.tasktype;
+	public TaskType getTaskType() {
+		return taskType;
 	}
 
-	public void setTasktype(String tasktype) {
-		this.tasktype = tasktype;
+	public void setTaskType(TaskType taskType) {
+		this.taskType = taskType;
 	}
 
-	public BigDecimal getTradedate() {
-		return this.tradedate;
+	public int getTradeDate() {
+		return tradeDate;
 	}
 
-	public void setTradedate(BigDecimal tradedate) {
-		this.tradedate = tradedate;
+	public void setTradeDate(int tradeDate) {
+		this.tradeDate = tradeDate;
 	}
 
-	public BigDecimal getVersion() {
-		return this.version;
+	public int getVersion() {
+		return version;
 	}
 
-	public void setVersion(BigDecimal version) {
+	public void setVersion(int version) {
 		this.version = version;
 	}
 

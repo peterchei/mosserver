@@ -30,6 +30,13 @@ public interface DomainEnums {
 		NONE, SENT, ACKED, BOOKED, REJECTED
 	}
 	
+	public enum TaskStatus {
+		NONE, NEW, IN_PROGRESS, CLOSED, CANCELLED
+	}
+	
+	public enum Priority {
+		LOW, NORMAL, HIGH, URGENT
+	}
 
 	public enum FlowType {
 		SS, PT, DMA, ATS, EDG, HFT, CVB, SYC
@@ -46,7 +53,11 @@ public interface DomainEnums {
 	public enum CommissionType {
 		BPS, CPS, FLAT, PERCENT
 	}
-
+	
+	public enum TaskType {
+		FIGURATION, CLIENTSERVICING, BOOKING, TRADEMANAGEMENT, CONFIRMATION, SETTLEMENT
+	}
+	
 	public enum PaymentMethod {
 		DVP, FOP, TBA
 	}

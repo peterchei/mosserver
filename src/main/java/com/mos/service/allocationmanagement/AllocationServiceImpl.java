@@ -4,13 +4,11 @@ import java.util.List;
 
 import com.google.inject.Inject;
 import com.mos.domain.Allocation;
-import com.mos.event.EventPublisher;
+
 import com.mos.store.AllocationStore;
 
 public class AllocationServiceImpl implements AllocationService {
 
-	@Inject
-	private EventPublisher publisher;
 	
 	@Inject
 	private AllocationStore store = new AllocationStore();

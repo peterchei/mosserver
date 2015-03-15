@@ -5,15 +5,13 @@ import static org.slf4j.LoggerFactory.getLogger;
 import org.slf4j.Logger;
 
 import com.mos.app.MosApp;
-import com.mos.event.EventPublisher;
 import com.mos.event.Notification;
+import com.mos.event.EventContext;
 
 public class HeartBeatDaemon implements Runnable {
 
 	private static Logger logger = getLogger(HeartBeatDaemon.class);
 
-	// @inject
-	protected EventPublisher publisher;
 	protected int waitTime = 1000;
 
 	@Override
@@ -44,8 +42,7 @@ public class HeartBeatDaemon implements Runnable {
 			logger.info("Max Memory: " + runtime.maxMemory() / mb   + "MB");
 			logger.info("############################################");
 
-			if (publisher != null)
-				publisher.publish(notification);
+			EventContext.publish(EventContext.TOPIC_HEARTBEAT_OUT, notification);
 
 			try {
 				Thread.sleep(waitTime);
