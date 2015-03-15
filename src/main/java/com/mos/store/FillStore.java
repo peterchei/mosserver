@@ -10,7 +10,7 @@ public class FillStore extends AbstractStore<Fill> {
 	@SuppressWarnings("unchecked")
 	public List<Fill> getFillByExternalId(String externalRef) {
 
-		return entityManager
+		return getEntityManager()
 				.createQuery("SELECT f FROM Fill f WHERE f.externalRef = :externalRef")
 				.setParameter("externalId", externalRef)
 				.setMaxResults(1000).getResultList();
@@ -20,7 +20,7 @@ public class FillStore extends AbstractStore<Fill> {
 	@SuppressWarnings("unchecked")
 	public List<Fill> getFillByOrderId(long orderId) {
 
-		return entityManager
+		return getEntityManager()
 				.createQuery("SELECT f FROM Fill f WHERE f.orderId = :orderId")
 				.setParameter("orderId", orderId).getResultList();
 	}
@@ -28,7 +28,7 @@ public class FillStore extends AbstractStore<Fill> {
 	@SuppressWarnings("unchecked")
 	public List<Fill> getFillByAveragePriceGroupId(long avpId) {
 
-		return entityManager
+		return getEntityManager()
 				.createQuery("SELECT f FROM Fill f, Order od WHERE f.orderId = od.orderId and od.averagePrcGrpId = :avpId")
 				.setParameter("avpId", avpId).getResultList();
 	}
@@ -36,7 +36,7 @@ public class FillStore extends AbstractStore<Fill> {
 	@SuppressWarnings("unchecked")
 	public List<Fill> getAllFills(long numberOfDays) {
 
-		return entityManager
+		return getEntityManager()
 				.createQuery("SELECT f FROM Fill f")
 				.setMaxResults(1000).getResultList();
 	}

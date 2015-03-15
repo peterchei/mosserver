@@ -12,20 +12,17 @@ public class AllocationWSImpl implements AllocationWS {
 
 	@Override
 	public Allocation getAllocation(long allocationId) {
-		// TODO Auto-generated method stub
-		return null;
+		return allocService.getAllocation(allocationId);
 	}
 
 	@Override
 	public Allocation[] getAllocationsByAveragePriceGroupId(long averagePrcGrpId) {
-		// TODO Auto-generated method stub
-		return null;
+		return allocService.getAllocationsByAveragePriceGroupId(averagePrcGrpId).toArray(new Allocation[0]);
 	}
 
 	@Override
 	public Allocation[] getAllAllocations(long numberOfDays) {
-		// TODO Auto-generated method stub
-		return null;
+		return allocService.getAllAllocations(numberOfDays).toArray(new Allocation[0]);
 	}
 
 }

@@ -9,7 +9,7 @@ public class PortfolioStore extends AbstractStore<Portfolio> {
 	
 	@SuppressWarnings("unchecked")
 	public List<Portfolio> getPortfolioByName(String name) {		
-		return entityManager
+		return getEntityManager()
 				.createQuery("SELECT pf FROM Portfolio pf WHERE pf.name = :name")
 				.setParameter("name", name).getResultList();
 		
@@ -17,7 +17,7 @@ public class PortfolioStore extends AbstractStore<Portfolio> {
 	
 	@SuppressWarnings("unchecked")
 	public List<Portfolio> getPortfolioByDate(int tradeDate) {		
-		return entityManager
+		return getEntityManager()
 				.createQuery("SELECT pf FROM Portfolio pf WHERE pf.tradeDate = :tradeDate")
 				.setParameter("tradeDate", tradeDate).getResultList();
 		

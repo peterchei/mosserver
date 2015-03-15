@@ -10,15 +10,15 @@ public class OrderStore extends AbstractStore<Order> {
    
 	@SuppressWarnings("unchecked")
 	public List<Order> getAllOrders(int days) {
-		entityManager.getTransaction().begin();		
-		List<Order> orders = entityManager.createNamedQuery("Order.findAll").getResultList();
-		entityManager.getTransaction().commit();
+		getEntityManager().getTransaction().begin();		
+		List<Order> orders = getEntityManager().createNamedQuery("Order.findAll").getResultList();
+		getEntityManager().getTransaction().commit();
 		return orders;
 	}
 	
 	@SuppressWarnings("unchecked")
 	public List<Order> getOrdersByAveragePrcGrpId(long averagePrcGrpId) {
-		return entityManager
+		return getEntityManager()
 				.createQuery("SELECT f FROM Order od WHERE od.averagePrcGrpId = :avpId")
 				.setParameter("avpId", averagePrcGrpId).getResultList();
 	

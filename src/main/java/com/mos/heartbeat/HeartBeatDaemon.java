@@ -12,7 +12,7 @@ public class HeartBeatDaemon implements Runnable {
 
 	private static Logger logger = getLogger(HeartBeatDaemon.class);
 
-	protected int waitTime = 1000;
+	protected int waitTime = 60000;
 
 	@Override
 	public void run() {

@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import com.mos.domain.DomainEnums.EntityType;
 import com.mos.domain.DomainEnums.Priority;
 import com.mos.domain.DomainEnums.TaskStatus;
 import com.mos.domain.DomainEnums.TaskType;
@@ -41,7 +42,8 @@ public class Task implements Serializable {
 
 	private long objectId;
 
-	private String objectType;
+	@Enumerated(EnumType.STRING)
+	private EntityType objectType;
 
 	@Enumerated(EnumType.STRING)
 	private Priority priority;
@@ -124,11 +126,11 @@ public class Task implements Serializable {
 		this.objectId = objectId;
 	}
 
-	public String getObjectType() {
+	public EntityType getObjectType() {
 		return objectType;
 	}
 
-	public void setObjectType(String objectType) {
+	public void setObjectType(EntityType objectType) {
 		this.objectType = objectType;
 	}
 

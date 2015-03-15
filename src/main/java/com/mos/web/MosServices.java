@@ -53,22 +53,19 @@ public class MosServices implements WSFacadeInterface {
 
 	@Override
 	public Allocation getAllocation(long allocationId) {
-		// TODO Auto-generated method stub
-		return null;
+		return allocateWs.getAllocation(allocationId) ;
 	}
 
 	@Override
 	public Allocation[] getAllocationsByAveragePriceGroupId(long averagePrcGrpId) {
-		// TODO Auto-generated method stub
-		return null;
+		return allocateWs.getAllocationsByAveragePriceGroupId(averagePrcGrpId);
 	}
 
 	@Override
 	public Allocation[] getAllAllocations(long numberOfDays) {
-		// TODO Auto-generated method stub
-		return null;
+		return allocateWs.getAllAllocations(numberOfDays);
 	}
-
-
+	
+	
 
 }

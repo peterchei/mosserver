@@ -14,13 +14,17 @@ public class AbstractStore<T> {
 	
 		
 	@Inject
-	protected EntityManager entityManager =null;
+	private EntityManager entityManager =null;
 	
 	@Inject
-	EntityManagerFactory emfactory = null;
+	private EntityManagerFactory emfactory = null;
 		
-	protected Class<T> genericClassT = null;
+	private Class<T> genericClassT = null;
 	
+	
+	protected EntityManager getEntityManager() {
+		return entityManager;
+	}
 	
 	@SuppressWarnings("unchecked")
 	public AbstractStore() {		

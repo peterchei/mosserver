@@ -55,13 +55,16 @@ public interface DomainEnums {
 	}
 	
 	public enum TaskType {
-		FIGURATION, CLIENTSERVICING, BOOKING, TRADEMANAGEMENT, CONFIRMATION, SETTLEMENT
+		FIGURATION, CLIENTSERVICING, BOOKING, TRADEMANAGEMENT, CONFIRMATION, SETTLEMENT, REFDATA
 	}
 	
 	public enum PaymentMethod {
 		DVP, FOP, TBA
 	}
 	
+	public enum EntityType {
+		ORDER, FILL, ALLOC, APG, TRADE
+	}
 
 
 	public enum Side {

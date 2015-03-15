@@ -9,7 +9,7 @@ public class ClientTradeStore extends AbstractStore<ClientTrade>  {
 	
 	@SuppressWarnings("unchecked")
 	public List<ClientTrade> getClientTradesByAllocId(long allocationId) {		
-		return entityManager
+		return getEntityManager()
 				.createQuery("SELECT ct FROM ClientTrade ct WHERE ct.allocationId >= :allocationId")
 				.setParameter("allocationId", allocationId).getResultList();
 	}

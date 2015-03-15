@@ -11,7 +11,7 @@ public class AllocationStore extends AbstractStore<Allocation> {
 	@SuppressWarnings("unchecked")
 	public List<Allocation> getAllocationByAveragePriceGroupId(long averagePriceGroupKey) {
 
-		return entityManager
+		return getEntityManager()
 				.createQuery("SELECT alloc FROM Allocation alloc WHERE alloc.averagePrcGrpId = :avpId")
 				.setParameter("avpId", averagePriceGroupKey).getResultList();
 
@@ -21,7 +21,7 @@ public class AllocationStore extends AbstractStore<Allocation> {
 	public List<Allocation> getAllAllocations(long numberOfDays) {
 		
 		int asOfDate = Integer.parseInt(new SimpleDateFormat("yyyyMMdd").format(new Date()));
-		return entityManager
+		return getEntityManager()
 				.createQuery("SELECT alloc FROM Allocation alloc WHERE alloc.tradeDate >= :asOfDate")
 				.setParameter("asOfDate", asOfDate)
 				.setMaxResults(5000).getResultList();
@@ -30,7 +30,7 @@ public class AllocationStore extends AbstractStore<Allocation> {
 	
 	@SuppressWarnings("unchecked")
 	public List<Allocation> getAllAllocationByOrderId(long orderId) {		
-		return entityManager
+		return getEntityManager()
 				.createQuery("SELECT alloc FROM Allocation alloc, Order od WHERE alloc.averagePrcGrpId = od.averagePrcGrpId and od.orderId =:orderId")
 				.setParameter("orderId", orderId).getResultList();
 	}
