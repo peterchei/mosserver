@@ -11,7 +11,7 @@ public class FillStore extends AbstractStore<Fill> {
 
 		return getEntityManager()
 				.createQuery("SELECT f FROM Fill f WHERE f.externalRef = :externalRef")
-				.setParameter("externalId", externalRef)
+				.setParameter("externalRef", externalRef)
 				.setMaxResults(1000).getResultList();
 	}
 	

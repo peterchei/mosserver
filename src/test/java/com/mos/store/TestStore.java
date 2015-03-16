@@ -44,6 +44,8 @@ public class TestStore {
 	private Order od;
 	private Allocation alloc;
 	private ClientTrade ct;
+	private Fill fill;
+	
 
 	/**
 	 * Store one record for each entity first.
@@ -115,7 +117,7 @@ public class TestStore {
 		od.setSalesId("Peter");
 		new OrderStore().save(od);
 	
-		Fill fill = new Fill();
+		fill = new Fill();
 		fill.setCapacity(od.getCapacity());
 		fill.setExchangeId(od.getExchangeId());
 		fill.setInstrumentId(od.getInstrumentId());
@@ -241,10 +243,30 @@ public class TestStore {
 		assertNotNull(store.getClientTradesByAllocId(alloc.getAllocationId()));
 
 	}
+	
+	@Test
+	public void testPortfolio() {
+		PortfolioStore store = new PortfolioStore() ;
+		
+		
+		assertNotNull(store.getPortfolioByDate(od.getTradeDate()));
+		
+		assertNotNull(store.getPortfolioByName("Peter Portfolio"));
+		
+		
+	}
 
 	@Test
 	public void testFillStore() {
-
+		FillStore store = new FillStore();
+		
+		assertNotNull(store.getFillByAveragePriceGroupId(od.getAveragePrcGrpId()));
+		
+		assertNotNull(store.getFillByOrderId(od.getOrderId()));
+		
+		assertNotNull(store.getFillByExternalId("externalRef"));
+		
+		assertNotNull(store.get(fill.getFillId()));
 	}
 
 	@Test

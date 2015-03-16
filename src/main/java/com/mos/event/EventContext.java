@@ -5,6 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.command.ActiveMQTopic;
 
+import com.google.gson.Gson;
 import com.google.inject.Inject;
 import com.mos.messaging.IBrokerService;
 import com.mos.messaging.IMessageProducer;
@@ -41,7 +42,10 @@ public class EventContext {
 	
 	public static final String TOPIC_HEARTBEAT_OUT="MOS.HEARTBEAT_OUT";
 	
+	public static final String TOPIC_NOTIFICATION_OUT="MOS.NOTIFICATION";
+	
 	private EventContext() {
+		
 		brokerService.bindToBrokerAtUrl("tcp://localhost:8081");
 		
 		IMessageProducer producer = null;
@@ -54,8 +58,13 @@ public class EventContext {
 		publishers.put(QUEUE_BLOCK_OUT, producer);		
 		producer = brokerService.getMessageProducer(new ActiveMQQueue(QUEUE_CONTRACT_NOTE_OUT));
 		publishers.put(QUEUE_CONTRACT_NOTE_OUT, producer);
+		
 		producer = brokerService.getMessageProducer(new ActiveMQTopic(TOPIC_HEARTBEAT_OUT));
 		publishers.put(TOPIC_HEARTBEAT_OUT, producer);
+		
+		producer = brokerService.getMessageProducer(new ActiveMQTopic(TOPIC_NOTIFICATION_OUT));
+		publishers.put(TOPIC_NOTIFICATION_OUT, producer);
+		
 		
 	}
 	
@@ -67,7 +76,8 @@ public class EventContext {
 	}
 
 	public static void publish(String destination, Notification event) {
-        getInstance().getEventPublisher(destination).send("Testing");
+		
+        getInstance().getEventPublisher(destination).send(new Gson().toJson(event));
 	}
 
     private IMessageProducer getEventPublisher(String dest) {

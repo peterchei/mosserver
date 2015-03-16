@@ -9,7 +9,7 @@ import com.mos.domain.Order;
 
 
 @WebService(endpointInterface = "com.mos.web.MosServices") //this binds the SEI to the SIB
-public class MosServices implements WSFacadeInterface {
+public class MosServices implements AllocationWS, OrderWS, ExecutionWS {
 
 	@Inject
 	private AllocationWS allocateWs = new AllocationWSImpl();
