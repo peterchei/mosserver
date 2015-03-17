@@ -276,6 +276,9 @@ public class TestStore {
 		List<Task> tasks = store.getTasksByEntityId(EntityType.ORDER,od.getOrderId());
 		
 		assertTrue(tasks != null && tasks.size() > 0);
+		
+		tasks = store.getAllPendingTasks();
+		assertTrue(tasks != null && tasks.size() > 0);
 	}
 
 

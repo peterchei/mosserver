@@ -4,12 +4,14 @@ import javax.jws.WebService;
 
 import com.google.inject.Inject;
 import com.mos.domain.Allocation;
+import com.mos.domain.DomainEnums.EntityType;
 import com.mos.domain.Fill;
 import com.mos.domain.Order;
+import com.mos.domain.Task;
 
 
 @WebService(endpointInterface = "com.mos.web.MosServices") //this binds the SEI to the SIB
-public class MosServices implements AllocationWS, OrderWS, ExecutionWS {
+public class MosServices implements AllocationWS, OrderWS, ExecutionWS, TaskWS {
 
 	@Inject
 	private AllocationWS allocateWs = new AllocationWSImpl();
@@ -19,6 +21,9 @@ public class MosServices implements AllocationWS, OrderWS, ExecutionWS {
 	
 	@Inject
 	private ExecutionWS executionWs = new ExecutionWSImpl();
+	
+	@Inject
+	private TaskWS taskWs = new TaskWSImpl();
 		
 	@Override
 	public Fill[] getFillsByOrderId(long orderId) {
@@ -63,6 +68,21 @@ public class MosServices implements AllocationWS, OrderWS, ExecutionWS {
 	@Override
 	public Allocation[] getAllAllocations(long numberOfDays) {
 		return allocateWs.getAllAllocations(numberOfDays);
+	}
+
+	@Override
+	public Task[] getAllPendingTasks() {		
+		return taskWs.getAllPendingTasks();
+	}
+
+	@Override
+	public Task[] getTasksByEntityId(EntityType type, long objectId) {
+		return taskWs.getTasksByEntityId(type, objectId);
+	}
+
+	@Override
+	public Task getTask(long taskId) {
+		return taskWs.getTask(taskId);
 	}
 	
 	
