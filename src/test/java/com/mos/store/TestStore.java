@@ -231,6 +231,8 @@ public class TestStore {
 		AveragePriceGroupStore store = new AveragePriceGroupStore();
 		
 		assertNotNull(store.get(od.getAveragePrcGrpId()));
+		
+		assertNotNull(store.getAveragePriceGroupByOrderId(od.getOrderId()));
 	}
 
 	@Test

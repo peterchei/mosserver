@@ -52,10 +52,13 @@ public class EventContext {
 		
 		producer = brokerService.getMessageProducer(new ActiveMQQueue(QUEUE_TRADE_OUT));
 		publishers.put(QUEUE_TRADE_OUT, producer);		
+		
 		producer = brokerService.getMessageProducer(new ActiveMQQueue(QUEUE_CONF_OUT));
 		publishers.put(QUEUE_CONF_OUT, producer);		
+		
 		producer = brokerService.getMessageProducer(new ActiveMQQueue(QUEUE_BLOCK_OUT));
 		publishers.put(QUEUE_BLOCK_OUT, producer);		
+		
 		producer = brokerService.getMessageProducer(new ActiveMQQueue(QUEUE_CONTRACT_NOTE_OUT));
 		publishers.put(QUEUE_CONTRACT_NOTE_OUT, producer);
 		
