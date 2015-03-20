@@ -1,6 +1,6 @@
 package com.mos.workflow;
 
-import com.mos.workflow.Transition.Action;
+import com.mos.workflow.Action;
 
 public abstract class AbstractWorkflow<T> {		
 	

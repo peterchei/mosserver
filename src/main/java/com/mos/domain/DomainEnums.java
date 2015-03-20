@@ -17,23 +17,23 @@ public interface DomainEnums {
 	public enum FillStatus {
 		NONE, ERROR, NEW, AMEND, CANCELLED
 	}
-	
+
 	public enum ConfStatus {
 		NONE, PENDING_SEND, SENT, ACKED, CONFIRMED
 	}
-	
+
 	public enum CtmStatus {
-		NONE, SENT, RBT, RBC, AFFRIAMED, REJECTED, CANCELLED 
+		NONE, SENT, RBT, RBC, AFFRIAMED, REJECTED, CANCELLED
 	}
-	
+
 	public enum BookingStatus {
 		NONE, SENT, ACKED, BOOKED, REJECTED
 	}
-	
+
 	public enum TaskStatus {
 		NONE, NEW, IN_PROGRESS, CLOSED, CANCELLED
 	}
-	
+
 	public enum Priority {
 		LOW, NORMAL, HIGH, URGENT
 	}
@@ -53,23 +53,23 @@ public interface DomainEnums {
 	public enum CommissionType {
 		BPS, CPS, FLAT, PERCENT
 	}
-	
+
 	public enum TaskType {
 		FIGURATION, CLIENTSERVICING, BOOKING, TRADEMANAGEMENT, CONFIRMATION, SETTLEMENT, REFDATA
 	}
-	
+
 	public enum PaymentMethod {
 		DVP, FOP, TBA
 	}
-	
+
 	public enum EntityType {
 		ORDER, FILL, ALLOC, APG, TRADE
 	}
 
-
 	public enum ClientRegion {
-		AS,EM,JP,US,AU
+		AS, EM, JP, US, AU
 	}
+
 	public enum Side {
 		B("Buy"), S("Sell"), SS("ShortSell"), SE("ShortSellExcempt");
 
@@ -82,6 +82,10 @@ public interface DomainEnums {
 		public String getDisplayName() {
 			return displayName;
 		}
+	}
+
+	public enum LegType {
+		TRADE, EOD, BKTF
 	}
 
 }

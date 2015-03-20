@@ -1,7 +1,7 @@
 package com.mos.workflow;
 
 import com.mos.domain.Order;
-import com.mos.workflow.Transition.Action;
+import com.mos.workflow.Action;
 
 public class OrderWorkflow extends AbstractWorkflow<Order> {
 
