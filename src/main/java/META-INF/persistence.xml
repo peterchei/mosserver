@@ -17,7 +17,16 @@
 		<class>com.mos.domain.Order</class>
 		<class>com.mos.domain.Portfolio</class>
 		<class>com.mos.domain.Task</class>
-		<class>com.mos.domain.Tradeleg</class>
+		<class>com.mos.domain.TradeLeg</class>
+		<class>com.mos.refdata.domain.Holiday</class>
+		<class>com.mos.refdata.domain.Country</class>
+		<class>com.mos.refdata.domain.LegalEntity</class>
+		<class>com.mos.refdata.domain.Instrument</class>
+		<class>com.mos.refdata.domain.Market</class>
+		<class>com.mos.refdata.domain.Exchange</class>
+		<class>com.mos.refdata.domain.Party</class>
+		<class>com.mos.refdata.domain.Currency</class>
+
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:calDb"/>
 			<property name="javax.persistence.jdbc.user" value="mos"/>
@@ -28,5 +37,8 @@
 			<property name="javax.persistence.schema-generation.scripts.create-target" value="creationScript.sql"/>
 		</properties>
 </persistence-unit>
+
+
+
 
 </persistence>
