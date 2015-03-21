@@ -18,7 +18,11 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQuery(name="Confirmation.findAll", query="SELECT c FROM Confirmation c")
 public class Confirmation implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7869092351776071683L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)

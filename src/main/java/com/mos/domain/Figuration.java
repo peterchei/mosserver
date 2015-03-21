@@ -21,7 +21,11 @@ import com.mos.domain.DomainEnums.EntityType;
 @Entity
 @NamedQuery(name="Figuration.findAll", query="SELECT f FROM Figuration f")
 public class Figuration implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1990412421596961492L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)

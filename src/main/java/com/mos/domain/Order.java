@@ -28,7 +28,11 @@ import com.mos.domain.DomainEnums.Side;
 @Table(name="ORDERS")
 @NamedQuery(name="Order.findAll", query="SELECT o FROM Order o")
 public class Order implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6683746183576100990L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)

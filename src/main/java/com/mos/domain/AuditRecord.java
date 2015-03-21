@@ -20,7 +20,11 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQuery(name="AuditRecord.findAll", query="SELECT a FROM AuditRecord a")
 public class AuditRecord implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5331184101641231940L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)

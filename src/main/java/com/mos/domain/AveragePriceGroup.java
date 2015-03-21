@@ -25,8 +25,8 @@ import com.mos.domain.DomainEnums.FlowType;
 @NamedQuery(name="AveragePriceGroup.findAll", query="SELECT a FROM AveragePriceGroup a")
 
 public class AveragePriceGroup implements Serializable {
-	private static final long serialVersionUID = 1L;
-	
+
+	private static final long serialVersionUID = -7751759136597709194L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)

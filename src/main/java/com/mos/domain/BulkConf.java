@@ -18,7 +18,11 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQuery(name="BulkConf.findAll", query="SELECT b FROM BulkConf b")
 public class BulkConf implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5133067115483917011L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)

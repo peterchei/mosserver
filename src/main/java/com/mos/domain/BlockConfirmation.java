@@ -16,7 +16,11 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQuery(name="BlockConfirmation.findAll", query="SELECT b FROM BlockConfirmation b")
 public class BlockConfirmation implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9177915739629209220L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)

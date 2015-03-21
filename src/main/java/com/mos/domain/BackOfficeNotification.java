@@ -16,7 +16,11 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQuery(name="BackOfficeNotification.findAll", query="SELECT b FROM BackOfficeNotification b")
 public class BackOfficeNotification implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 513601364855782311L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)

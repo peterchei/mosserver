@@ -25,7 +25,10 @@ import com.mos.domain.DomainEnums.PaymentMethod;
 @Entity
 @NamedQuery(name="Allocation.findAll", query="SELECT a FROM Allocation a")
 public class Allocation implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+
+	private static final long serialVersionUID = 679979459697236377L;
+
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)

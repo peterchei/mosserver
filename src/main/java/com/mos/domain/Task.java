@@ -26,7 +26,11 @@ import com.mos.domain.DomainEnums.TaskType;
 @Entity
 @NamedQuery(name = "Task.findAll", query = "SELECT t FROM Task t")
 public class Task implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5051797379308552026L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)

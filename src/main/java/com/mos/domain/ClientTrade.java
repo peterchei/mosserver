@@ -24,7 +24,11 @@ import com.mos.domain.DomainEnums.CtmStatus;
 @Entity
 @NamedQuery(name="ClientTrade.findAll", query="SELECT c FROM ClientTrade c")
 public class ClientTrade implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7773998402821129829L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)

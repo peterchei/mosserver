@@ -16,7 +16,11 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQuery(name="Portfolio.findAll", query="SELECT p FROM Portfolio p")
 public class Portfolio implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7932027908293157522L;
 
 	@Id
 	//@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="sequencePortfolio")

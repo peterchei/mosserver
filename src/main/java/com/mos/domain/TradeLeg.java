@@ -21,7 +21,11 @@ import com.mos.domain.DomainEnums.Side;
 @Entity
 @NamedQuery(name="TradeLeg.findAll", query="SELECT t FROM TradeLeg t")
 public class TradeLeg implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8937826689250283535L;
 
 	@Id
 	private long tradeLegId;

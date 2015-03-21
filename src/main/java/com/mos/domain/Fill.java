@@ -26,7 +26,11 @@ import com.mos.domain.DomainEnums.Side;
 @Entity
 @NamedQuery(name="Fill.findAll", query="SELECT f FROM Fill f")
 public class Fill implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -466172947028327463L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
