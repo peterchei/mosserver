@@ -17,16 +17,13 @@ import javax.persistence.NamedQuery;
 @NamedQuery(name="BlockConfirmation.findAll", query="SELECT b FROM BlockConfirmation b")
 public class BlockConfirmation implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 9177915739629209220L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	private long id;
 
-	private java.math.BigDecimal allocationid;
+	private long allocationId;
 
 	public BlockConfirmation() {
 	}
@@ -39,12 +36,13 @@ public class BlockConfirmation implements Serializable {
 		this.id = id;
 	}
 
-	public java.math.BigDecimal getAllocationid() {
-		return this.allocationid;
+	public long getAllocationId() {
+		return allocationId;
 	}
 
-	public void setAllocationid(java.math.BigDecimal allocationid) {
-		this.allocationid = allocationid;
+	public void setAllocationId(long allocationId) {
+		this.allocationId = allocationId;
 	}
+
 
 }

@@ -2,6 +2,8 @@ package com.mos.event;
 
 import java.util.concurrent.ConcurrentHashMap;
 
+import javax.jms.MessageListener;
+
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.command.ActiveMQTopic;
 
@@ -23,7 +25,10 @@ public class EventContext {
 
 	@Inject
 	private IBrokerService brokerService = new ActivemqBrokerService();
-	public ConcurrentHashMap<String, IMessageProducer> publishers = new ConcurrentHashMap<String, IMessageProducer>(10);
+	
+	private ConcurrentHashMap<String, IMessageProducer> publishers = new ConcurrentHashMap<String, IMessageProducer>(10);
+	
+		
 	private static EventContext instance;
 	
 	public static final String FIX_IN="MOS.FIX_IN";
@@ -70,6 +75,15 @@ public class EventContext {
 		
 		
 	}
+	
+	public void subscribe(String destination, MessageListener listener) {
+		
+	}
+	
+	public void unSubscribe(String destination, MessageListener listener) {
+		
+	}
+	
 	
 	public static synchronized EventContext getInstance() {
 		if (instance == null) {

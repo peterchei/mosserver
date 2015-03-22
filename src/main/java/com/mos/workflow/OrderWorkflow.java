@@ -6,25 +6,10 @@ import com.mos.workflow.Action;
 public class OrderWorkflow extends AbstractWorkflow<Order> {
 
 	
-	
 	@Override
-	public Order perform(Order original, Action action, Object[]... args) {
-		
-		
+	public Order perform(Order object, Request request) {
+		// TODO Auto-generated method stub
 		return null;
-	}
-
-
-	public void processNewOrder() {
-		
-	}
-	
-	public void processAmendOrder() {
-		
-	}
-	
-	public void processCancelOrder() {
-		
 	}
 	
 
