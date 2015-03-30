@@ -2,7 +2,10 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 
 		<persistence-unit name="TestJPA" transaction-type="RESOURCE_LOCAL">
-			<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		  <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		 
+
+			
 		<class>com.mos.domain.Allocation</class>
 		<class>com.mos.domain.AuditRecord</class>
 		<class>com.mos.domain.AveragePriceGroup</class>
@@ -17,7 +20,16 @@
 		<class>com.mos.domain.Order</class>
 		<class>com.mos.domain.Portfolio</class>
 		<class>com.mos.domain.Task</class>
-		<class>com.mos.domain.Tradeleg</class>
+		<class>com.mos.domain.TradeLeg</class>
+		<class>com.mos.refdata.domain.Holiday</class>
+		<class>com.mos.refdata.domain.Country</class>
+		<class>com.mos.refdata.domain.LegalEntity</class>
+		<class>com.mos.refdata.domain.Instrument</class>
+		<class>com.mos.refdata.domain.Market</class>
+		<class>com.mos.refdata.domain.Exchange</class>
+		<class>com.mos.refdata.domain.Party</class>
+		<class>com.mos.refdata.domain.Currency</class>
+
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:calDb"/>
 			<property name="javax.persistence.jdbc.user" value="mos"/>
@@ -28,5 +40,9 @@
 			<property name="javax.persistence.schema-generation.scripts.create-target" value="creationScript.sql"/>
 		</properties>
 </persistence-unit>
+
+
+
+
 
 </persistence>

@@ -11,22 +11,26 @@ sourceCompatibility = 1.8
 repositories {
     jcenter()
     mavenCentral()
+    
+    flatDir {
+       dirs 'localLibs'
+   }
 }
 
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.5',
-			'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final',
-			'org.hibernate:hibernate-entitymanager:3.6.9.Final',
-            'org.apache.activemq:activemq-core:5.7.0',
+    		'org.eclipse.persistence:eclipselink:2.5.2-M1',      
+     		'org.apache.activemq:activemq-core:5.7.0',
             'com.google.inject:guice:3.0',
             'com.google.code.gson:gson:2.3.1',
-            'com.googlecode.disruptor:disruptor:2.7.1'
-            
+            'com.googlecode.disruptor:disruptor:2.7.1',
+            'oracle:ojdbc7:0'        
             
 
     runtime 'ch.qos.logback:logback-classic:1.0.13',
     		'org.slf4j:slf4j-api:1.7.5',
-            'com.google.inject:guice:3.0'
+            'com.google.inject:guice:3.0',
+            'oracle:ojdbc7:0'  
 
     testCompile 'junit:junit:4.11',
             'org.mockito:mockito-core:1.9.5',

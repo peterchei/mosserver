@@ -1,18 +1,25 @@
 package com.mos.fix;
 
+import javax.jms.Message;
+import javax.jms.MessageListener;
 
-public class FixInbound {
+import com.google.inject.Inject;
+
+
+public class FixInbound implements MessageListener {
 	
-	public void onMessage(String message) {
+	@Inject
+	private Processor fixProcessor = new Processor();
+	
+	@Override
+	public void onMessage(Message message) {
+		FixMessage fix = convert(message);
+		fixProcessor.processFIX(fix);		
+	}
 		
-		//To do
+	public FixMessage convert(Message message) {	
+		//Convert JMSMessage to FIXMessage
 		
-		
-		//Translate message to POJO object.
-		
-		
-		//Lookup FIX process and hande the messages
-		
-				
+		return null;
 	}
 }
