@@ -1,5 +1,8 @@
 package com.mos.fix;
 
+import com.mos.workflow.OrderWorkflow;
+import com.mos.workflow.request.NewOrderRequest;
+
 public class Processor {
 
 	public void processFIX(FixMessage message) {
@@ -8,8 +11,7 @@ public class Processor {
 		// Transfer to request
 		
 		// pass request to workflow;
-		
-		
+				
 		
 		switch (message.getMessageType()) {
 		case CANCEL_FILL:
@@ -22,7 +24,8 @@ public class Processor {
 			break;
 		case NEW_FILL:
 			break;
-		case NEW_ORDER:
+		case NEW_ORDER:			
+			new OrderWorkflow().perform(getNewOrderRequest());
 			break;
 		case REOPEN_ORDER:
 			break;
@@ -30,6 +33,14 @@ public class Processor {
 			break;
 		}
 
+	}
+	
+	
+	public NewOrderRequest getNewOrderRequest() {
+		
+		//TODO
+		
+		return null;
 	}
 
 }
