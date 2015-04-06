@@ -19,7 +19,7 @@ public class FixInbound implements MessageListener {
 		
 	public FixMessage convert(Message message) {	
 		//Convert JMSMessage to FIXMessage
-		
-		return null;
+		FixMessage fix = new FixMessage(message.toString());
+		return fix;
 	}
 }

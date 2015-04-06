@@ -10,6 +10,11 @@ sourceCompatibility = 1.8
 
 repositories {
     jcenter()
+    
+    maven {
+        url "http://repo.marketcetera.org/maven";
+    }
+    
     mavenCentral()
     
     flatDir {
@@ -24,7 +29,16 @@ dependencies {
             'com.google.inject:guice:3.0',
             'com.google.code.gson:gson:2.3.1',
             'com.googlecode.disruptor:disruptor:2.7.1',
-            'oracle:ojdbc7:0'        
+            'oracle:ojdbc7:0',
+            'quickfixj:quickfixj-core:1.5.3',
+            'quickfixj:quickfixj-msg-fix50:1.5.3',
+            'quickfixj:quickfixj-msg-fix44:1.5.3',
+            'quickfixj:quickfixj-msg-fix43:1.5.3',
+            'quickfixj:quickfixj-msg-fix42:1.5.3',
+            'quickfixj:quickfixj-msg-fix41:1.5.3',
+            'quickfixj:quickfixj-msg-fix40:1.5.3',
+            'org.apache.mina:mina-core:1.1.7'
+
             
 
     runtime 'ch.qos.logback:logback-classic:1.0.13',

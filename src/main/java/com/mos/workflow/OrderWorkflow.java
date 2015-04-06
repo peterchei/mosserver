@@ -2,6 +2,7 @@ package com.mos.workflow;
 
 import com.mos.domain.Order;
 import com.mos.workflow.Action;
+import com.mos.workflow.request.Request;
 
 public class OrderWorkflow extends AbstractWorkflow<Order> {
 
