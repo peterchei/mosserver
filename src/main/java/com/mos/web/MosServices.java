@@ -8,6 +8,9 @@ import com.mos.domain.DomainEnums.EntityType;
 import com.mos.domain.Fill;
 import com.mos.domain.Order;
 import com.mos.domain.Task;
+import com.mos.workflow.request.CancelOrderRequest;
+import com.mos.workflow.request.CancelReplaceOrderRequest;
+import com.mos.workflow.request.NewOrderRequest;
 
 
 @WebService(endpointInterface = "com.mos.web.MosServices") //this binds the SEI to the SIB
@@ -83,6 +86,13 @@ public class MosServices implements AllocationWS, OrderWS, ExecutionWS, TaskWS {
 	@Override
 	public Task getTask(long taskId) {
 		return taskWs.getTask(taskId);
+	}
+
+	@Override
+	public void showWorkflowRequest(NewOrderRequest request,
+			CancelOrderRequest request2, CancelReplaceOrderRequest request3) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

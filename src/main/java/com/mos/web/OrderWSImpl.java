@@ -6,6 +6,9 @@ import com.google.inject.Inject;
 import com.mos.domain.Order;
 import com.mos.service.ordermanagement.OrderService;
 import com.mos.service.ordermanagement.OrderServiceImpl;
+import com.mos.workflow.request.CancelOrderRequest;
+import com.mos.workflow.request.CancelReplaceOrderRequest;
+import com.mos.workflow.request.NewOrderRequest;
 
 /**
  * 
@@ -31,6 +34,13 @@ public class OrderWSImpl implements OrderWS {
 	@Override
 	public Order getOrder(long orderId) {
 		return orderService.getOrder(orderId);
+	}
+
+	@Override
+	public void showWorkflowRequest(NewOrderRequest request,
+			CancelOrderRequest request2, CancelReplaceOrderRequest request3) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

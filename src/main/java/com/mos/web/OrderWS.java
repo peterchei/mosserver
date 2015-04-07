@@ -6,6 +6,9 @@ import javax.jws.soap.SOAPBinding;
 import javax.jws.soap.SOAPBinding.Style;
 
 import com.mos.domain.Order;
+import com.mos.workflow.request.CancelOrderRequest;
+import com.mos.workflow.request.CancelReplaceOrderRequest;
+import com.mos.workflow.request.NewOrderRequest;
 
 
 @WebService
@@ -21,5 +24,7 @@ public interface OrderWS {
 	@WebMethod
 	public Order getOrder(long orderId);
 
+	@WebMethod
+	public void showWorkflowRequest(NewOrderRequest request, CancelOrderRequest request2, CancelReplaceOrderRequest request3);
 
 }

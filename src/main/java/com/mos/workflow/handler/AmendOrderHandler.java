@@ -1,4 +1,4 @@
-package com.mos.workflow.handlers;
+package com.mos.workflow.handler;
 
 public class AmendOrderHandler {
 
