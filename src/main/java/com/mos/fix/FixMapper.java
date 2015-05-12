@@ -56,7 +56,7 @@ public class FixMapper {
 		FixMapper mapper = FixMapper.getInstance();		
 		FixMap map = mapper.getFixMap();		
 		for (Map item: map.getMaps()) {			
-			System.out.println(item.getTagName());
+			System.out.println("TAG_" + item.getTagName().toUpperCase()+ "=" + item.getTagNumber());
 		}
 		
 
