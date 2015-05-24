@@ -31,13 +31,13 @@
 		<class>com.mos.refdata.domain.Currency</class>
 
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:calDb"/>
-			<property name="javax.persistence.jdbc.user" value="mos"/>
-			<property name="javax.persistence.jdbc.password" value="CALYPSO"/>
-			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+			<property name="javax.persistence.jdbc.url" value='jdbc:derby://localhost:1527/mos;create=true'/>
+			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
 			<property name="javax.persistence.schema-generation.create-database-schemas" value="false"/>
 			<property name="javax.persistence.schema-generation.scripts.action" value="create"/>
-			<property name="javax.persistence.schema-generation.scripts.create-target" value="creationScript.sql"/>
+			<property name="javax.persistence.schema-generation.scripts.create-target" value="creationScriptDerby.sql"/>
+			<property name="javax.persistence.jdbc.user" value="mos"/>
+			<property name="javax.persistence.jdbc.password" value="mos"/>
 		</properties>
 </persistence-unit>
 
