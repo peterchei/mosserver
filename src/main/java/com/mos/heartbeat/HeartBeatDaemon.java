@@ -9,9 +9,11 @@ import com.mos.event.Notification;
 
 public class HeartBeatDaemon implements Runnable {
 
+	
 	private static Logger logger = getLogger(HeartBeatDaemon.class);
 
 	protected int waitTime = 60000;
+	
 
 	@Override
 	public void run() {

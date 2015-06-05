@@ -1,5 +1,11 @@
 package com.mos.messaging;
 
+/**
+ * Embedded messaging service
+ *  
+ * @author peter
+ *
+ */
 public interface IBrokerServer {
 
 	//refactor from startEmbeddedBroker()

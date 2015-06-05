@@ -1,7 +1,5 @@
 package com.mos.heartbeat;
 
-import java.util.Date;
-
 import com.mos.event.Notification;
 
 public class HeartBeatNotification extends Notification {
@@ -10,9 +8,6 @@ public class HeartBeatNotification extends Notification {
 	private long usedMemory;
 	private long totalMemory;
 	private long maxMemory;
-
-	
-	
 	
 	public long getFreeMemory() {
 		return freeMemory;
