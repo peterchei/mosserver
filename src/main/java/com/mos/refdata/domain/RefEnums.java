@@ -1,7 +1,5 @@
 package com.mos.refdata.domain;
 
-import javax.persistence.Entity;
-
 public interface RefEnums {
 
 	public enum AccountType {

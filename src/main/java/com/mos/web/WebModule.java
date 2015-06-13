@@ -31,9 +31,6 @@ public class WebModule {
 		endPoint.publish("http://localhost:9001/mos"); 	
 		logger.info("Service orderWS exported to http://localhost:9001/mos");
 
-
-
-
 		logger.info("*****************************");
 		logger.info("**** WebService started. ****");
 		logger.info("*****************************");
