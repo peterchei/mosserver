@@ -67,7 +67,7 @@ public interface DomainEnums {
 	}
 
 	public enum ClientRegion {
-		AS, EM, JP, US, AU
+		AS, EM, JP, AM, AU
 	}
 
 	public enum Side {
@@ -85,7 +85,7 @@ public interface DomainEnums {
 	}
 
 	public enum LegType {
-		TRADE, EOD, BKTF
+		TRADE, EOD, BOOKTRANSFER
 	}
 
 }
