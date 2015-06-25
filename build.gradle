@@ -22,6 +22,14 @@ repositories {
  //  }
 }
 
+
+sourceSets {
+    main {
+       output.resourcesDir = "build/classes/main"
+     }
+  }
+  
+  
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.5',
     		'org.eclipse.persistence:eclipselink:2.5.2-M1', 

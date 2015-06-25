@@ -25,8 +25,9 @@ public class TestFixMap {
 			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 			Unmarshaller jaxbUnMarshaller = jaxbContext.createUnmarshaller();
-			InputStream input = FixMap.class.getResourceAsStream("FixMap.xml");
+			InputStream input = TestFixMap.class.getResourceAsStream("FixMap.xml");
 
+			
 			FixMap map = (FixMap) jaxbUnMarshaller.unmarshal(input);
 
 			jaxbMarshaller.marshal(map, System.out);

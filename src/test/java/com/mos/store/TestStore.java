@@ -281,6 +281,10 @@ public class TestStore {
 		
 		tasks = store.getAllPendingTasks();
 		assertTrue(tasks != null && tasks.size() > 0);
+		
+		tasks = store.getAll();
+		assertTrue(tasks != null && tasks.size() > 0);
+		
 	}
 
 
