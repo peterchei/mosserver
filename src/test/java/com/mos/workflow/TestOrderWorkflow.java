@@ -8,7 +8,7 @@ public class TestOrderWorkflow {
 	
 	
 
-	@Test
+	//@Test
 	public void testOrderWorkFlow() {
 		
 		new OrderWorkflow().perform(new NewOrderRequest());

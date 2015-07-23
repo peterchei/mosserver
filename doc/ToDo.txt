@@ -1,0 +1,41 @@
+Build 
+- gradle
+
+
+
+
+
+Database
+- java db / oracle
+
+
+
+JPA
+-- transaction 
+
+--  reference
+
+-- config
+
+
+Caching
+
+Messaging
+-- active MQ
+
+
+
+FIX.4.4
+-- FIX session and state machine
+
+
+Business servie
+
+
+WebService
+
+
+REST
+
+
+

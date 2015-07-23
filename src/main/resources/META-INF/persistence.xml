@@ -21,14 +21,16 @@
 		<class>com.mos.domain.Portfolio</class>
 		<class>com.mos.domain.Task</class>
 		<class>com.mos.domain.TradeLeg</class>
-		<class>com.mos.refdata.domain.Holiday</class>
+		<class>com.mos.refdata.domain.Book</class>
+		<class>com.mos.refdata.domain.BookAttribute</class>
 		<class>com.mos.refdata.domain.Country</class>
-		<class>com.mos.refdata.domain.LegalEntity</class>
-		<class>com.mos.refdata.domain.Instrument</class>
-		<class>com.mos.refdata.domain.Market</class>
-		<class>com.mos.refdata.domain.Exchange</class>
-		<class>com.mos.refdata.domain.Party</class>
 		<class>com.mos.refdata.domain.Currency</class>
+		<class>com.mos.refdata.domain.Exchange</class>
+		<class>com.mos.refdata.domain.Holiday</class>
+		<class>com.mos.refdata.domain.Instrument</class>
+		<class>com.mos.refdata.domain.LegalEntity</class>
+		<class>com.mos.refdata.domain.Market</class>
+		<class>com.mos.refdata.domain.Party</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.url" value='jdbc:derby://localhost:1527/mos;create=true'/>

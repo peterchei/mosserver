@@ -13,7 +13,7 @@ import com.mos.fix.FixMap.Map;
 
 public class TestFixMap {
 
-	@Test
+	//@Test
 	public void testMap() throws Exception {
 
 		JAXBContext jaxbContext;
