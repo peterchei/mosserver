@@ -2,10 +2,13 @@ package com.mos.refdata.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 @Entity
@@ -43,9 +46,13 @@ public class Book {
 	public void setLegalEntityId(long legalEntityId) {
 		this.legalEntityId = legalEntityId;
 	}
+	
+	//bi-directional many-to-one association to Bookattribute
+	@OneToMany(mappedBy="book", cascade= CascadeType.ALL)
 	public List<BookAttribute> getBookAttributes() {
 		return bookAttributes;
 	}
+	
 	public void setBookAttributes(List<BookAttribute> bookAttributes) {
 		this.bookAttributes = bookAttributes;
 	}

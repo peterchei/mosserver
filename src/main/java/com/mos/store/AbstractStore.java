@@ -47,7 +47,6 @@ public class AbstractStore<T> {
 			entityManager.getTransaction().begin();
 			entityManager.persist(obj);
 		} catch (Exception ex) {
-
 			entityManager.getTransaction().rollback();
 		} finally {
 
@@ -62,6 +61,8 @@ public class AbstractStore<T> {
 			for (T obj : objs) {
 				entityManager.persist(obj);
 			}
+		} catch (Exception ex) {
+			entityManager.getTransaction().rollback();
 		} finally {
 			entityManager.getTransaction().commit();
 		}
@@ -72,6 +73,9 @@ public class AbstractStore<T> {
 			entityManager.getTransaction().begin();
 			T obj = entityManager.find(genericClassT, id);
 			return obj;
+		} catch (Exception ex) {
+			entityManager.getTransaction().rollback();
+			throw ex;
 		} finally {
 			entityManager.getTransaction().commit();
 		}
@@ -85,7 +89,10 @@ public class AbstractStore<T> {
 			TypedQuery<T> q = entityManager.createQuery(query);
 			List<T> alls = q.getResultList();
 			return alls;
-	
+
+		} catch (Exception ex) {
+			entityManager.getTransaction().rollback();
+			throw ex;
 		} finally {
 			entityManager.getTransaction().commit();
 		}

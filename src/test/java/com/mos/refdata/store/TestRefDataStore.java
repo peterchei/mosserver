@@ -19,22 +19,31 @@ public class TestRefDataStore {
 		book.setName("BOOK1");
 		book.setShortName("B1");
 		book.setLegalEntityId(1234);
-		BookAttribute ba = new BookAttribute();
+
 		
-		ba.setAttributeName("A1");
-		ba.setAttributeValue("V1");
-		
+
 		
 		
 		
 		BookStore bs = new BookStore();
-		bs.save(book);
+		BookAttributeStore bsa = new BookAttributeStore();
+		//bs.save(book);
+		
+		
+		BookAttribute ba = new BookAttribute();
+		
+
 		
 		ArrayList<BookAttribute> list = new ArrayList<BookAttribute>();
 		list.add(ba);
 		book.setBookAttributes(list);
+		ba.setAttributeName("A1");
+		ba.setAttributeValue("V1");
+		ba.setBook(book);
+		bsa.save(ba);
+		bsa.save(ba);
 		
-		bs.save(book);
+		
 		
 	}
 	
@@ -47,7 +56,8 @@ public class TestRefDataStore {
 		
 		List<Book> books = bs.getAll();
 		
-		System.out.println(books);
+		System.out.println(books.size());
+		
 		
 		
 	}
