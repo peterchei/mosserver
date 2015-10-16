@@ -49,7 +49,6 @@ public class AbstractStore<T> {
 		} catch (Exception ex) {
 			entityManager.getTransaction().rollback();
 		} finally {
-
 			entityManager.getTransaction().commit();
 		}
 
@@ -89,7 +88,6 @@ public class AbstractStore<T> {
 			TypedQuery<T> q = entityManager.createQuery(query);
 			List<T> alls = q.getResultList();
 			return alls;
-
 		} catch (Exception ex) {
 			entityManager.getTransaction().rollback();
 			throw ex;
