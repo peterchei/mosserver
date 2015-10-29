@@ -25,12 +25,15 @@ public class MosApp {
 		init();
 	}
 	
-	public void init() {
+	protected void init() {
 		
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml"); 
+		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		try {
-			brokerServer = (IBrokerServer) context.getBean("embededBrokerServer");			
+			brokerServer = (IBrokerServer) context.getBean("embededBrokerServer");
+			
 		} catch (Exception e) {
+			logger.error("Failed to start broker server.", e);
+			System.exit(1);
 
 		} 
 		heartBeat = new Thread(new HeartBeatDaemon());
@@ -40,8 +43,7 @@ public class MosApp {
 		
 	}
 	
-	public void start() throws Exception {
-		
+	protected void start() throws Exception {
 
 		brokerServer.start("tcp://localhost:8081");
 		webModule.start();
