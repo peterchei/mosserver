@@ -17,11 +17,13 @@ public class TestBook {
 		
 	}
 	
-	@Test void testSaveBookAttribute() {
+	@Test public 
+	void testSaveBookAttribute() {
 		
 	}
 	
-	@Test void testGetBook() {
+	@Test public 
+	void testGetBook() {
 		
 	}
 
