@@ -21,40 +21,37 @@ import javax.persistence.NamedQuery;
 @NamedQuery(name="AuditRecord.findAll", query="SELECT a FROM AuditRecord a")
 public class AuditRecord implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5331184101641231940L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	private long auditid;
+	private long id;
 
 	private String actor;
 
 	private String description;
 
-	private Timestamp entereddatetime;
+	private Timestamp creationDateTime;
 
-	private String isdeleted;
+	private String isDeleted;
 
 	@Lob
 	@Column(name="\"OBJECT\"")
 	private String object;
 
-	private BigDecimal objectid;
+	private BigDecimal objectId;
 
-	private String objecttype;
+	private String objectType;
 
 	public AuditRecord() {
 	}
 
-	public long getAuditid() {
-		return this.auditid;
+	public long getId() {
+		return this.id;
 	}
 
-	public void setAuditid(long auditid) {
-		this.auditid = auditid;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getActor() {
@@ -73,20 +70,20 @@ public class AuditRecord implements Serializable {
 		this.description = description;
 	}
 
-	public Timestamp getEntereddatetime() {
-		return this.entereddatetime;
+	public Timestamp getCreationDateTime() {
+		return this.creationDateTime;
 	}
 
-	public void setEntereddatetime(Timestamp entereddatetime) {
-		this.entereddatetime = entereddatetime;
+	public void setCreationDateTime(Timestamp creationDateTime) {
+		this.creationDateTime = creationDateTime;
 	}
 
-	public String getIsdeleted() {
-		return this.isdeleted;
+	public String getIsDeleted() {
+		return this.isDeleted;
 	}
 
-	public void setIsdeleted(String isdeleted) {
-		this.isdeleted = isdeleted;
+	public void setIsDeleted(String isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 
 	public String getObject() {
@@ -97,20 +94,20 @@ public class AuditRecord implements Serializable {
 		this.object = object;
 	}
 
-	public BigDecimal getObjectid() {
-		return this.objectid;
+	public BigDecimal getObjectId() {
+		return this.objectId;
 	}
 
-	public void setObjectid(BigDecimal objectid) {
-		this.objectid = objectid;
+	public void setObjectIdd(BigDecimal objectId) {
+		this.objectId = objectId;
 	}
 
-	public String getObjecttype() {
-		return this.objecttype;
+	public String getObjectType() {
+		return this.objectType;
 	}
 
-	public void setObjecttype(String objecttype) {
-		this.objecttype = objecttype;
+	public void setObjectType(String objectType) {
+		this.objectType = objectType;
 	}
 
 }

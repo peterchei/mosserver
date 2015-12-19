@@ -49,4 +49,67 @@ public class TradeLeg implements Serializable {
 	}
 
 
-}  
+	public long getTradeLegId() {
+		return tradeLegId;
+	}
+
+	public void setTradeLegId(long tradeLegId) {
+		this.tradeLegId = tradeLegId;
+	}
+
+	public long getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(long accountId) {
+		this.accountId = accountId;
+	}
+
+	public long getAveragePrcGrpId() {
+		return averagePrcGrpId;
+	}
+
+	public void setAveragePrcGrpId(long averagePrcGrpId) {
+		this.averagePrcGrpId = averagePrcGrpId;
+	}
+
+	public long getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(long bookId) {
+		this.bookId = bookId;
+	}
+
+	public long getClientTradeId() {
+		return clientTradeId;
+	}
+
+	public void setClientTradeId(long clientTradeId) {
+		this.clientTradeId = clientTradeId;
+	}
+
+	public long getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(long orderId) {
+		this.orderId = orderId;
+	}
+
+	public LegType getLegType() {
+		return legType;
+	}
+
+	public void setLegType(LegType legType) {
+		this.legType = legType;
+	}
+
+	public Side getSide() {
+		return side;
+	}
+
+	public void setSide(Side side) {
+		this.side = side;
+	}
+}

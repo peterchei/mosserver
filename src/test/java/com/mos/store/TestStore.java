@@ -8,23 +8,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import com.mos.domain.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
-import com.mos.domain.Allocation;
-import com.mos.domain.AveragePriceGroup;
-import com.mos.domain.ClientTrade;
 import com.mos.domain.DomainEnums.BookingStatus;
 import com.mos.domain.DomainEnums.CommissionType;
 import com.mos.domain.DomainEnums.CtmStatus;
 import com.mos.domain.DomainEnums.FlowType;
 import com.mos.domain.DomainEnums.PaymentMethod;
-import com.mos.domain.Fill;
-import com.mos.domain.Order;
-import com.mos.domain.Portfolio;
 import com.mos.domain.DomainEnums.AVGStatus;
 import com.mos.domain.DomainEnums.AllocStatus;
 import com.mos.domain.DomainEnums.AllocType;
@@ -35,7 +30,6 @@ import com.mos.domain.DomainEnums.OrderStatus;
 import com.mos.domain.DomainEnums.Side;
 import com.mos.domain.DomainEnums.TaskStatus;
 import com.mos.domain.DomainEnums.TaskType;
-import com.mos.domain.Task;
 
 public class TestStore {
 
@@ -197,6 +191,16 @@ public class TestStore {
 	@Test
 	public void testFigurationStore() {
 
+	}
+
+	@Test
+	public void testBackOfficeNotification() {
+
+		BackOfficeNotification bon = new BackOfficeNotification();
+
+		bon.setBackOfficeId("XXXXXX");
+
+		new BackOfficeNotificationStore().save(bon);
 	}
 
 	@Test

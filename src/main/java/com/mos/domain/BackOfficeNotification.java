@@ -26,7 +26,7 @@ public class BackOfficeNotification implements Serializable {
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	private long id;
 
-	private java.math.BigDecimal tradelegid;
+	private String backOfficeId;
 
 	public BackOfficeNotification() {
 	}
@@ -39,12 +39,11 @@ public class BackOfficeNotification implements Serializable {
 		this.id = id;
 	}
 
-	public java.math.BigDecimal getTradelegid() {
-		return this.tradelegid;
+	public String getBackOfficeId() {
+		return backOfficeId;
 	}
 
-	public void setTradelegid(java.math.BigDecimal tradelegid) {
-		this.tradelegid = tradelegid;
+	public void setBackOfficeId(String backOfficeId) {
+		this.backOfficeId = backOfficeId;
 	}
-
 }

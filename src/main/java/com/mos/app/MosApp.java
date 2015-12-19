@@ -1,68 +1,73 @@
 package com.mos.app;
 
 
-import static org.slf4j.LoggerFactory.getLogger;
-
-import org.slf4j.Logger;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+import com.google.inject.Inject;
 import com.mos.event.EventContext;
 import com.mos.heartbeat.HeartBeatDaemon;
 import com.mos.messaging.IBrokerServer;
 import com.mos.web.WebModule;
+import org.slf4j.Logger;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import static org.slf4j.LoggerFactory.getLogger;
 
 
 public class MosApp {
-	
-	private static Logger logger = getLogger(MosApp.class);
-	
-	private IBrokerServer brokerServer;	
-	private WebModule webModule;
-	private Thread heartBeat;
-	
-	public MosApp() {
-		init();
-	}
-	
-	protected void init() {
-		
-		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-		try {
-			brokerServer = (IBrokerServer) context.getBean("embededBrokerServer");
-			
-		} catch (Exception e) {
-			logger.error("Failed to start broker server.", e);
-			System.exit(1);
 
-		} 
-		heartBeat = new Thread(new HeartBeatDaemon());
-		
-		
-		webModule = new WebModule();
-		
-	}
-	
-	protected void start() throws Exception {
+    private static Logger logger = getLogger(MosApp.class);
 
-		brokerServer.start("tcp://localhost:8081");
-		webModule.start();
-		heartBeat.start();
-		EventContext.getInstance();
-		logger.info("*****************************************");
-		logger.info("******   All services started.  *********");
-		logger.info("*****************************************");
+    @Inject
+    private IBrokerServer brokerServer;
+
+    @Inject
+    private WebModule webModule;
+
+    @Inject
+    private Thread heartBeat;
+
+    public MosApp() {
+        init();
+    }
+
+    public static void main(String args[]) {
+        try {
+            MosApp myApp = new MosApp();
+            myApp.start();
+        } catch (Exception e) {
+             logger.error("Fatal Error. ", e);
+        }
+    }
+
+    protected void init() {
+
+        //TODO
+        //Dependence injection
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        try {
+            brokerServer = (IBrokerServer) context.getBean("embededBrokerServer");
+        } catch (Exception e) {
+            logger.error("Failed to start broker server.", e);
+            System.exit(1);
+        }
+
+
+        heartBeat = new Thread(new HeartBeatDaemon());
+
+        webModule = new WebModule();
 
     }
 
-	public static void main(String args[]) {	
-	
-		try {
-			MosApp myApp = new MosApp();	
-			myApp.start();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+    protected void start() throws Exception {
+
+        brokerServer.start("tcp://localhost:8081");
+        webModule.start();
+        heartBeat.start();
+        EventContext.getInstance();
+        logger.info("*****************************************");
+        logger.info("******   All services started.  *********");
+        logger.info("*****************************************");
+
+    }
 }

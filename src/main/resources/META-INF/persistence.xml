@@ -35,7 +35,7 @@
 		<properties>
 			<property name="javax.persistence.jdbc.url" value='jdbc:derby://localhost:1527/mos;create=true'/>
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-			<property name="javax.persistence.schema-generation.create-database-schemas" value="false"/>
+			<property name="javax.persistence.schema-generation.create-database-schemas" value="true"/>
 			<property name="javax.persistence.schema-generation.scripts.action" value="create"/>
 			<property name="javax.persistence.schema-generation.scripts.create-target" value="creationScriptDerby.sql"/>
 			<property name="javax.persistence.jdbc.user" value="mos"/>

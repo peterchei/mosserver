@@ -19,188 +19,164 @@ import com.mos.domain.DomainEnums.FlowType;
 
 /**
  * The persistent class for the AVERAGEPRICEGROUP database table.
- * 
  */
 @Entity
-@NamedQuery(name="AveragePriceGroup.findAll", query="SELECT a FROM AveragePriceGroup a")
+@NamedQuery(name = "AveragePriceGroup.findAll", query = "SELECT a FROM AveragePriceGroup a")
 
 public class AveragePriceGroup implements Serializable {
 
-	private static final long serialVersionUID = -7751759136597709194L;
+    private static final long serialVersionUID = -7751759136597709194L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
-	private long averagePrcGrpId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private long averagePrcGrpId;
 
-	private BigDecimal averagePrice;
+    private BigDecimal averagePrice;
 
-	@Enumerated(EnumType.STRING)
-	private Capacity capacity;
+    @Enumerated(EnumType.STRING)
+    private Capacity capacity;
 
-	private long clientId;
+    private long clientId;
 
-	private long exchangeId;
+    private long exchangeId;
 
-	@Enumerated(EnumType.STRING)
-	private FlowType flowType;
+    @Enumerated(EnumType.STRING)
+    private FlowType flowType;
 
-	private long instrumentId;
+    private long instrumentId;
 
-	private String mergeKey;
+    private String mergeKey;
 
-	private BigDecimal quantity;
-	
-	@Enumerated(EnumType.STRING)
-	private AVGStatus status;
+    private BigDecimal quantity;
 
-	private int tradeDate;
+    @Enumerated(EnumType.STRING)
+    private AVGStatus status;
 
-	@Column(name="\"VERSION\"")
-	private int version;
+    private int tradeDate;
 
-	public AveragePriceGroup() {
-	}
-	
-	
+    @Column(name = "\"VERSION\"")
+    private int version;
 
-	public long getAveragePrcGrpId() {
-		return averagePrcGrpId;
-	}
+    public AveragePriceGroup() {
+    }
 
 
+    public long getAveragePrcGrpId() {
+        return averagePrcGrpId;
+    }
 
-	public void setAveragePrcGrpId(long averagePrcGrpId) {
-		this.averagePrcGrpId = averagePrcGrpId;
-	}
 
+    public void setAveragePrcGrpId(long averagePrcGrpId) {
+        this.averagePrcGrpId = averagePrcGrpId;
+    }
 
 
-	public BigDecimal getAveragePrice() {
-		return averagePrice;
-	}
+    public BigDecimal getAveragePrice() {
+        return averagePrice;
+    }
 
 
+    public void setAveragePrice(BigDecimal averagePrice) {
+        this.averagePrice = averagePrice;
+    }
 
-	public void setAveragePrice(BigDecimal averagePrice) {
-		this.averagePrice = averagePrice;
-	}
 
+    public Capacity getCapacity() {
+        return capacity;
+    }
 
 
-	public Capacity getCapacity() {
-		return capacity;
-	}
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
+    }
 
 
+    public long getClientId() {
+        return clientId;
+    }
 
-	public void setCapacity(Capacity capacity) {
-		this.capacity = capacity;
-	}
 
+    public void setClientId(long clientId) {
+        this.clientId = clientId;
+    }
 
 
-	public long getClientId() {
-		return clientId;
-	}
+    public long getExchangeId() {
+        return exchangeId;
+    }
 
 
+    public void setExchangeId(long exchangeId) {
+        this.exchangeId = exchangeId;
+    }
 
-	public void setClientId(long clientId) {
-		this.clientId = clientId;
-	}
 
+    public FlowType getFlowType() {
+        return flowType;
+    }
 
 
-	public long getExchangeId() {
-		return exchangeId;
-	}
+    public void setFlowType(FlowType flowType) {
+        this.flowType = flowType;
+    }
 
 
+    public long getInstrumentId() {
+        return instrumentId;
+    }
 
-	public void setExchangeId(long exchangeId) {
-		this.exchangeId = exchangeId;
-	}
 
+    public void setInstrumentId(long instrumentId) {
+        this.instrumentId = instrumentId;
+    }
 
 
-	public FlowType getFlowType() {
-		return flowType;
-	}
+    public String getMergeKey() {
+        return mergeKey;
+    }
 
 
+    public void setMergeKey(String mergeKey) {
+        this.mergeKey = mergeKey;
+    }
 
-	public void setFlowType(FlowType flowType) {
-		this.flowType = flowType;
-	}
 
+    public BigDecimal getQuantity() {
+        return quantity;
+    }
 
 
-	public long getInstrumentId() {
-		return instrumentId;
-	}
+    public void setQuantity(BigDecimal quantity) {
+        this.quantity = quantity;
+    }
 
 
+    public AVGStatus getStatus() {
+        return status;
+    }
 
-	public void setInstrumentId(long instrumentId) {
-		this.instrumentId = instrumentId;
-	}
 
+    public void setStatus(AVGStatus status) {
+        this.status = status;
+    }
 
 
-	public String getMergeKey() {
-		return mergeKey;
-	}
+    public int getTradeDate() {
+        return tradeDate;
+    }
 
 
+    public void setTradeDate(int tradeDate) {
+        this.tradeDate = tradeDate;
+    }
 
-	public void setMergeKey(String mergeKey) {
-		this.mergeKey = mergeKey;
-	}
 
+    public int getVersion() {
+        return this.version;
+    }
 
-
-	public BigDecimal getQuantity() {
-		return quantity;
-	}
-
-
-
-	public void setQuantity(BigDecimal quantity) {
-		this.quantity = quantity;
-	}
-
-
-
-	public AVGStatus getStatus() {
-		return status;
-	}
-
-
-
-	public void setStatus(AVGStatus status) {
-		this.status = status;
-	}
-
-
-
-	public int getTradeDate() {
-		return tradeDate;
-	}
-
-
-
-	public void setTradeDate(int tradeDate) {
-		this.tradeDate = tradeDate;
-	}
-
-
-
-	public int getVersion() {
-		return this.version;
-	}
-
-	public void setVersion(int version) {
-		this.version = version;
-	}
+    public void setVersion(int version) {
+        this.version = version;
+    }
 
 }

@@ -9,16 +9,15 @@ import com.mos.event.Notification;
 
 public class HeartBeatDaemon implements Runnable {
 
-	
 	private static Logger logger = getLogger(HeartBeatDaemon.class);
 
-	protected int waitTime = 60000;
-	
+	protected int waitTime = 600;
+
 
 	@Override
 	public void run() {
 
-		while (true) {
+		while (!Thread.interrupted()){
 			HeartBeatNotification notification = new HeartBeatNotification();
 			logger.info("Heartbeat publishing a live message.");
 

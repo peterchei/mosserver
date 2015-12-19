@@ -10,8 +10,8 @@ sourceCompatibility = 1.8
 
 repositories {
     jcenter()
-    
-    maven {
+
+        maven {
         url "http://repo.marketcetera.org/maven";
     }
     
