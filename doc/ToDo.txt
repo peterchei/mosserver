@@ -1,5 +1,11 @@
 Build 
-- gradle
+- gradle build
+
+
+Dependence Injector
+- Guice
+
+
 
 
 
@@ -13,10 +19,11 @@ Database
 JPA
 -- transaction 
 
---  reference
+-- reference
 
 -- config
 
+-- Client Preference
 
 Caching
 

@@ -17,4 +17,8 @@ public interface RefEnums {
 	enum HolidayType {
 		Trade, Settlement
 	}
+
+	enum ClientRegion {
+		ASIAEX, US, EMEA, JAPAN
+	}
 }
