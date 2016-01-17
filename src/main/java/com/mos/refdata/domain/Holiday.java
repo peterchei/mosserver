@@ -22,6 +22,8 @@ public class Holiday  implements Serializable {
 
 	private int date;
 	private long marketId;
+	private HolidayType type;
+
 
 	/*
 	 * Date in yyyyMMdd format
@@ -50,4 +52,11 @@ public class Holiday  implements Serializable {
 		this.date = date;
 	}
 
+	public HolidayType getType() {
+		return type;
+	}
+
+	public void setType(HolidayType type) {
+		this.type = type;
+	}
 }

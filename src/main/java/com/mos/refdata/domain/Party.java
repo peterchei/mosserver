@@ -3,7 +3,6 @@ package com.mos.refdata.domain;
 import java.io.Serializable;
 
 import com.mos.domain.DomainEnums.ClientRegion;
-import com.mos.refdata.domain.RefEnums.AccountType;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +23,7 @@ public class Party   implements Serializable {
 	private long shortName;
 	private ClientRegion clientRegion;
 	private Country clientCountry;
-	private AccountType accountType;
+	private PartyAccountType accountType;
 
 	public long getPartyId() {
 		return partyId;
@@ -66,11 +65,11 @@ public class Party   implements Serializable {
 		this.clientCountry = clientCountry;
 	}
 
-	public AccountType getAccountType() {
+	public PartyAccountType getAccountType() {
 		return accountType;
 	}
 
-	public void setAccountType(AccountType accountType) {
+	public void setAccountType(PartyAccountType accountType) {
 		this.accountType = accountType;
 	}
 

@@ -94,7 +94,6 @@ public class AbstractStore<T> {
 		} finally {
 			entityManager.getTransaction().commit();
 		}
-
 	}
 
 }
