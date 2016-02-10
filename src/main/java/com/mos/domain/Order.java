@@ -52,6 +52,8 @@ public class Order implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private CommissionType commissionType;
 
+	private BigDecimal CommissionAmount;
+
 	private String currency;
 
 	private long exchangeId;
@@ -65,7 +67,7 @@ public class Order implements Serializable {
 
 	private String foOrderRef;
 
-	private BigDecimal frontOfficeComment;
+	private String frontOfficeComment;
 
 	private String fxDirection;
 
@@ -207,11 +209,11 @@ public class Order implements Serializable {
 		this.foOrderRef = foOrderRef;
 	}
 
-	public BigDecimal getFrontOfficeComment() {
+	public String getFrontOfficeComment() {
 		return frontOfficeComment;
 	}
 
-	public void setFrontOfficeComment(BigDecimal frontOfficeComment) {
+	public void setFrontOfficeComment(String frontOfficeComment) {
 		this.frontOfficeComment = frontOfficeComment;
 	}
 
@@ -333,6 +335,13 @@ public class Order implements Serializable {
 
 	public void setVersion(int version) {
 		this.version = version;
-	}	
-	
+	}
+
+	public BigDecimal getCommissionAmount() {
+		return CommissionAmount;
+	}
+
+	public void setCommissionAmount(BigDecimal commissionAmount) {
+		CommissionAmount = commissionAmount;
+	}
 }

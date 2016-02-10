@@ -29,11 +29,11 @@ public class Portfolio implements Serializable {
     public Portfolio() {
     }
 
-    public long getPortfolioid() {
+    public long getPortfolioId() {
         return this.portfolioId;
     }
 
-    public void setPortfolioid(long portfolioId) {
+    public void setPortfolioId(long portfolioId) {
         this.portfolioId = portfolioId;
     }
 

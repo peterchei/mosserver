@@ -12,7 +12,7 @@ import javax.persistence.NamedQuery;
 
 /**
  * The persistent class for the CONTRACTNOTE database table.
- * 
+ *
  */
 @Entity
 @NamedQuery(name="ContractNote.findAll", query="SELECT c FROM ContractNote c")
@@ -27,7 +27,7 @@ public class ContractNote implements Serializable {
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	private long id;
 
-	private BigDecimal clienttradeid;
+	private long clientTradeId;
 
 	public ContractNote() {
 	}
@@ -40,12 +40,12 @@ public class ContractNote implements Serializable {
 		this.id = id;
 	}
 
-	public BigDecimal getClienttradeid() {
-		return this.clienttradeid;
+	public long getClientTradeId() {
+		return this.clientTradeId;
 	}
 
-	public void setClienttradeid(BigDecimal clienttradeid) {
-		this.clienttradeid = clienttradeid;
+	public void setClientTradeId(long clientTradeId) {
+		this.clientTradeId = clientTradeId;
 	}
 
 }

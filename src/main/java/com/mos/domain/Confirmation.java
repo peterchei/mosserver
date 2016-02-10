@@ -1,7 +1,6 @@
 package com.mos.domain;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,67 +25,67 @@ public class Confirmation implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	private long confirmationid;
+	private long confirmationId;
 
-	private BigDecimal bulkid;
+	private long bulkId;
 
-	private BigDecimal clienttradeid;
+	private long clientTradeId;
 
-	private String confstatus;
+	private DomainEnums.ConfStatus confStatus;
 
-	private BigDecimal isbulk;
+	private boolean isBulk;
 
 	@Column(name="\"VERSION\"")
-	private BigDecimal version;
+	private int version;
 
 	public Confirmation() {
 	}
 
-	public long getConfirmationid() {
-		return this.confirmationid;
+	public long getConfirmationId() {
+		return this.confirmationId;
 	}
 
-	public void setConfirmationid(long confirmationid) {
-		this.confirmationid = confirmationid;
+	public void setConfirmationId(long confirmationId) {
+		this.confirmationId = confirmationId;
 	}
 
-	public BigDecimal getBulkid() {
-		return this.bulkid;
+	public long getBulkId() {
+		return this.bulkId;
 	}
 
-	public void setBulkid(BigDecimal bulkid) {
-		this.bulkid = bulkid;
+	public void setBulkId(long bulkId) {
+		this.bulkId = bulkId;
 	}
 
-	public BigDecimal getClienttradeid() {
-		return this.clienttradeid;
+	public long getClientTradeId() {
+		return this.clientTradeId;
 	}
 
-	public void setClienttradeid(BigDecimal clienttradeid) {
-		this.clienttradeid = clienttradeid;
+	public void setClientTradeId(long clientTradeId) {
+		this.clientTradeId = clientTradeId;
 	}
 
-	public String getConfstatus() {
-		return this.confstatus;
+	public DomainEnums.ConfStatus getConfStatus() {
+		return this.confStatus;
 	}
 
-	public void setConfstatus(String confstatus) {
-		this.confstatus = confstatus;
+	public void setConfStatus(DomainEnums.ConfStatus confStatus) {
+		this.confStatus = confStatus;
 	}
 
-	public BigDecimal getIsbulk() {
-		return this.isbulk;
+	public boolean getBulk() {
+		return this.isBulk;
 	}
 
-	public void setIsbulk(BigDecimal isbulk) {
-		this.isbulk = isbulk;
+	public void setBulk(boolean bulk) {
+		this.isBulk = bulk;
 	}
 
-	public BigDecimal getVersion() {
+	public int getVersion() {
 		return this.version;
 	}
 
-	public void setVersion(BigDecimal version) {
+	public void setVersion(int version) {
 		this.version = version;
 	}
 

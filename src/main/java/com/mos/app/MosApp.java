@@ -24,7 +24,7 @@ public class MosApp {
     private WebModule webModule;
 
     @Inject
-    private Thread heartBeat;
+    private HeartBeatDaemon heartBeat;
 
     public MosApp() {
         init();
@@ -53,7 +53,7 @@ public class MosApp {
         }
 
 
-        heartBeat = new Thread(new HeartBeatDaemon());
+        heartBeat = new HeartBeatDaemon();
 
         webModule = new WebModule();
 

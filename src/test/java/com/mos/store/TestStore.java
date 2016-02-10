@@ -59,7 +59,7 @@ public class TestStore {
 		pf.setTradeDate(Integer.parseInt(new SimpleDateFormat("yyyymmdd")
 				.format((new Date()))));
 		new PortfolioStore().save(pf);
-		assertTrue(pf.getPortfolioid() > 0);
+		assertTrue(pf.getPortfolioId() > 0);
 
 		AveragePriceGroup apg = new AveragePriceGroup();
 
@@ -82,7 +82,7 @@ public class TestStore {
 		od = new Order();
 
 		od.setAveragePrcGrpId((apg.getAveragePrcGrpId()));
-		od.setPortfolioId((pf.getPortfolioid()));
+		od.setPortfolioId((pf.getPortfolioId()));
 		od.setFoOrderRef("XXXXXX");
 		od.setClientId(1);
 		od.setSide(Side.B);
@@ -103,7 +103,7 @@ public class TestStore {
 		od.setFxDirection("D");
 		od.setExecutionCountry("HK");
 		od.setExecutionRegion("AS");
-		od.setFrontOfficeComment(BigDecimal.ONE);
+		od.setFrontOfficeComment("Hello");
 		od.setCapacity(Capacity.Agency);
 		od.setMoComment(" ");
 		od.setVersion(1);

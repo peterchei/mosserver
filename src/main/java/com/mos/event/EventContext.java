@@ -10,6 +10,7 @@ import org.apache.activemq.command.ActiveMQTopic;
 
 import javax.jms.MessageListener;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Logger;
 
 
 /**
@@ -18,6 +19,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author Peter Chei
  */
 public class EventContext {
+
+    private static Logger logger = Logger.getLogger(EventContext.class.getName());
 
     @Inject
     private IBrokerService brokerService = new ActivemqBrokerService();
@@ -89,7 +92,9 @@ public class EventContext {
 
     public static void publish(String destination, Notification event) {
 
-        getInstance().getEventPublisher(destination).send(new Gson().toJson(event));
+        String message = new Gson().toJson(event);
+        logger.info(message);
+        getInstance().getEventPublisher(destination).send(message);
     }
 
     private IMessageProducer getEventPublisher(String dest) {

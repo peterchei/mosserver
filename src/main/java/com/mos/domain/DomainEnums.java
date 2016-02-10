@@ -3,7 +3,7 @@ package com.mos.domain;
 public interface DomainEnums {
 
 	public enum OrderStatus {
-		NONE, ERROR, VERIFIED, OPEN, FILLED, CLOSED, CANCELLED, COMPLETED
+		NONE, ERROR, VERIFIED, OPENED, FILLED, CLOSED, CANCELLED, COMPLETED
 	}
 
 	public enum AllocStatus {
@@ -19,7 +19,7 @@ public interface DomainEnums {
 	}
 
 	public enum ConfStatus {
-		NONE, PENDING_SEND, SENT, ACKED, CONFIRMED
+		NONE, PENDING_SEND, SENT, ACKED, CONFIRMED, FAILED
 	}
 
 	public enum CtmStatus {
@@ -71,7 +71,6 @@ public interface DomainEnums {
 	}
 
 	public enum Side {
-
 		B("Buy"), S("Sell"), SS("ShortSell"), SE("ShortSellExcempt");
 		private String displayName;
 		private Side(String displayName) {
