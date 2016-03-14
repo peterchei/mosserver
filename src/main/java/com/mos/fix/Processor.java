@@ -24,8 +24,7 @@ public class Processor {
 		
 		// pass request to workflow;				
 		
-		switch (message.getMessageType()) {		
-			
+		switch (message.getMessageType()) {
 			
 		case NEW_FILL:
 			break;
@@ -48,7 +47,6 @@ public class Processor {
 		case DONE_FOR_DAY:
 			
 			break;
-			
 			
 		default:
 			throw new RuntimeException("Unsupported Message Type." + message.getMessageType());

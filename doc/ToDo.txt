@@ -6,11 +6,8 @@ Dependence Injector
 - Guice
 
 
-
-
 Database
 - java db / oracle
-
 
 
 JPA
@@ -26,9 +23,16 @@ Caching
 
 Messaging
 -- active MQ
-
 -- web socket
+-- Disrruptor
 
+
+
+Web
+-- TypeScript
+-- JavaScript
+-- W2UI
+-- Angular
 
 
 FIX.4.4
