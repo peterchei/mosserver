@@ -14,3 +14,4 @@ Web
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\PreferExternalManifest (DWORD) to 1
 
 2. add esclipse.manifest to the esclipse.exe directory.
+
