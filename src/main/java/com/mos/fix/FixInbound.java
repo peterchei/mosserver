@@ -6,6 +6,10 @@ import javax.jms.MessageListener;
 import com.google.inject.Inject;
 
 
+/**
+ * Convert incoming JMS message FixMessage and then delegate to processor.
+ *
+ */
 public class FixInbound implements MessageListener {
 	
 	@Inject
