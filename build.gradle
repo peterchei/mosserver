@@ -1,22 +1,23 @@
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'eclipse'
+//apply plugin: 'eclipse'
 
 version = '1.0-SNAPSHOT'
 group = 'com.mos'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 
 repositories {
     jcenter()
 
     maven {
-        url "http://repo.marketcetera.org/maven";
+        url "http://repo.marketcetera.org/maven"
     }
 
     maven {
-        url "https://repo1.maven.org/maven2";
+        url "https://repo1.maven.org/maven2"
     }
     mavenCentral()
     
@@ -27,43 +28,63 @@ repositories {
 
 
 sourceSets {
+    /*
     main {
-       output.resourcesDir = "build/classes/main"
-     }
-  }
+        java {
+            srcDirs = ['src']
+            output.resourcesDir = "build/classes/main"
+        }
+    }
 
+    test {
+        java {
+            srcDirs = ['test']
+        }
+    }
+    */
+     
+}
+
+compileJava {
+    options.incremental = true
+    options.fork = true
+    options.failOnError = false
+}
 
 dependencies {
+
+    //Since Jar signed issue, we have to exclude javax.persistence not signed and include signed one.
+    compile ('org.eclipse.persistence:eclipselink:2.7.4') {
+        exclude module: "javax.persistence"
+    }
+    compile ('javax.persistence:javax.persistence-api:2.2')
+    
     compile 'org.slf4j:slf4j-api:1.7.5',
-    		'org.eclipse.persistence:eclipselink:2.5.2-M1', 
+            'com.sun.xml.ws:jaxws-ri:2.3.2',
      		'org.apache.activemq:activemq-core:5.7.0',
             'com.google.inject:guice:3.0',
             'com.google.code.gson:gson:2.3.1',
             'com.googlecode.disruptor:disruptor:2.7.1',
-         //   'oracle:ojdbc7:0',
             'quickfixj:quickfixj-core:1.5.3',
             'quickfixj:quickfixj-msg-fix50:1.5.3',
-            'quickfixj:quickfixj-msg-fix44:1.5.3',
-            'quickfixj:quickfixj-msg-fix43:1.5.3',
-            'quickfixj:quickfixj-msg-fix42:1.5.3',
-            'quickfixj:quickfixj-msg-fix41:1.5.3',
-            'quickfixj:quickfixj-msg-fix40:1.5.3',
-            'org.apache.mina:mina-core:1.1.7',
-            'io.undertow:undertow-core:1.2.0.Final',
-            'io.undertow:undertow-servel:1.2.11.Final',
-            'io.undertow:undertow-websockets-jar:1.2.11.Final'
-            
+           // 'quickfixj:quickfixj-msg-fix44:1.5.3',
+           // 'quickfixj:quickfixj-msg-fix43:1.5.3',
+           // 'quickfixj:quickfixj-msg-fix42:1.5.3',
+           // 'quickfixj:quickfixj-msg-fix41:1.5.3',
+           // 'quickfixj:quickfixj-msg-fix40:1.5.3',
+           // 'org.apache.mina:mina-core:1.1.7',
+            'io.undertow:undertow-core:1.2.0.Final'
+           
 
     runtime 'ch.qos.logback:logback-classic:1.0.13',
     		'org.slf4j:slf4j-api:1.7.5',
             'com.google.inject:guice:3.0',
-        //    'oracle:ojdbc7:0',
 			'org.apache.derby:derbyclient:10.11.1.1'
 
     testCompile 'junit:junit:4.11',
             'org.mockito:mockito-core:1.9.5',
             'org.assertj:assertj-core:1.6.1',
             'org.slf4j:slf4j-api:1.7.5',
-			'org.apache.derby:derbyclient:10.11.1.1'
+			'org.apache.derby:derbyclient:10.15.1.3'
 }
 
