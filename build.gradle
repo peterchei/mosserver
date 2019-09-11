@@ -1,6 +1,17 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.5.RELEASE")
+    }
+}
+
 apply plugin: 'java'
+apply plugin: 'eclipse'
 apply plugin: 'idea'
-//apply plugin: 'eclipse'
+//apply plugin: 'org.springframework.boot'
+//apply plugin: 'io.spring.dependency-management'
 
 version = '1.0-SNAPSHOT'
 group = 'com.mos'
@@ -76,8 +87,8 @@ dependencies {
             'io.undertow:undertow-core:1.2.0.Final'
            
 
-    runtime 'ch.qos.logback:logback-classic:1.0.13',
-    		'org.slf4j:slf4j-api:1.7.5',
+    runtime 'org.slf4j:slf4j-api:1.7.5', 
+            'ch.qos.logback:logback-classic:1.0.13',
             'com.google.inject:guice:3.0',
 			'org.apache.derby:derbyclient:10.11.1.1'
 

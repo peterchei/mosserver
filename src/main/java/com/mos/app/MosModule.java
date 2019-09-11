@@ -17,7 +17,5 @@ public class MosModule extends AbstractModule {
         bind(IBrokerServer.class).to(ActiveMqBrokerServerImpl.class);
         bind(IBrokerService.class).to(ActivemqBrokerService.class);
 
-
-
     }
 }

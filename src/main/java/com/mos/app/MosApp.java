@@ -6,17 +6,9 @@ import com.mos.event.EventContext;
 import com.mos.heartbeat.HeartBeatDaemon;
 import com.mos.messaging.IBrokerServer;
 import com.mos.web.WebModule;
-import io.undertow.Undertow;
-import io.undertow.server.HttpServerExchange;
-import io.undertow.util.Headers;
 import org.slf4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import javax.xml.ws.spi.http.HttpExchange;
-import javax.xml.ws.spi.http.HttpHandler;
-
-import java.io.IOException;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -39,16 +31,6 @@ public class MosApp {
     }
 
     public static void main(String args[]) {
-
-
-
-                Undertow server = Undertow.builder()
-                        .addHttpListener(8080, "localhost").build();
-
-
-                server.start();
-
-
         try {
             MosApp myApp = new MosApp();
             myApp.start();
