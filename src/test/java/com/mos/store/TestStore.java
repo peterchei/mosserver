@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.mos.domain.*;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 
@@ -31,6 +32,7 @@ import com.mos.domain.DomainEnums.Side;
 import com.mos.domain.DomainEnums.TaskStatus;
 import com.mos.domain.DomainEnums.TaskType;
 
+@Ignore
 public class TestStore {
 
 	private static Logger log = getLogger(TestStore.class);

@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.mos.refdata.domain.Book;
 import com.mos.refdata.domain.BookAttribute;
 
+@Ignore
 public class TestRefDataStore {
 
 	@Before
