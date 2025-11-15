@@ -16,8 +16,14 @@ apply plugin: 'idea'
 version = '1.0-SNAPSHOT'
 group = 'com.mos'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+sourceCompatibility = 21
+targetCompatibility = 21
 
 
 repositories {
@@ -25,6 +31,7 @@ repositories {
 
     maven {
         url "http://repo.marketcetera.org/maven"
+        allowInsecureProtocol = true
     }
 
     maven {
@@ -65,12 +72,12 @@ compileJava {
 dependencies {
 
     //Since Jar signed issue, we have to exclude javax.persistence not signed and include signed one.
-    compile ('org.eclipse.persistence:eclipselink:2.7.4') {
+    implementation ('org.eclipse.persistence:eclipselink:2.7.4') {
         exclude module: "javax.persistence"
     }
-    compile ('javax.persistence:javax.persistence-api:2.2')
-    
-    compile 'org.slf4j:slf4j-api:1.7.5',
+    implementation ('javax.persistence:javax.persistence-api:2.2')
+
+    implementation 'org.slf4j:slf4j-api:1.7.5',
             'com.sun.xml.ws:jaxws-ri:2.3.2',
      		'org.apache.activemq:activemq-core:5.7.0',
             'com.google.inject:guice:3.0',
@@ -87,15 +94,14 @@ dependencies {
             'io.undertow:undertow-core:1.2.0.Final'
            
 
-    runtime 'org.slf4j:slf4j-api:1.7.5', 
+    runtimeOnly 'org.slf4j:slf4j-api:1.7.5',
             'ch.qos.logback:logback-classic:1.0.13',
             'com.google.inject:guice:3.0',
 			'org.apache.derby:derbyclient:10.11.1.1'
 
-    testCompile 'junit:junit:4.11',
+    testImplementation 'junit:junit:4.11',
             'org.mockito:mockito-core:1.9.5',
             'org.assertj:assertj-core:1.6.1',
             'org.slf4j:slf4j-api:1.7.5',
             'org.apache.derby:derbyclient:10.11.1.1'
 }
-

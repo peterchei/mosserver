@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AgentMigrationStateService">
+    <option name="migrationStatus" value="COMPLETED" />
+  </component>
+  <component name="Ask2AgentMigrationStateService">
+    <option name="migrationStatus" value="COMPLETED" />
+  </component>
+  <component name="AskMigrationStateService">
+    <option name="migrationStatus" value="COMPLETED" />
+  </component>
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
       <module name="MOSServer.main" target="1.8" />
       <module name="MOSServer.test" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="EditMigrationStateService">
+    <option name="migrationStatus" value="COMPLETED" />
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="GradleMigrationSettings" migrationVersion="1" />
@@ -15,13 +27,12 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="C:/DevTools/gradle/gradle-5.5" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../DevTools/gradle/gradle-5.5" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
           </set>
         </option>
-        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>
@@ -33,9 +44,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MOSServer.iml" filepath="$PROJECT_DIR$/MOSServer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MOSServer.main.iml" filepath="$PROJECT_DIR$/MOSServer.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MOSServer.test.iml" filepath="$PROJECT_DIR$/MOSServer.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mosserver.iml" filepath="$PROJECT_DIR$/mosserver.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_12" project-jdk-name="JDK 12.0.1" project-jdk-type="JavaSDK">
@@ -43,6 +52,14 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+  <component name="accountSettings">
+    <option name="activeRegion" value="us-east-1" />
+    <option name="recentlyUsedRegions">
+      <list>
+        <option value="us-east-1" />
+      </list>
+    </option>
   </component>
   <component name="libraryTable">
     <library name="Gradle: aopalliance:aopalliance:1.0">
